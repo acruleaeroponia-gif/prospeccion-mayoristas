@@ -1,0 +1,17 @@
+## Negocios ya prospectados (no repetir)
+## Formato: Nombre | Zona
+Mantillo del Bosque | Benavídez
+Vivero Verdezza (Spinelli) | Rincón de Milberg
+Vivero Reservarte | Tigre
+Vivero Santa María | Rincón de Milberg
+Chill Out Remeros | Tigre/Nordelta
+Rancho Deco | Rincón de Milberg
+Compañía Nativa | Puerto de Frutos
+Cinderella Decoración | Puerto de Frutos
+Lalita Growshop | Tigre
+Planto Luego Existo Growshop | Tigre
+NutriTigre | Tigre
+Ferretería El Tigre | Tigre
+Vivero Lunta | Tigre
+Pindo Studio | Tigre
+Rincón Tigre | Tigre

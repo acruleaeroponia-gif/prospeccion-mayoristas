@@ -1,0 +1,27 @@
+{
+  "zona_actual": "Nordelta",
+  "zonas_pendientes": ["Benavídez", "Rincón de Milberg", "Tigre Centro", "Escobar", "San Fernando", "San Isidro", "Pacheco", "Don Torcuato", "Pilar", "Campana"],
+  "zonas_cubiertas": [],
+  "prospectos_por_dia": 20,
+  "categorias_busqueda": [
+    "viveros",
+    "jardinerías",
+    "growshops",
+    "decoración hogar",
+    "dietéticas y orgánicas",
+    "ferreterías con jardín",
+    "florerías",
+    "casa y jardín",
+    "tiendas sustentables",
+    "tiendas de diseño",
+    "bazares deco",
+    "paisajismo",
+    "garden center",
+    "productos naturales",
+    "tiendas ecológicas",
+    "macetas y cerámica"
+  ],
+  "producto": "Kits de huerta urbana",
+  "marca": "[Tu Marca]",
+  "notas": "Reemplazar [Tu Marca] por el nombre real de la marca cuando esté definido"
+}
