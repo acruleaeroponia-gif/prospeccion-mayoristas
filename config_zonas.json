@@ -1,7 +1,7 @@
 {
-  "zona_actual": "Nordelta",
-  "zonas_pendientes": ["Benavídez", "Rincón de Milberg", "Tigre Centro", "Escobar", "San Fernando", "San Isidro", "Pacheco", "Don Torcuato", "Pilar", "Campana"],
-  "zonas_cubiertas": [],
+  "zona_actual": "Benavídez",
+  "zonas_pendientes": ["Rincón de Milberg", "Tigre Centro", "Escobar", "San Fernando", "San Isidro", "Pacheco", "Don Torcuato", "Pilar", "Campana"],
+  "zonas_cubiertas": ["Nordelta"],
   "prospectos_por_dia": 20,
   "categorias_busqueda": [
     "viveros",
@@ -22,6 +22,6 @@
     "macetas y cerámica"
   ],
   "producto": "Kits de huerta urbana",
-  "marca": "[Tu Marca]",
-  "notas": "Reemplazar [Tu Marca] por el nombre real de la marca cuando esté definido"
+  "marca": "Acrule",
+  "notas": "Marca: Acrule - Cultivos hidropónicos"
 }
