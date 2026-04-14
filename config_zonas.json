@@ -1,7 +1,7 @@
 {
-  "zona_actual": "Benavídez",
-  "zonas_pendientes": ["Rincón de Milberg", "Tigre Centro", "Escobar", "San Fernando", "San Isidro", "Pacheco", "Don Torcuato", "Pilar", "Campana"],
-  "zonas_cubiertas": ["Nordelta"],
+  "zona_actual": "Escobar",
+  "zonas_pendientes": ["San Fernando", "San Isidro", "Pacheco", "Don Torcuato", "Pilar", "Campana"],
+  "zonas_cubiertas": ["Nordelta", "Benavídez", "Rincón de Milberg", "Tigre Centro"],
   "prospectos_por_dia": 20,
   "categorias_busqueda": [
     "viveros",
