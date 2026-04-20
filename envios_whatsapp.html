@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>Envío WhatsApp - Acrule</title>
+<style>
+  body { font-family:-apple-system,sans-serif;max-width:820px;margin:0 auto;padding:16px;background:#f0f2f5; }
+  .stats { background:#fff;padding:14px;border-radius:8px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.1);position:sticky;top:8px;z-index:10; }
+  h1 { color:#075e54;margin:0 0 8px; }
+  .filtros button { margin-right:6px;padding:6px 12px;border:1px solid #ccc;background:#fff;border-radius:6px;cursor:pointer;font-size:13px; }
+  .filtros button.active { background:#075e54;color:#fff;border-color:#075e54; }
+  .card { background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.08);transition:opacity .3s; }
+  .card.hecho { opacity:.35; } .card.hidden { display:none; }
+  .head { display:flex;gap:8px;align-items:center;flex-wrap:wrap; }
+  .num { background:#e7f3ff;color:#075e54;padding:2px 8px;border-radius:6px;font-size:13px;font-weight:600; }
+  .name { font-size:17px;font-weight:600;flex:1; }
+  .badge { padding:2px 10px;border-radius:10px;font-size:12px;font-weight:600; }
+  .badge.alta { background:#d4f4dd;color:#1d7a3a; } .badge.media { background:#fff3cd;color:#856404; } .badge.baja { background:#f5d5d5;color:#721c24; }
+  .meta { color:#65676b;font-size:13px;margin:6px 0; }
+  .msg { background:#fff8d6;padding:10px 12px;border-radius:8px;font-size:14px;line-height:1.5;margin:8px 0;border-left:3px solid #25d366; }
+  .actions { display:flex;gap:8px;margin-top:8px;flex-wrap:wrap; }
+  .btn { padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;text-decoration:none;display:inline-block; }
+  .btn.send { background:#25d366;color:#fff; } .btn.send:hover { background:#1fa855; }
+  .btn.done { background:#e4e6eb;color:#050505; } .btn.done:hover { background:#d8dadf; }
+</style></head><body>
+<div class="stats">
+  <h1>📲 Envío WhatsApp - Acrule</h1>
+  <strong>Total:</strong> 45 prospectos · Enviados: <b id="count">0</b>
+  <div class="filtros">
+    <button class="active" onclick="filtrar('todos',this)">Todos (45)</button>
+    <button onclick="filtrar('Alta',this)">🟢 Alta (18)</button>
+    <button onclick="filtrar('Media',this)">🟡 Media (18)</button>
+    <button onclick="filtrar('Baja',this)">🔴 Baja (9)</button>
+    <button onclick="toggleHechos(this)" id="tg">Ocultar enviados</button>
+  </div>
+</div>
+
+    <div class="card" data-idx="1" data-calif="Alta">
+      <div class="head"><span class="num">#28</span><span class="name">Aires de Cultivo Grow Shop</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Growshop · Ituzaingó 2710, Benavídez, Tigre · <b>+5491166894723</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que creemos que el laburo que hacen en Aires de Cultivo Grow Shop con todo el tema cultivo tiene mucho valor y encaja perfecto con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491166894723?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20creemos%20que%20el%20laburo%20que%20hacen%20en%20Aires%20de%20Cultivo%20Grow%20Shop%20con%20todo%20el%20tema%20cultivo%20tiene%20mucho%20valor%20y%20encaja%20perfecto%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(1)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(1)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="2" data-calif="Alta">
+      <div class="head"><span class="num">#56</span><span class="name">Vivero Hisaki</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Vivero · San Martín 1305, Belén de Escobar · <b>+5491126794886</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Vivero Hisaki con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491126794886?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Vivero%20Hisaki%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(2)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(2)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="3" data-calif="Alta">
+      <div class="head"><span class="num">#57</span><span class="name">Vivero Holandés</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Vivero mayorista · Belén de Escobar · <b>+5491168915124</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Vivero Holandés con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491168915124?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Vivero%20Holand%C3%A9s%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(3)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(3)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="4" data-calif="Alta">
+      <div class="head"><span class="num">#58</span><span class="name">Vivero Kogiso</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Vivero mayorista · Cabildo 1390, Garín, Escobar · <b>+543327456557</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Vivero Kogiso con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/543327456557?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Vivero%20Kogiso%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(4)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(4)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="5" data-calif="Alta">
+      <div class="head"><span class="num">#59</span><span class="name">Vivero Sileoni</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Vivero mayorista · Las Azucenas 2505, Belén de Escobar · <b>+5491133647000</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Vivero Sileoni con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491133647000?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Vivero%20Sileoni%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(5)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(5)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="6" data-calif="Alta">
+      <div class="head"><span class="num">#60</span><span class="name">Vivero Cítrico San Felipe BA</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Vivero mayorista · Av. Los Inmigrantes 1360, Belén de Escobar · <b>+5491161973473</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Vivero Cítrico San Felipe BA con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491161973473?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Vivero%20C%C3%ADtrico%20San%20Felipe%20BA%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(6)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(6)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="7" data-calif="Alta">
+      <div class="head"><span class="num">#62</span><span class="name">Escobar Growshop</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Growshop · Belén de Escobar · <b>+5491157820615</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que creemos que el laburo que hacen en Escobar Growshop con todo el tema cultivo tiene mucho valor y encaja perfecto con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491157820615?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20creemos%20que%20el%20laburo%20que%20hacen%20en%20Escobar%20Growshop%20con%20todo%20el%20tema%20cultivo%20tiene%20mucho%20valor%20y%20encaja%20perfecto%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(7)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(7)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="8" data-calif="Alta">
+      <div class="head"><span class="num">#63</span><span class="name">Maschwitz Grow</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Growshop · Córdoba 1243, Ing. Maschwitz, Escobar · <b>+5491160037025</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que creemos que el laburo que hacen en Maschwitz Grow con todo el tema cultivo tiene mucho valor y encaja perfecto con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491160037025?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20creemos%20que%20el%20laburo%20que%20hacen%20en%20Maschwitz%20Grow%20con%20todo%20el%20tema%20cultivo%20tiene%20mucho%20valor%20y%20encaja%20perfecto%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(8)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(8)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="9" data-calif="Alta">
+      <div class="head"><span class="num">#64</span><span class="name">Grow Shopping Pilar</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Growshop · Maquinista Savio, Escobar · <b>+5491160187605</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que creemos que el laburo que hacen en Grow Shopping Pilar con todo el tema cultivo tiene mucho valor y encaja perfecto con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491160187605?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20creemos%20que%20el%20laburo%20que%20hacen%20en%20Grow%20Shopping%20Pilar%20con%20todo%20el%20tema%20cultivo%20tiene%20mucho%20valor%20y%20encaja%20perfecto%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(9)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(9)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="10" data-calif="Alta">
+      <div class="head"><span class="num">#74</span><span class="name">Cultivo Urbano Maschwitz</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Growshop · Ing. Maschwitz, Escobar · <b>+5491123091385</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que creemos que el laburo que hacen en Cultivo Urbano Maschwitz con todo el tema cultivo tiene mucho valor y encaja perfecto con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491123091385?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20creemos%20que%20el%20laburo%20que%20hacen%20en%20Cultivo%20Urbano%20Maschwitz%20con%20todo%20el%20tema%20cultivo%20tiene%20mucho%20valor%20y%20encaja%20perfecto%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(10)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(10)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="11" data-calif="Alta">
+      <div class="head"><span class="num">#76</span><span class="name">Vivero Green Project</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Vivero/Florería · Colectora Este Ramal Escobar 2505, Ing. Maschwitz · <b>+541145267698</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Vivero Green Project con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/541145267698?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Vivero%20Green%20Project%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(11)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(11)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="12" data-calif="Alta">
+      <div class="head"><span class="num">#77</span><span class="name">Vivero Rauscher</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Vivero especializado · Víctor Manuel II 375, Matheu, Escobar · <b>+543488469111</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Vivero Rauscher con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/543488469111?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Vivero%20Rauscher%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(12)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(12)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="13" data-calif="Alta">
+      <div class="head"><span class="num">#78</span><span class="name">El Almacén del Huillin</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Tienda sustentable · Aconquija 360, Ing. Maschwitz · <b>+5491134854442</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi la mirada sustentable que tienen en El Almacén del Huillin y sentimos que lo nuestro suma mucho a esa propuesta, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491134854442?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20la%20mirada%20sustentable%20que%20tienen%20en%20El%20Almac%C3%A9n%20del%20Huillin%20y%20sentimos%20que%20lo%20nuestro%20suma%20mucho%20a%20esa%20propuesta%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(13)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(13)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="14" data-calif="Alta">
+      <div class="head"><span class="num">#80</span><span class="name">Espacios Verdes La Esperanza</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Vivero · Av. H. Yrigoyen 608, Matheu, Escobar · <b>+543484460064</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Espacios Verdes La Esperanza con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/543484460064?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Espacios%20Verdes%20La%20Esperanza%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(14)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(14)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="15" data-calif="Alta">
+      <div class="head"><span class="num">#85</span><span class="name">Vivero San Fernando</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Vivero · San Fernando Buenos Aires · <b>+5491167814433</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Vivero San Fernando con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491167814433?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Vivero%20San%20Fernando%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(15)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(15)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="16" data-calif="Alta">
+      <div class="head"><span class="num">#90</span><span class="name">Germinando Nativas</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Vivero plantas nativas · Buenos Aires, Zona Norte · <b>+5491162437142</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Germinando Nativas con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491162437142?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Germinando%20Nativas%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(16)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(16)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="17" data-calif="Alta">
+      <div class="head"><span class="num">#91</span><span class="name">Buenos Aires Grow Shop</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Growshop · Zona Norte, Buenos Aires · <b>+541146017785</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que creemos que el laburo que hacen en Buenos Aires Grow Shop con todo el tema cultivo tiene mucho valor y encaja perfecto con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/541146017785?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20creemos%20que%20el%20laburo%20que%20hacen%20en%20Buenos%20Aires%20Grow%20Shop%20con%20todo%20el%20tema%20cultivo%20tiene%20mucho%20valor%20y%20encaja%20perfecto%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(17)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(17)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="18" data-calif="Alta">
+      <div class="head"><span class="num">#92</span><span class="name">La Floresta Growshop</span><span class="badge alta">Alta</span></div>
+      <div class="meta">Growshop · Zona Norte, Buenos Aires · <b>+5491161227241</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que creemos que el laburo que hacen en La Floresta Growshop con todo el tema cultivo tiene mucho valor y encaja perfecto con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491161227241?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20creemos%20que%20el%20laburo%20que%20hacen%20en%20La%20Floresta%20Growshop%20con%20todo%20el%20tema%20cultivo%20tiene%20mucho%20valor%20y%20encaja%20perfecto%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(18)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(18)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="19" data-calif="Media">
+      <div class="head"><span class="num">#14</span><span class="name">Pindo Studio</span><span class="badge media">Media</span></div>
+      <div class="meta">Vivero/Deco · Av. Agustin M. Garcia 6385, Tigre · <b>+5491133343852</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Pindo Studio con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491133343852?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20Pindo%20Studio%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(19)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(19)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="20" data-calif="Media">
+      <div class="head"><span class="num">#20</span><span class="name">Guazú-Nambí Muebles y Deco</span><span class="badge media">Media</span></div>
+      <div class="meta">Decoración · Agustín García 5899, Nordelta, Tigre · <b>+5491140906281</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que me encantó la estética que manejan en Guazú-Nambí Muebles y Deco y creo que nuestras huertas encajan perfecto con la propuesta de diseño que tienen, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491140906281?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20me%20encant%C3%B3%20la%20est%C3%A9tica%20que%20manejan%20en%20Guaz%C3%BA-Namb%C3%AD%20Muebles%20y%20Deco%20y%20creo%20que%20nuestras%20huertas%20encajan%20perfecto%20con%20la%20propuesta%20de%20dise%C3%B1o%20que%20tienen%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(20)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(20)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="21" data-calif="Media">
+      <div class="head"><span class="num">#21</span><span class="name">Gloria Atelier Deco</span><span class="badge media">Media</span></div>
+      <div class="meta">Decoración · Av. de los Lagos 7008, Nordelta Centro Comercial, Tigre · <b>+5491134839270</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que me encantó la estética que manejan en Gloria Atelier Deco y creo que nuestras huertas encajan perfecto con la propuesta de diseño que tienen, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491134839270?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20me%20encant%C3%B3%20la%20est%C3%A9tica%20que%20manejan%20en%20Gloria%20Atelier%20Deco%20y%20creo%20que%20nuestras%20huertas%20encajan%20perfecto%20con%20la%20propuesta%20de%20dise%C3%B1o%20que%20tienen%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(21)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(21)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="22" data-calif="Media">
+      <div class="head"><span class="num">#24</span><span class="name">Loreto Muebles y Objetos Nordelta</span><span class="badge media">Media</span></div>
+      <div class="meta">Muebles/Deco · Nordelta, Tigre · <b>+5491127437693</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que me encantó la estética que manejan en Loreto Muebles y Objetos Nordelta y creo que nuestras huertas encajan perfecto con la propuesta de diseño que tienen, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491127437693?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20me%20encant%C3%B3%20la%20est%C3%A9tica%20que%20manejan%20en%20Loreto%20Muebles%20y%20Objetos%20Nordelta%20y%20creo%20que%20nuestras%20huertas%20encajan%20perfecto%20con%20la%20propuesta%20de%20dise%C3%B1o%20que%20tienen%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(22)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(22)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="23" data-calif="Media">
+      <div class="head"><span class="num">#25</span><span class="name">New Garden Nordelta</span><span class="badge media">Media</span></div>
+      <div class="meta">Dietética · Av. de los Lagos 7008, Rincón de Milberg · <b>+541148715555</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en New Garden Nordelta con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/541148715555?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20New%20Garden%20Nordelta%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(23)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(23)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="24" data-calif="Media">
+      <div class="head"><span class="num">#37</span><span class="name">Sol Palou Deco</span><span class="badge media">Media</span></div>
+      <div class="meta">Decoración · Av. Santa María de las Conchas 6385, CC Santa María, Tigre · <b>+5491128520734</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que me encantó la estética que manejan en Sol Palou Deco y creo que nuestras huertas encajan perfecto con la propuesta de diseño que tienen, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491128520734?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20me%20encant%C3%B3%20la%20est%C3%A9tica%20que%20manejan%20en%20Sol%20Palou%20Deco%20y%20creo%20que%20nuestras%20huertas%20encajan%20perfecto%20con%20la%20propuesta%20de%20dise%C3%B1o%20que%20tienen%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(24)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(24)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="25" data-calif="Media">
+      <div class="head"><span class="num">#39</span><span class="name">Relax y Decoración</span><span class="badge media">Media</span></div>
+      <div class="meta">Decoración · Galería Lo Mejor del Puerto, Locales 22-24, Puerto de Frutos, Tigre · <b>+5491140382010</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que me encantó la estética que manejan en Relax y Decoración y creo que nuestras huertas encajan perfecto con la propuesta de diseño que tienen, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491140382010?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20me%20encant%C3%B3%20la%20est%C3%A9tica%20que%20manejan%20en%20Relax%20y%20Decoraci%C3%B3n%20y%20creo%20que%20nuestras%20huertas%20encajan%20perfecto%20con%20la%20propuesta%20de%20dise%C3%B1o%20que%20tienen%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(25)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(25)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="26" data-calif="Media">
+      <div class="head"><span class="num">#40</span><span class="name">Florería Dylan</span><span class="badge media">Media</span></div>
+      <div class="meta">Florería · Av. Santa María de las Conchas 2596, Rincón de Milberg, Tigre · <b>+5491156399338</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi la propuesta de Florería Dylan y nos parece que hay mucha sintonía con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491156399338?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20la%20propuesta%20de%20Florer%C3%ADa%20Dylan%20y%20nos%20parece%20que%20hay%20mucha%20sinton%C3%ADa%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(26)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(26)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="27" data-calif="Media">
+      <div class="head"><span class="num">#41</span><span class="name">Corralón Casa Camilo</span><span class="badge media">Media</span></div>
+      <div class="meta">Corralón · Carriego 1746, Rincón de Milberg, Tigre · <b>+5491125223247</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi la propuesta de Corralón Casa Camilo y nos parece que hay mucha sintonía con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491125223247?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20la%20propuesta%20de%20Corral%C3%B3n%20Casa%20Camilo%20y%20nos%20parece%20que%20hay%20mucha%20sinton%C3%ADa%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(27)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(27)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="28" data-calif="Media">
+      <div class="head"><span class="num">#46</span><span class="name">Ferretería y Corralón Andersen</span><span class="badge media">Media</span></div>
+      <div class="meta">Ferretería/Corralón · Ruta 197 y Liniers, Troncos del Talar, Tigre · <b>+5491127669364</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi que en Ferretería y Corralón Andersen la gente del barrio se acerca para armar sus proyectos, y creemos que las huertas hidropónicas pueden ser un producto lindo para sumar al local, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491127669364?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20que%20en%20Ferreter%C3%ADa%20y%20Corral%C3%B3n%20Andersen%20la%20gente%20del%20barrio%20se%20acerca%20para%20armar%20sus%20proyectos%2C%20y%20creemos%20que%20las%20huertas%20hidrop%C3%B3nicas%20pueden%20ser%20un%20producto%20lindo%20para%20sumar%20al%20local%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(28)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(28)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="29" data-calif="Media">
+      <div class="head"><span class="num">#55</span><span class="name">Corralón Ferreyra</span><span class="badge media">Media</span></div>
+      <div class="meta">Corralón · Troncos del Talar, Tigre · <b>+541130570527</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi la propuesta de Corralón Ferreyra y nos parece que hay mucha sintonía con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/541130570527?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20la%20propuesta%20de%20Corral%C3%B3n%20Ferreyra%20y%20nos%20parece%20que%20hay%20mucha%20sinton%C3%ADa%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(29)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(29)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="30" data-calif="Media">
+      <div class="head"><span class="num">#72</span><span class="name">Ferretería Corralón Garay</span><span class="badge media">Media</span></div>
+      <div class="meta">Ferretería/Corralón · Garay 3549, Escobar · <b>+541137645454</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi que en Ferretería Corralón Garay la gente del barrio se acerca para armar sus proyectos, y creemos que las huertas hidropónicas pueden ser un producto lindo para sumar al local, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/541137645454?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20que%20en%20Ferreter%C3%ADa%20Corral%C3%B3n%20Garay%20la%20gente%20del%20barrio%20se%20acerca%20para%20armar%20sus%20proyectos%2C%20y%20creemos%20que%20las%20huertas%20hidrop%C3%B3nicas%20pueden%20ser%20un%20producto%20lindo%20para%20sumar%20al%20local%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(30)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(30)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="31" data-calif="Media">
+      <div class="head"><span class="num">#75</span><span class="name">Distribuidora Escobar</span><span class="badge media">Media</span></div>
+      <div class="meta">Distribuidora · Loma Verde, Escobar · <b>+543484493350</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi la propuesta de Distribuidora Escobar y nos parece que hay mucha sintonía con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/543484493350?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20la%20propuesta%20de%20Distribuidora%20Escobar%20y%20nos%20parece%20que%20hay%20mucha%20sinton%C3%ADa%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(31)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(31)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="32" data-calif="Media">
+      <div class="head"><span class="num">#79</span><span class="name">Área Verde Productos y Servicios</span><span class="badge media">Media</span></div>
+      <div class="meta">Vivero/Jardín · Ruta 26 1576, Maquinista Savio · <b>+54111553050936</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en Área Verde Productos y Servicios con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/54111553050936?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20%C3%81rea%20Verde%20Productos%20y%20Servicios%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(32)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(32)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="33" data-calif="Media">
+      <div class="head"><span class="num">#81</span><span class="name">Dietética Loma Verde</span><span class="badge media">Media</span></div>
+      <div class="meta">Dietética · Belén de Escobar · <b>+543484406505</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi la propuesta de Dietética Loma Verde y nos parece que hay mucha sintonía con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/543484406505?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20la%20propuesta%20de%20Diet%C3%A9tica%20Loma%20Verde%20y%20nos%20parece%20que%20hay%20mucha%20sinton%C3%ADa%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(33)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(33)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="34" data-calif="Media">
+      <div class="head"><span class="num">#82</span><span class="name">New Garden Maschwitz</span><span class="badge media">Media</span></div>
+      <div class="meta">Dietética/Alimentos naturales · Patricios 1790, Ing. Maschwitz · <b>+5491131975628</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi lo que hacen en New Garden Maschwitz con las plantas y la propuesta verde, y nos parece que encaja perfecto con la comunidad que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491131975628?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20lo%20que%20hacen%20en%20New%20Garden%20Maschwitz%20con%20las%20plantas%20y%20la%20propuesta%20verde%2C%20y%20nos%20parece%20que%20encaja%20perfecto%20con%20la%20comunidad%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(34)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(34)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="35" data-calif="Media">
+      <div class="head"><span class="num">#89</span><span class="name">Clon Factory San Fernando</span><span class="badge media">Media</span></div>
+      <div class="meta">Growshop · Pocitos 2830, San Fernando · <b>+5491123517352</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que creemos que el laburo que hacen en Clon Factory San Fernando con todo el tema cultivo tiene mucho valor y encaja perfecto con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491123517352?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20creemos%20que%20el%20laburo%20que%20hacen%20en%20Clon%20Factory%20San%20Fernando%20con%20todo%20el%20tema%20cultivo%20tiene%20mucho%20valor%20y%20encaja%20perfecto%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(35)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(35)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="36" data-calif="Media">
+      <div class="head"><span class="num">#93</span><span class="name">SAJO Hogar San Fernando</span><span class="badge media">Media</span></div>
+      <div class="meta">Decoración hogar · Beruti 58, San Fernando · <b>+5491164734324</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que me encantó la estética que manejan en SAJO Hogar San Fernando y creo que nuestras huertas encajan perfecto con la propuesta de diseño que tienen, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491164734324?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20me%20encant%C3%B3%20la%20est%C3%A9tica%20que%20manejan%20en%20SAJO%20Hogar%20San%20Fernando%20y%20creo%20que%20nuestras%20huertas%20encajan%20perfecto%20con%20la%20propuesta%20de%20dise%C3%B1o%20que%20tienen%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(36)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(36)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="37" data-calif="Baja">
+      <div class="head"><span class="num">#23</span><span class="name">Merci Interiores</span><span class="badge baja">Baja</span></div>
+      <div class="meta">Interiorismo/Deco · Showroom en Nordelta, Tigre (con cita previa) · <b>+5491171010458</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que me encantó la estética que manejan en Merci Interiores y creo que nuestras huertas encajan perfecto con la propuesta de diseño que tienen, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491171010458?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20me%20encant%C3%B3%20la%20est%C3%A9tica%20que%20manejan%20en%20Merci%20Interiores%20y%20creo%20que%20nuestras%20huertas%20encajan%20perfecto%20con%20la%20propuesta%20de%20dise%C3%B1o%20que%20tienen%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(37)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(37)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="38" data-calif="Baja">
+      <div class="head"><span class="num">#27</span><span class="name">Ferretería Nordelta</span><span class="badge baja">Baja</span></div>
+      <div class="meta">Ferretería · Nordelta, Tigre · <b>+5491124261660</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi que en Ferretería Nordelta la gente del barrio se acerca para armar sus proyectos, y creemos que las huertas hidropónicas pueden ser un producto lindo para sumar al local, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491124261660?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20que%20en%20Ferreter%C3%ADa%20Nordelta%20la%20gente%20del%20barrio%20se%20acerca%20para%20armar%20sus%20proyectos%2C%20y%20creemos%20que%20las%20huertas%20hidrop%C3%B3nicas%20pueden%20ser%20un%20producto%20lindo%20para%20sumar%20al%20local%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(38)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(38)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="39" data-calif="Baja">
+      <div class="head"><span class="num">#42</span><span class="name">Tigremat SRL</span><span class="badge baja">Baja</span></div>
+      <div class="meta">Corralón · Av. Juan B. Justo 827, Tigre · <b>+5491147492511</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi la propuesta de Tigremat SRL y nos parece que hay mucha sintonía con lo que estamos armando, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491147492511?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20la%20propuesta%20de%20Tigremat%20SRL%20y%20nos%20parece%20que%20hay%20mucha%20sinton%C3%ADa%20con%20lo%20que%20estamos%20armando%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(39)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(39)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="40" data-calif="Baja">
+      <div class="head"><span class="num">#43</span><span class="name">Ferretería Rober</span><span class="badge baja">Baja</span></div>
+      <div class="meta">Ferretería · Av. Benavídez 66, Benavídez, Tigre · <b>+5491171429008</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi que en Ferretería Rober la gente del barrio se acerca para armar sus proyectos, y creemos que las huertas hidropónicas pueden ser un producto lindo para sumar al local, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5491171429008?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20que%20en%20Ferreter%C3%ADa%20Rober%20la%20gente%20del%20barrio%20se%20acerca%20para%20armar%20sus%20proyectos%2C%20y%20creemos%20que%20las%20huertas%20hidrop%C3%B3nicas%20pueden%20ser%20un%20producto%20lindo%20para%20sumar%20al%20local%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(40)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(40)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="41" data-calif="Baja">
+      <div class="head"><span class="num">#44</span><span class="name">Ferretería El Ombú</span><span class="badge baja">Baja</span></div>
+      <div class="meta">Ferretería · Gorriti 615, Benavídez, Tigre · <b>+541153848200</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi que en Ferretería El Ombú la gente del barrio se acerca para armar sus proyectos, y creemos que las huertas hidropónicas pueden ser un producto lindo para sumar al local, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/541153848200?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20que%20en%20Ferreter%C3%ADa%20El%20Omb%C3%BA%20la%20gente%20del%20barrio%20se%20acerca%20para%20armar%20sus%20proyectos%2C%20y%20creemos%20que%20las%20huertas%20hidrop%C3%B3nicas%20pueden%20ser%20un%20producto%20lindo%20para%20sumar%20al%20local%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(41)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(41)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="42" data-calif="Baja">
+      <div class="head"><span class="num">#45</span><span class="name">Ferretería San Nicolás</span><span class="badge baja">Baja</span></div>
+      <div class="meta">Ferretería · Av. Gral. J.D. Perón, Benavídez, Tigre · <b>+5493487310766</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi que en Ferretería San Nicolás la gente del barrio se acerca para armar sus proyectos, y creemos que las huertas hidropónicas pueden ser un producto lindo para sumar al local, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/5493487310766?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20que%20en%20Ferreter%C3%ADa%20San%20Nicol%C3%A1s%20la%20gente%20del%20barrio%20se%20acerca%20para%20armar%20sus%20proyectos%2C%20y%20creemos%20que%20las%20huertas%20hidrop%C3%B3nicas%20pueden%20ser%20un%20producto%20lindo%20para%20sumar%20al%20local%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(42)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(42)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="43" data-calif="Baja">
+      <div class="head"><span class="num">#54</span><span class="name">Bulonera La.Ca</span><span class="badge baja">Baja</span></div>
+      <div class="meta">Ferretería · Av. Gral. J.D. Perón, Benavídez, Tigre · <b>+543327480344</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi que en Bulonera La.Ca la gente del barrio se acerca para armar sus proyectos, y creemos que las huertas hidropónicas pueden ser un producto lindo para sumar al local, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/543327480344?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20que%20en%20Bulonera%20La.Ca%20la%20gente%20del%20barrio%20se%20acerca%20para%20armar%20sus%20proyectos%2C%20y%20creemos%20que%20las%20huertas%20hidrop%C3%B3nicas%20pueden%20ser%20un%20producto%20lindo%20para%20sumar%20al%20local%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(43)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(43)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="44" data-calif="Baja">
+      <div class="head"><span class="num">#70</span><span class="name">Ferretería El Molino</span><span class="badge baja">Baja</span></div>
+      <div class="meta">Ferretería · Av. Villanueva 1750, Ing. Maschwitz, Escobar · <b>+543484446514</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi que en Ferretería El Molino la gente del barrio se acerca para armar sus proyectos, y creemos que las huertas hidropónicas pueden ser un producto lindo para sumar al local, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/543484446514?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20que%20en%20Ferreter%C3%ADa%20El%20Molino%20la%20gente%20del%20barrio%20se%20acerca%20para%20armar%20sus%20proyectos%2C%20y%20creemos%20que%20las%20huertas%20hidrop%C3%B3nicas%20pueden%20ser%20un%20producto%20lindo%20para%20sumar%20al%20local%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(44)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(44)">✅ Marcar contactado</button>
+      </div>
+    </div>
+    <div class="card" data-idx="45" data-calif="Baja">
+      <div class="head"><span class="num">#71</span><span class="name">Bulonera Industrial Garín</span><span class="badge baja">Baja</span></div>
+      <div class="meta">Ferretería · Av. Fructuoso Díaz 489, Garín, Escobar · <b>+543484470686</b></div>
+      <div class="msg">Buenas, ¿cómo andan? Soy Mariano, de Acrule Hidroponía. Les escribo porque fabricamos huertas hidropónicas y estamos armando una comunidad enfocada en ayudar a que la gente cultive sus propios alimentos de manera saludable. Te cuento que vi que en Bulonera Industrial Garín la gente del barrio se acerca para armar sus proyectos, y creemos que las huertas hidropónicas pueden ser un producto lindo para sumar al local, y podrían ser un buen punto de comercialización. Si te copa la idea avisame y te paso más info!</div>
+      <div class="actions">
+        <a class="btn send" href="https://wa.me/543484470686?text=Buenas%2C%20%C2%BFc%C3%B3mo%20andan%3F%20Soy%20Mariano%2C%20de%20Acrule%20Hidropon%C3%ADa.%20Les%20escribo%20porque%20fabricamos%20huertas%20hidrop%C3%B3nicas%20y%20estamos%20armando%20una%20comunidad%20enfocada%20en%20ayudar%20a%20que%20la%20gente%20cultive%20sus%20propios%20alimentos%20de%20manera%20saludable.%20Te%20cuento%20que%20vi%20que%20en%20Bulonera%20Industrial%20Gar%C3%ADn%20la%20gente%20del%20barrio%20se%20acerca%20para%20armar%20sus%20proyectos%2C%20y%20creemos%20que%20las%20huertas%20hidrop%C3%B3nicas%20pueden%20ser%20un%20producto%20lindo%20para%20sumar%20al%20local%2C%20y%20podr%C3%ADan%20ser%20un%20buen%20punto%20de%20comercializaci%C3%B3n.%20Si%20te%20copa%20la%20idea%20avisame%20y%20te%20paso%20m%C3%A1s%20info%21" target="_blank" onclick="marcarEnviado(45)">📤 Abrir WhatsApp y enviar</a>
+        <button class="btn done" onclick="marcarHecho(45)">✅ Marcar contactado</button>
+      </div>
+    </div>
+<script>
+  const S='acrule_wa_enviados';let e=JSON.parse(localStorage.getItem(S)||'[]'),o=false,f='todos';
+  function r(){document.querySelectorAll('.card').forEach(c=>c.classList.remove('hecho','hidden'));e.forEach(i=>{const c=document.querySelector('[data-idx="'+i+'"]');if(c)c.classList.add('hecho');});document.getElementById('count').textContent=e.length;document.querySelectorAll('.card').forEach(c=>{if(f!=='todos'&&c.dataset.calif!==f)c.classList.add('hidden');if(o&&c.classList.contains('hecho'))c.classList.add('hidden');});}
+  function marcarEnviado(i){setTimeout(()=>{if(confirm('¿Ya enviaste el mensaje?'))marcarHecho(i);},2500);}
+  function marcarHecho(i){if(!e.includes(i)){e.push(i);localStorage.setItem(S,JSON.stringify(e));}r();}
+  function filtrar(n,btn){document.querySelectorAll('.filtros button[onclick^="filtrar"]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');f=n;r();}
+  function toggleHechos(btn){o=!o;btn.textContent=o?'Mostrar enviados':'Ocultar enviados';r();}
+  r();
+</script></body></html>
