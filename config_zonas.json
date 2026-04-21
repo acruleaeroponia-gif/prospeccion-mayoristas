@@ -1,7 +1,22 @@
 {
-  "zona_actual": "San Fernando",
-  "zonas_pendientes": ["San Isidro", "Pacheco", "Don Torcuato", "Pilar", "Campana"],
-  "zonas_cubiertas": ["Nordelta", "Benavídez", "Rincón de Milberg", "Tigre Centro", "Escobar"],
+  "zona_actual": "San Isidro/Pilar/Torcuato/Pacheco/Campana",
+  "zonas_pendientes": [
+    "Tigre Oeste",
+    "Victoria",
+    "Olivos",
+    "Vicente López",
+    "Martínez"
+  ],
+  "zonas_cubiertas": [
+    "San Fernando",
+    "Garín",
+    "Benavídez",
+    "Tigre Centro",
+    "Escobar",
+    "Nordelta",
+    "Maschwitz",
+    "Rincón de Milberg"
+  ],
   "prospectos_por_dia": 20,
   "categorias_busqueda": [
     "viveros",
