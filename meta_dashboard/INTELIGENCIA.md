@@ -1,0 +1,56 @@
+# INTELIGENCIA — Acrule Meta
+
+Este archivo es tuyo, Mariano. El agente lo lee PRIMERO cada mañana. Tus decisiones acá **mandan
+sobre las reglas automáticas** del PLAYBOOK.
+
+📚 Contexto completo (el agente también lo lee):
+- `meta_dashboard/contexto/CONTEXTO_OPERATIVO.md` — negocio, campañas, aprendizajes, financiero.
+- `creativos_sem22-28/DOCUMENTO_MAESTRO_ACRULE.md` — sistema creativo, conjuntos, naming.
+- `meta_dashboard/REGLAS_API_META.md` — reglas anti-bloqueo (obligatorias).
+
+---
+
+## 🎯 Mis recomendaciones / decisiones (el agente las respeta)
+<!-- Editá esta lista. Ejemplos de formato: -->
+- NO juzgar las campañas de Mensajes por ROAS: su objetivo es costo por conversación y volumen.
+- NO tocar campañas con <7 días desde el último cambio (fase de aprendizaje de Meta).
+- Escalar presupuesto máximo +50% por vez, nunca más.
+- Mini LED = INDOOR (cocina). Resto = OUTDOOR con sol. Respetar en toda recomendación creativa.
+
+### Aprendizajes de la bitácora (reglas que el agente DEBE respetar)
+- **Presupuesto en campañas CBO se sube a nivel CAMPAÑA, no conjunto.** Al escalar una CBO, redactar "subí +X% el presupuesto de la CAMPAÑA _Z_", NO "del conjunto". (Solo en ABO el presupuesto es por conjunto.)
+- **Campaña corregida (29 jun):** "TEST Ang ABO Huerta 12 24 32" fue reemplazada por **"TEST Ang ABO Huerta 12 24 32 2"** (la vieja tenía catálogo dinámico mal armado). H-04 "Vivís en depto" y los tests viven ahora en la campaña **"...32 2"**. Referir siempre a la nueva.
+- **Fatiga/ampliar: SOLO flaggear anuncios ACTIVE con frecuencia alta.** Nunca proponer refrescar/ampliar anuncios PAUSADOS (confunde). Verificar effective_status=ACTIVE antes de una orden de fatiga.
+- **Órdenes de mantenimiento (P4) deben nombrar anuncio/conjunto/campaña EXACTOS y activos** — nada de "varias/varios".
+
+## 📐 Parámetros del negocio (ver `contexto/KPIS_FINANCIEROS_2026.md`)
+- Ticket Mini LED $218.900 · Mini sin LED $121.900 · Huerta 12/24/32 $348.900/$398.900/$486.300 · Curso $68.000 · Ebook $24.480.
+- **Margen bruto: 65%.** AOV ~$199-234k. CAC Meta ~$77k.
+- **Break-even ROAS (MEB): ~3,4.** Debajo de eso = se pierde plata. Hoy ROAS ~2,8 → EN PÉRDIDA.
+- **El negocio está a pérdida en 2026 (–$95,7M).** Ads = 31% de la facturación (mayor costo controlable). Por eso el objetivo ROAS 6 es supervivencia, no lujo.
+- **Target costo por conversación WhatsApp: $400 ARS** (KPI oficial). Actual $511–$1.181.
+- % de conversaciones WA que terminan en venta: _____ %  ← completar (WhatsApp cierra ~$72M/año, no lo ve el píxel).
+- ROAS objetivo ventas: **6** (mínimo para no perder: 3,4). Frecuencia máxima: 3.5.
+
+## ✅ Ángulos GANADORES (confirmados con data)
+- 🏢 **H-04 Vivís en depto** — ROAS 6.89x (escalando) — Huertas grandes
+- 🍳 **Cocina Mini LED** — ROAS 4.70x (motor validado) — Mini LED
+- ⭐ **RES-03 Antes/Ahora** — ROAS 4.65x — Mini sin LED (⚠️ cuidar política antes/después)
+- 💬 **FRÍO-04 Problema/Solución** — mejor de Mensajes
+
+## ❌ Ángulos MUERTOS (no reintentar igual)
+H-01 ahorro/verdura · H-02 no sé de plantas (CTR 0.49%) · Fundador en estático (0) · RES-04 capturas WhatsApp (0) · SE Sin Esfuerzo (Meta descartó).
+
+## 🔄 RE-TEST (fallaron por creativo, no por ángulo)
+- H-05 +3.000 familias → re-test con MAPA de Argentina.
+- H-07 Sin tiempo → re-test con "persona ocupada + huerta funcionando".
+
+## 🧪 EN TESTING sem 2 (arranca 30 jun) — dejar 7 días sin tocar
+H-03 ROI paga la huerta · H-08 de cero a cosecha en 3 semanas · H-09 tu balcón es suficiente · H-12 las que se mueren vs la que crece · H-14 sin saber/complicarte/morir.
+
+## ⚪ BACKLOG (sin testear)
+H-06 familia comiendo lo cultivado · H-10 antes gastaba en verdura · H-11 de la huerta al plato en 3 min · H-13 mi hijo se enamoró de las plantas · H-15 cosechar es meditar · H-16 Argentina cultiva en casa · H-17 sin químicos · H-18 regalá una huerta · H-19 el huerto que cabe en tu cocina · H-20 de vacía a cosechada en 21 días.
+
+## 📄 Documentos madre
+- ✅ Cargados: `contexto/CONTEXTO_OPERATIVO.md` y `creativos_sem22-28/DOCUMENTO_MAESTRO_ACRULE.md`.
+- Pendiente completar arriba: margen por venta y % conversación→venta.

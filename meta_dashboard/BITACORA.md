@@ -1,0 +1,29 @@
+# 📓 BITÁCORA DE ACCIONES — Acrule Meta
+
+> Memoria del sistema. Acá queda lo que Mariano EJECUTÓ cada día (o decidió NO hacer y por qué).
+> El agente diario y el de los lunes leen esto para: no repetir órdenes, respetar tus decisiones,
+> atribuir resultados y respetar la ventana de 7 días de aprendizaje.
+
+**Cómo cargar:** en el dashboard, marcá el checklist (Hecho / No lo hago + motivo / Observación) y
+tocá "📋 Copiar bitácora de hoy". Pegá el bloque acá abajo, o pasámelo por el chat y yo lo registro.
+
+Formato: `[x]` hecho · `[-]` no lo hago (con motivo) · `[ ]` pendiente · `OBS:` observación/cambio.
+
+---
+
+<!-- Pegá acá tus bloques diarios. El más nuevo arriba. Ejemplo:
+
+## 2026-06-30 — bitácora Meta
+- [x] APAGAR estatico 3 - Copia 2 (La mejor huerta / Mini huerta led) — HECHO
+- [-] APAGAR Caliente Iteraciones (Caliente Iteraciones / CBO Mensajes Huertas) — NO LO HAGO: quiero darle 3 días más con audiencia ampliada
+- [x] ESCALAR Fácil + cocina — HECHO — OBS: subí solo +15%, no +25%, por las dudas
+-->
+
+## 2026-06-29 — bitácora Meta
+- [x] APAGAR estatico 3 - Copia 2 (La mejor huerta cualquier espacio / CBO Mini huerta led) — HECHO
+- [x] APAGAR (todo el conjunto) (Caliente Iteraciones / CBO Mensajes Huertas) — HECHO
+- [~] ESCALAR Fácil + cocina (CBO Mini huerta led) — OBS: es campaña CBO (presupuesto a nivel campaña, no conjunto). Subió +20% al presupuesto de la CAMPAÑA.
+- [x] REACTIVAR video 3 (Innovación + Cocina / CBO Mini huerta led) — HECHO
+- [-] REACTIVAR H-04 · Vivís en depto — NO LO HAGO: la campaña "TEST Ang ABO Huerta 12 24 32" estaba con catálogo dinámico (mal armada). La reemplazó por **"TEST Ang ABO Huerta 12 24 32 2"** (bien armada) y duplicó el conjunto ahí. H-04 vive ahora en la campaña nueva.
+- [ ] ITERAR estatico cocina (Innovación + Cocina / CBO Mini huerta led) — PENDIENTE
+- [-] AMPLIAR ad 3 / Estatico 4 (fatiga) — NO LO HAGO: Mariano no reconoce esos anuncios. (Eran anuncios PAUSADOS del reporte 30d → orden mal formulada, no debió flaggear pausados por fatiga.)

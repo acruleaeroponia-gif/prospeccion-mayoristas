@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acrule · Centro de Comando Meta</title>
+<style>
+  :root{
+    --bg:#0b0f0d; --panel:#121815; --panel2:#19211d; --line:#243029;
+    --txt:#e8f0eb; --mut:#8aa093; --green:#28d17c; --green2:#1ca866;
+    --red:#ff5a5a; --amber:#ffb020; --blue:#4aa8ff; --purple:#b18cff;
+    --shadow:0 8px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:radial-gradient(1200px 600px at 70% -10%,#15211b 0,var(--bg) 60%);color:var(--txt);
+    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:28px;max-width:1280px;margin:0 auto}
+  h1{font-size:24px;letter-spacing:-.4px}
+  h2{font-size:17px;margin:0 0 14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .mut{color:var(--mut)} .sm{font-size:13px} .xs{font-size:11.5px}
+  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:24px}
+  .badge{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11.5px;font-weight:600}
+  .b-green{background:rgba(40,209,124,.14);color:var(--green)}
+  .b-red{background:rgba(255,90,90,.14);color:var(--red)}
+  .b-amber{background:rgba(255,176,32,.14);color:var(--amber)}
+  .b-blue{background:rgba(74,168,255,.14);color:var(--blue)}
+  .b-purple{background:rgba(177,140,255,.14);color:var(--purple)}
+  .b-mut{background:rgba(138,160,147,.14);color:var(--mut)}
+  .panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:16px;padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
+  .hero{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:center}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}}
+  .gauge{position:relative;width:260px;height:260px;margin:0 auto}
+  .gauge svg{transform:rotate(-90deg)}
+  .gauge .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .gauge .big{font-size:54px;font-weight:800;line-height:1}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:560px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .kpi .v{font-size:22px;font-weight:700}
+  .kpi .l{font-size:11.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+  .delta{font-size:12px;font-weight:600}
+  .up{color:var(--green)} .down{color:var(--red)}
+
+  /* ORDERS / CHECKLIST */
+  .ordbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .btn{background:var(--green);color:#002414;border:0;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:13px}
+  .btn.ghost{background:var(--panel2);color:var(--txt);border:1px solid var(--line)}
+  .order{border-left:4px solid var(--line);background:var(--panel);border-radius:10px;padding:14px 16px;margin-bottom:10px;transition:opacity .2s}
+  .order.p1{border-color:var(--red)} .order.p2{border-color:var(--green)}
+  .order.p3{border-color:var(--blue)} .order.p4{border-color:var(--amber)}
+  .order.done{opacity:.5}
+  .order.done .ttl{text-decoration:line-through}
+  .order.skip{opacity:.6}
+  .order .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .order .ttl{font-weight:700}
+  .ruta{font-size:12px;color:var(--mut);margin-top:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .ruta .crumb{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+  .ruta .arrow{color:var(--mut)}
+  .order .why{color:var(--mut);font-size:13px;margin-top:8px}
+  .order .why b{color:var(--txt)}
+  details.iter{margin-top:9px;background:rgba(74,168,255,.06);border:1px solid rgba(74,168,255,.18);border-radius:8px}
+  details.iter summary{cursor:pointer;padding:9px 12px;font-size:13px;font-weight:600;color:var(--blue);list-style:none;user-select:none}
+  details.iter summary::-webkit-details-marker{display:none}
+  details.iter summary::before{content:"▸ ";transition:transform .2s}
+  details.iter[open] summary::before{content:"▾ "}
+  details.iter .body{padding:0 14px 12px 14px;font-size:13px}
+  details.iter ol{margin:6px 0 6px 18px} details.iter li{margin:5px 0}
+  details.iter .ej{margin-top:8px;padding:8px 10px;background:rgba(255,255,255,.03);border-radius:6px;color:var(--mut)}
+  .acc{font-weight:800;text-transform:uppercase;font-size:11px;letter-spacing:.5px;padding:2px 7px;border-radius:5px;margin-right:6px}
+  .acc.apagar{background:var(--red);color:#1a0000} .acc.iterar{background:var(--blue);color:#001426}
+  .acc.escalar{background:var(--green);color:#002414} .acc.ampliar{background:var(--amber);color:#241a00}
+  .acc.reactivar{background:var(--purple);color:#160024}
+  .chk{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:11px;padding-top:10px;border-top:1px dashed var(--line)}
+  .cbtn{background:var(--panel2);border:1px solid var(--line);color:var(--mut);border-radius:7px;padding:5px 11px;font-size:12px;font-weight:600;cursor:pointer}
+  .cbtn.on-done{background:var(--green);color:#002414;border-color:var(--green)}
+  .cbtn.on-skip{background:var(--red);color:#fff;border-color:var(--red)}
+  .cbtn.on-note{background:var(--blue);color:#001426;border-color:var(--blue)}
+  .chk input,.chk textarea{flex:1 1 100%;background:var(--bg);border:1px solid var(--line);color:var(--txt);border-radius:7px;padding:7px 9px;font:13px inherit;margin-top:4px}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:middle}
+  .roaspill{padding:2px 8px;border-radius:6px;font-weight:700;font-variant-numeric:tabular-nums}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:820px){.two{grid-template-columns:1fr}}
+  .row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);gap:10px}
+  .row:last-child{border:0}
+  .tag{font-size:11px;padding:2px 7px;border-radius:6px;background:var(--panel2);border:1px solid var(--line);color:var(--mut)}
+  .bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin-top:6px}
+  .bar > i{display:block;height:100%;border-radius:6px}
+  .obs{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .obs:last-child{border:0}
+  .obs .ic{flex:0 0 24px;font-size:16px}
+  .step{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line)}
+  .step:last-child{border:0}
+  .step .n{flex:0 0 32px;height:32px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green)}
+  .plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:820px){.plan-grid{grid-template-columns:1fr}}
+  .plan-box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .plan-box h3{font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+  .plan-box li{margin:5px 0 5px 18px;font-size:13px}
+  .intel-note{display:flex;gap:8px;margin-top:10px}
+  .intel-note textarea{flex:1;background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:9px;font:13px inherit;resize:vertical;min-height:46px}
+  .intel-note button{background:var(--green);color:#002414;border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+  .pill-list span{display:inline-block;margin:3px 4px 0 0}
+  footer{margin-top:24px;color:var(--mut);font-size:12px;text-align:center}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;color:var(--mut);font-size:12px;margin-top:8px}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     BLOQUE DE DATOS — el agente reemplaza SOLO este objeto.
+============================================================ -->
+<script id="data">
+const DASH = {
+  cuenta:"Acrule Publicidad", moneda:"ARS", actualizado:"2026-07-02",
+  ventana:"Últimos 30 días (2 jun – 1 jul 2026)", objetivo_roas:6,
+
+  roas_30d:2.69, roas_7d:2.71, spend_30d:8946485, spend_7d:2716079,
+  ctr_30d:2.72, ctr_7d:2.26, cpc_30d:186.83, cpc_7d:283.01,
+  reach_30d:702071, freq_30d:2.51, opportunity_score:57, tendencia:"subiendo",
+
+  fin:{ margen_bruto:65, break_even_roas:3.4, resultado:"pérdida",
+        ads_pct_fact:31, cac_ads:77222, aov:199004 },
+
+  msj:{ mensajes_30d:1346, spend_30d:1076992, costo_prom:800, target_costo:400,
+        mejor:"FRIO Iteraciones ($831/msg)", peor:"tibio Comparaciones ($1.142/msg)" },
+
+  // OBSERVACIONES DEL DÍA — el agente piensa en voz alta, alineado al objetivo
+  observaciones:[
+    { ic:"✅", txt:"<b>Tus movidas de ayer funcionaron:</b> el ROAS subió 2,58 → <b>2,69</b> y la tendencia 7d (2,71) dejó de caer. 'video 3' reactivado ya rinde <b>6,33</b> y la campaña que escalaste sostiene 3,93. Vas bien." },
+    { ic:"🚀", txt:"Tu nueva campaña <b>'TEST Ang ABO Huerta 12 24 32 2'</b> arrancó en ROAS <b>4,01</b> — bien armada. <b>Dejala 7 días sin tocar</b> para que Meta aprenda; recién el lunes decidimos escalar." },
+    { ic:"🎯", txt:"Seguís <b>debajo del break-even</b> (2,69 vs 3,4): faltan ~0,7 puntos. La palanca está en concentrar en los formatos ganadores de cocina (<b>carrusel 1: 6,99 · video 3: 6,33</b>) y cortar los mensajes caros." },
+    { ic:"⚠️", txt:"Ojo: <b>'Tu cocina con Mini LED' cayó de 4,70 a 2,22</b> — se está gastando/fatigando. Va a iteración esta semana. Y 'tibio Comparaciones' (mensajes) está en $1.142/conv, muy por encima del target $400." }
+  ],
+
+  ordenes:[
+    { p:"p2", accion:"escalar", titulo:"Subí +20% la campaña que sostiene todo",
+      ruta:{campana:"CBO Mini huerta led", conjunto:"(campaña CBO — presupuesto a nivel campaña)", anuncio:"—"},
+      impacto:"Doblar la apuesta a lo rentable",
+      why:"Tras tu +20% de ayer sostiene ROAS <b>3,93</b> con $3,17M. Adentro tiene ganadores fuertes: carrusel 1 (6,99), video 3 (6,33), video 5 (19,27). Es la campaña con más ganadores.",
+      detalle:"Subí el presupuesto de la CAMPAÑA (es CBO) otro +20%. Esperá 3-4 días antes de volver a subir." },
+    { p:"p1", accion:"apagar", titulo:"Apagá el conjunto de mensajes más caro (nuevo)",
+      ruta:{campana:"CBO Mensajes Huertas", conjunto:"tibio Comparaciones", anuncio:"(todo el conjunto)"},
+      impacto:"Baja el costo por conversación",
+      why:"Costo por conversación <b>$1.142</b> = 2,9× el target ($400) y el más caro que quedó activo tras cortar 'Caliente Iteraciones' ayer. El volumen de mensajes barato está en FRÍO, no acá." },
+    { p:"p3", accion:"iterar", titulo:"Refrescá 'Tu cocina con Mini LED' (se está gastando)",
+      ruta:{campana:"CBO Mini huerta led", conjunto:"Fácil + cocina", anuncio:"estatico Tu cocina con Mini LED"},
+      impacto:"Recuperar un ganador que cae",
+      why:"Venía en ROAS <b>4,70</b> y cayó a <b>2,22</b>. El concepto funciona, el creativo se quemó. Refrescalo antes de que arrastre el conjunto.",
+      iteraciones:[
+        "Mismo concepto (Mini LED en la cocina) pero cambiá el HOOK: '¿Cuánto gastás en verdura por mes?' / 'Tu cocina puede producir su propia comida'.",
+        "Pasalo a VIDEO 9:16 con audio — los formatos video/carrusel son los que están ganando (carrusel 1: 6,99, video 3: 6,33).",
+        "Sumá prueba social arriba: '+3.000 familias ya cultivan en su cocina'.",
+        "Probá 3 variantes de copy para que Meta elija la mejor."
+      ],
+      ejemplo:"Ej: reel de 12s con la huerta encendida en la mesada de noche (ángulo 'no necesita sol') + plato fresco al final + zócalo '6 cuotas sin interés'." },
+    { p:"p3", accion:"iterar", titulo:"Replicá el formato CARRUSEL ganador",
+      ruta:{campana:"CBO Mini huerta led", conjunto:"Innovación + Cocina", anuncio:"carrusel 1"},
+      impacto:"Escalar lo que mejor funciona",
+      why:"'carrusel 1' rinde ROAS <b>6,99</b> con volumen real ($202k). El formato carrusel en cocina está ganando fuerte — vale la pena producir más así.",
+      iteraciones:[
+        "Nuevo carrusel cocina: slide 1 producto encendido en mesada · slide 2 variedades que cultivás · slide 3 cosecha en el plato · slide 4 prueba social + cuotas.",
+        "Versión carrusel del ángulo DEPTO (H-04, tu ganador 6,89): 'tu balcón/cocina alcanza'.",
+        "Mantené el primer slide con el mismo gancho visual del carrusel 1 que ya gana."
+      ],
+      ejemplo:"Brief para Lucas (domingo): 2 carruseles nuevos — uno cocina, uno depto — mismo molde que 'carrusel 1'." },
+    { p:"p2", accion:"escalar", titulo:"Vigilá el super-ganador de bajo volumen",
+      ruta:{campana:"CBO Mini huerta led", conjunto:"La mejor huerta cualquier espacio", anuncio:"video 5 - Copia 2"},
+      impacto:"Puede ser oro o puntual",
+      why:"ROAS <b>19,27</b> pero con poco gasto ($57k) — puede ser un pico por pocas ventas de ticket alto. Dejá que junte más volumen 3-4 días: si sostiene >5, es un ganador para replicar.",
+      detalle:"No lo toques todavía; observá 3-4 días. Si mantiene ROAS alto con más gasto, priorizá su formato." },
+    { p:"p4", accion:"ampliar", titulo:"No toques los tests nuevos — dejalos madurar",
+      ruta:{campana:"TEST Ang ABO Huerta 12 24 32 2 + Iteración Cocina", conjunto:"(en aprendizaje)", anuncio:"—"},
+      impacto:"Respetar el aprendizaje de Meta",
+      why:"'TEST Ang ABO 2' (4,01) y el conjunto 'Iteración Cocina' (nuevo, aún sin ventas) están en fase de aprendizaje. Tocarlos ahora resetea todo. El lunes el cerebro semanal decide." }
+  ],
+
+  // PLAN DE LA SEMANA (lo llena el agente de los lunes)
+  plan_semanal:{
+    actualizado:"2026-06-29",
+    foco:"Cruzar el break-even (3,4). Concentrar todo en COCINA + DEPTO, priorizando formatos CARRUSEL y VIDEO (son los que más rinden). Escalar ganadores, cortar mensajes caros.",
+    escalar:["Campaña 'CBO Mini huerta led' +20% (tiene los ganadores)","Replicar formato carrusel/video de cocina (carrusel 1: 6,99, video 3: 6,33)","Dejar madurar 'TEST Ang ABO 2' (4,01) — escalar el próximo lunes"],
+    matar:["Conjunto 'tibio Comparaciones' ($1.142/conv)","Refrescar 'Tu cocina con Mini LED' (cayó 4,70 → 2,22)"],
+    testear:[
+      {id:"H-03", angulo:"ROI: lo que gastás paga la huerta", prod:"Huertas 12/24/32"},
+      {id:"H-08", angulo:"De cero a primera cosecha en 3 semanas", prod:"Huertas 12/24/32"},
+      {id:"H-09", angulo:"Tu balcón es suficiente (orgullo)", prod:"Huertas 12/24/32"},
+      {id:"H-12", angulo:"Las que se mueren vs la que crece", prod:"Huertas 12/24/32"},
+      {id:"H-14", angulo:"Sin saber, sin complicarte, sin morir", prod:"Huertas 12/24/32"}
+    ],
+    iteraciones:[
+      {ruta:"carrusel 1 · Innovación+Cocina · Mini huerta led", brief:"2 carruseles nuevos (cocina + depto) con el molde ganador."},
+      {ruta:"Tu cocina con Mini LED · Fácil+cocina · Mini huerta led", brief:"Refresco urgente: video 9:16 con hook nuevo + prueba social (cayó a 2,22)."}
+    ],
+    subir:"Domingo. No tocar los tests por 7 días. Analizamos el próximo lunes."
+  },
+
+  ventas_campanas:[
+    { n:"CBO Mini huerta led", est:"ACTIVE", spend:3171403, roas:3.93, ventas:51 },
+    { n:"CBO MINI HUERTA ABIERTO", est:"ACTIVE", spend:2109129, roas:2.69, ventas:30 },
+    { n:"TEST Ang ABO Huerta 12 24 32 2", est:"ACTIVE", spend:134206, roas:4.01, ventas:2 },
+    { n:"ABO MODULAR ABIERTO", est:"PAUSED", spend:1558120, roas:2.77, ventas:33 },
+    { n:"CBO Huerta 12 24 32", est:"ACTIVE", spend:163592, roas:1.29, ventas:2 },
+    { n:"CBO Ebook", est:"PAUSED", spend:201511, roas:1.08, ventas:9 }
+  ],
+  mensajes_campanas:[
+    { n:"CBO Mensajes Huertas", est:"ACTIVE", spend:886642, mensajes:999, costo:888 },
+    { n:"CBO Emprendedores Mensajes", est:"ACTIVE", spend:190351, mensajes:347, costo:549 }
+  ],
+  ganadores:[
+    { anuncio:"video 5 - Copia 2", conjunto:"La mejor huerta", campana:"Mini huerta led", roas:19.27, spend:57215, est:"ACTIVE" },
+    { anuncio:"carrusel 1", conjunto:"Innovación + Cocina", campana:"Mini huerta led", roas:6.99, spend:202256, est:"ACTIVE" },
+    { anuncio:"video 3", conjunto:"Innovación + Cocina", campana:"Mini huerta led", roas:6.33, spend:353325, est:"ACTIVE" },
+    { anuncio:"La huerta del futuro", conjunto:"Fácil + cocina", campana:"Mini huerta led", roas:5.78, spend:183835, est:"ACTIVE" },
+    { anuncio:"RES-03 · Antes/Ahora", conjunto:"reseñas Iteracion", campana:"MINI HUERTA ABIERTO", roas:4.26, spend:254714, est:"ACTIVE" },
+    { anuncio:"RES-02 · Collage +3.000 familias", conjunto:"reseñas Iteracion", campana:"MINI HUERTA ABIERTO", roas:3.18, spend:177261, est:"ACTIVE" }
+  ],
+  perdedores:[
+    { anuncio:"Tu cocina con Mini LED (cayó de 4,70)", conjunto:"Fácil + cocina", campana:"Mini huerta led", roas:2.22, spend:98464, est:"ACTIVE" },
+    { anuncio:"Viejos que funcionaron", conjunto:"—", campana:"CBO Huerta 12 24 32", roas:1.38, spend:152734, est:"ACTIVE" },
+    { anuncio:"EM-01 Solo vs acompañam. (mensajes)", conjunto:"Abierto intereses empr.", campana:"Emprendedores Msj", roas:0.20, spend:124797, est:"ACTIVE" }
+  ],
+  angulos:[
+    { n:"🍳 Cocina (carrusel/video)", roas:"4,0–19", estado:"ESCALAR", nivel:96 },
+    { n:"🚀 Innovación / huerta del futuro", roas:"5,8–6,3", estado:"ESCALAR", nivel:92 },
+    { n:"🏢 Espacio reducido / vivís en depto", roas:"4,0–6,9", estado:"ESCALAR", nivel:86 },
+    { n:"⭐ Reseñas / antes-después", roas:"3,2–4,3", estado:"ITERAR", nivel:70 },
+    { n:"⏱️ Fácil y sin tiempo", roas:"2,2–3,0", estado:"ITERAR", nivel:52 },
+    { n:"📚 Ebook / catálogo", roas:"1,1–1,6", estado:"PAUSAR", nivel:20 },
+    { n:"😱 Miedo / por no saber", roas:"0,86", estado:"PAUSAR", nivel:12 }
+  ],
+  inteligencia:{
+    recomendaciones:[
+      "Mensajes se miden por costo/conversación (target $400) y volumen, NO por ROAS",
+      "En CBO el presupuesto se sube a nivel CAMPAÑA, no conjunto",
+      "No tocar campañas con <7 días desde el último cambio · Escalar máx +50% · Mini LED INDOOR"
+    ],
+    pendientes:["H-03 ROI","H-08 cosecha 3 sem","H-09 tu balcón alcanza","H-12 la que crece","H-14 sin morir","H-05 re-test (mapa)","H-07 re-test (ocupada)"]
+  },
+  roadmap:[
+    { fase:"Semana 1 — Cruzar break-even", roas:"2,69 → 3,4", txt:"Escalar CBO Mini huerta led, replicar formatos carrusel/video de cocina, cortar mensajes caros. Vas 2,58→2,69: buen camino." },
+    { fase:"Semana 2-3 — Concentrar", roas:"→ 4,2", txt:"Todo a cocina, futuro, depto en formato carrusel/video. Iterar los que caen. Quick-wins Meta." },
+    { fase:"Semana 4-6 — Iterar", roas:"→ 5,0", txt:"2-3 creativos nuevos/semana sobre ganadores. Refrescar fatiga. Retargeting." },
+    { fase:"Semana 6+ — Apalancar AOV", roas:"→ 6,0", txt:"Bundles, cuotas, order-bump + subir conversión del checkout. Escalar sin techo." }
+  ]
+};
+</script>
+
+<header>
+  <div>
+    <h1>🌱 Acrule · Centro de Comando Meta</h1>
+    <div class="mut sm" id="sub"></div>
+    <div class="xs" id="fresh" style="margin-top:4px"></div>
+  </div>
+  <div style="text-align:right">
+    <div class="xs mut">OPPORTUNITY SCORE (Meta)</div>
+    <div style="font-size:22px;font-weight:700" id="opp"></div>
+  </div>
+</header>
+
+<div class="panel hero">
+  <div class="gauge">
+    <svg width="260" height="260" viewBox="0 0 260 260">
+      <circle cx="130" cy="130" r="110" fill="none" stroke="var(--line)" stroke-width="22"/>
+      <circle id="arc" cx="130" cy="130" r="110" fill="none" stroke="var(--green)" stroke-width="22"
+        stroke-linecap="round" stroke-dasharray="691" stroke-dashoffset="691"/>
+    </svg>
+    <div class="center">
+      <div class="big" id="roasBig"></div>
+      <div class="mut sm">ROAS ventas</div>
+      <div class="sm" id="roasTrend" style="margin-top:6px"></div>
+      <div class="xs" id="beStatus" style="margin-top:6px"></div>
+      <div class="xs mut" style="margin-top:6px">Break-even <b id="beVal"></b> · Objetivo <b style="color:var(--green)">6,0</b></div>
+    </div>
+  </div>
+  <div>
+    <h2>📊 Estado de la cuenta <span id="estTag"></span></h2>
+    <div class="kpis" id="kpis"></div>
+    <div id="finStrip" class="legend" style="margin-top:10px;padding:10px 12px;background:var(--panel);border:1px solid var(--line);border-radius:10px"></div>
+  </div>
+</div>
+
+<!-- OBSERVACIONES DEL DÍA -->
+<div class="panel">
+  <h2>🧠 Lo que veo hoy <span class="mut sm" style="font-weight:400">— análisis alineado al objetivo, no solo tareas</span></h2>
+  <div id="obs"></div>
+</div>
+
+<!-- MENSAJES -->
+<div class="panel">
+  <h2>💬 Canal Mensajes <span class="mut sm" style="font-weight:400">— costo por mensaje y volumen (no ROAS)</span></h2>
+  <div class="kpis" id="msjKpis" style="margin-bottom:14px"></div>
+  <table id="msjTable"><thead><tr><th>Campaña</th><th class="num">Gasto</th><th class="num">Mensajes</th><th class="num">Costo/msj</th></tr></thead><tbody></tbody></table>
+</div>
+
+<!-- ÓRDENES / CHECKLIST -->
+<div class="panel">
+  <h2>✅ Checklist de hoy <span class="mut sm" style="font-weight:400">— marcá qué hiciste, qué no (y por qué) y tus observaciones</span></h2>
+  <div class="ordbar">
+    <div class="sm mut" id="chkProgress"></div>
+    <div style="display:flex;gap:8px">
+      <button class="btn ghost" onclick="resetDay()">Reiniciar día</button>
+      <button class="btn" onclick="copyBitacora()">📋 Copiar bitácora de hoy</button>
+    </div>
+  </div>
+  <div id="orders"></div>
+  <div class="xs mut" id="bitHint" style="margin-top:8px">Tus marcas se guardan en este navegador. Tocá “Copiar bitácora” y pegámela en el chat (o en <b>meta_dashboard/BITACORA.md</b>): el agente la lee y aprende de lo que hiciste.</div>
+</div>
+
+<!-- PLAN DE LA SEMANA -->
+<div class="panel">
+  <h2>📅 Plan de la semana <span class="mut sm" style="font-weight:400" id="planFecha"></span></h2>
+  <div class="order p2" style="border-color:var(--purple);margin-bottom:14px"><b>🎯 Foco:</b> <span id="planFoco"></span></div>
+  <div class="plan-grid">
+    <div class="plan-box"><h3 style="color:var(--green)">📈 Escalar</h3><ul id="planEscalar"></ul></div>
+    <div class="plan-box"><h3 style="color:var(--red)">🩸 Matar</h3><ul id="planMatar"></ul></div>
+  </div>
+  <div class="plan-box" style="margin-top:14px"><h3 style="color:var(--blue)">🧪 5 ángulos a testear esta semana</h3><div id="planTest"></div></div>
+  <div class="plan-box" style="margin-top:14px"><h3 style="color:var(--amber)">🎬 Briefs de iteración</h3><div id="planIter"></div></div>
+  <div class="sm mut" style="margin-top:12px" id="planSubir"></div>
+</div>
+
+<div class="two">
+  <div class="panel">
+    <h2>🛒 Campañas de Ventas (30d)</h2>
+    <table id="ventas"><thead><tr><th>Campaña</th><th class="num">Gasto</th><th class="num">Ventas</th><th class="num">ROAS</th></tr></thead><tbody></tbody></table>
+    <div class="legend"><span><span class="dot" style="background:var(--green)"></span>≥3 escalar</span><span><span class="dot" style="background:var(--amber)"></span>2–3 iterar</span><span><span class="dot" style="background:var(--red)"></span>&lt;2 cortar</span></div>
+  </div>
+  <div class="panel">
+    <h2>🧭 Ángulos creativos</h2>
+    <div id="angles"></div>
+  </div>
+</div>
+
+<div class="two">
+  <div class="panel">
+    <h2>🏆 Anuncios ganadores <span class="badge b-green">escalar / replicar</span></h2>
+    <div id="winners"></div>
+  </div>
+  <div class="panel">
+    <h2>🩸 Cortar / revisar <span class="badge b-red">arrastran el promedio</span></h2>
+    <div id="losers"></div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>🧩 Inteligencia <span class="mut sm" style="font-weight:400">— tus decisiones mandan sobre las reglas automáticas</span></h2>
+  <div class="two" style="gap:20px">
+    <div>
+      <div class="xs mut" style="text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Tus recomendaciones activas</div>
+      <div id="intelReco"></div>
+    </div>
+    <div>
+      <div class="xs mut" style="text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Ángulos pendientes de testear</div>
+      <div class="pill-list" id="intelPend"></div>
+    </div>
+  </div>
+  <div class="intel-note">
+    <textarea id="noteBox" placeholder="Escribí una recomendación/decisión para el agente..."></textarea>
+    <button onclick="copyNote()">Copiar p/ INTELIGENCIA.md</button>
+  </div>
+  <div class="xs mut" id="noteHint" style="margin-top:6px">Tu nota se copia lista para pegar en <b>meta_dashboard/INTELIGENCIA.md</b>. El agente la respeta.</div>
+</div>
+
+<div class="panel">
+  <h2>🚀 Camino a ROAS 6</h2>
+  <div id="roadmap"></div>
+</div>
+
+<footer id="foot"></footer>
+
+<script>
+const d=DASH;
+const fmt=n=>n==null?"—":"$"+Math.round(n).toLocaleString("es-AR");
+const cma=n=>n.toFixed(2).replace(".",",");
+const roasColor=r=>r==null?"var(--mut)":r>=3?"var(--green)":r>=2?"var(--amber)":"var(--red)";
+const estColor=e=>e==="ACTIVE"?"var(--green)":"var(--mut)";
+const esc=s=>(s||"").replace(/</g,"&lt;");
+
+document.getElementById("sub").textContent=`${d.cuenta} · ${d.ventana} · actualizado ${d.actualizado}`;
+const opp=document.getElementById("opp");
+opp.innerHTML=`${d.opportunity_score}<span class="mut" style="font-size:14px">/100</span>`;
+opp.style.color=d.opportunity_score>=70?"var(--green)":d.opportunity_score>=50?"var(--amber)":"var(--red)";
+
+const pct=Math.min(d.roas_30d/d.objetivo_roas,1), circ=691, arc=document.getElementById("arc");
+arc.style.strokeDashoffset=circ-circ*pct; arc.style.stroke=roasColor(d.roas_30d);
+arc.style.transition="stroke-dashoffset 1.2s ease";
+const rb=document.getElementById("roasBig"); rb.textContent=cma(d.roas_30d); rb.style.color=roasColor(d.roas_30d);
+const tDown=d.roas_7d<d.roas_30d;
+document.getElementById("roasTrend").innerHTML=`<span class="${tDown?'down':'up'}">${tDown?'▼':'▲'} ${cma(d.roas_7d)} últ. 7d</span>`;
+
+if(d.fin){
+  document.getElementById("beVal").textContent=cma(d.fin.break_even_roas);
+  const be=document.getElementById("beStatus"), below=d.roas_30d<d.fin.break_even_roas;
+  be.innerHTML=below?`<span style="color:var(--red)">🔴 Debajo del break-even · perdés plata</span>`
+                    :`<span style="color:var(--green)">🟢 Arriba del break-even · rentable</span>`;
+  document.getElementById("finStrip").innerHTML=[
+    `<span>💰 Margen bruto <b style="color:var(--txt)">${d.fin.margen_bruto}%</b></span>`,
+    `<span>⚖️ Break-even ROAS <b style="color:var(--txt)">${cma(d.fin.break_even_roas)}</b></span>`,
+    `<span>📣 Ads = <b style="color:var(--txt)">${d.fin.ads_pct_fact}%</b> de facturación</span>`,
+    `<span>🎫 AOV <b style="color:var(--txt)">${fmt(d.fin.aov)}</b> · CAC <b style="color:var(--txt)">${fmt(d.fin.cac_ads)}</b></span>`
+  ].join("");
+}
+
+const tendMap={bajando:["b-red","🔴 Tendencia a la baja — actuar ya"],estable:["b-amber","🟡 Estable"],subiendo:["b-green","🟢 Subiendo"]};
+const tm=tendMap[d.tendencia]||tendMap.estable;
+const et=document.getElementById("estTag"); et.className="badge "+tm[0]; et.textContent=tm[1];
+
+const delta=(a,b,inv=false)=>{const up=a>b,good=inv?!up:up;return `<span class="delta ${good?'up':'down'}">${up?'▲':'▼'} ${typeof a==='number'?cma(a):a} (7d)</span>`;};
+document.getElementById("kpis").innerHTML=[
+  ["Gasto ventas 30d",fmt(d.spend_30d),`<span class="delta mut">${fmt(d.spend_7d)} 7d</span>`],
+  ["ROAS 30d",cma(d.roas_30d),delta(d.roas_7d,d.roas_30d)],
+  ["CTR",cma(d.ctr_30d)+"%",delta(d.ctr_7d,d.ctr_30d)],
+  ["CPC",fmt(d.cpc_30d),delta(d.cpc_7d,d.cpc_30d,true)],
+  ["Alcance 30d",d.reach_30d.toLocaleString("es-AR"),""],
+  ["Frecuencia",cma(d.freq_30d),""]
+].map(([l,v,e])=>`<div class="kpi"><div class="l">${l}</div><div class="v">${v}</div>${e||""}</div>`).join("");
+
+// OBSERVACIONES
+document.getElementById("obs").innerHTML=(d.observaciones||[]).map(o=>`<div class="obs"><div class="ic">${o.ic}</div><div>${o.txt}</div></div>`).join("");
+
+// MENSAJES
+const costoColor=c=>c<=d.msj.target_costo?"var(--green)":c<=d.msj.target_costo*1.6?"var(--amber)":"var(--red)";
+document.getElementById("msjKpis").innerHTML=[
+  ["Mensajes 30d",d.msj.mensajes_30d.toLocaleString("es-AR"),""],
+  ["Costo prom/msj",fmt(d.msj.costo_prom),`<span class="delta mut">target ${fmt(d.msj.target_costo)}</span>`],
+  ["Gasto mensajes",fmt(d.msj.spend_30d),""]
+].map(([l,v,e])=>`<div class="kpi"><div class="l">${l}</div><div class="v">${v}</div>${e||""}</div>`).join("");
+document.querySelector("#msjTable tbody").innerHTML=d.mensajes_campanas.map(c=>`<tr>
+  <td><span class="dot" style="background:${estColor(c.est)}"></span>${c.n}<div class="xs mut">${c.est}</div></td>
+  <td class="num">${fmt(c.spend)}</td><td class="num">${c.mensajes.toLocaleString("es-AR")}</td>
+  <td class="num"><span class="roaspill" style="background:${costoColor(c.costo)}22;color:${costoColor(c.costo)}">${fmt(c.costo)}</span></td></tr>`).join("")
+  +`<tr><td class="xs mut" colspan="4">🟢 mejor: ${d.msj.mejor} · 🔴 peor: ${d.msj.peor}</td></tr>`;
+
+// ===== CHECKLIST con memoria (localStorage) =====
+const LSKEY="acrule_bitacora_"+d.actualizado;
+function loadState(){try{return JSON.parse(localStorage.getItem(LSKEY))||{}}catch(e){return {}}}
+function saveState(s){localStorage.setItem(LSKEY,JSON.stringify(s))}
+let state=loadState();
+const pLabel={p1:["P1",'b-red'],p2:["P2",'b-green'],p3:["P3",'b-blue'],p4:["P4",'b-amber']};
+
+function renderOrders(){
+  document.getElementById("orders").innerHTML=d.ordenes.map((o,i)=>{
+    const [lab,cls]=pLabel[o.p]; const st=state[i]||{};
+    const ruta=`<div class="ruta"><span class="crumb">📣 ${esc(o.ruta.campana)}</span><span class="arrow">→</span>
+      <span class="crumb">📦 ${esc(o.ruta.conjunto)}</span><span class="arrow">→</span>
+      <span class="crumb"><b>🎬 ${esc(o.ruta.anuncio)}</b></span></div>`;
+    let iter="";
+    if(o.iteraciones){iter=`<details class="iter"><summary>Ver las iteraciones exactas (${o.iteraciones.length})</summary>
+      <div class="body"><ol>${o.iteraciones.map(x=>`<li>${x}</li>`).join("")}</ol>${o.ejemplo?`<div class="ej">💡 ${o.ejemplo}</div>`:""}</div></details>`;}
+    else if(o.detalle){iter=`<div class="why" style="margin-top:8px"><b>▶</b> ${o.detalle}</div>`;}
+    const cls2=st.estado==="hecho"?"done":st.estado==="no"?"skip":"";
+    return `<div class="order ${o.p} ${cls2}" data-i="${i}"><div class="top">
+        <span class="ttl"><span class="badge ${cls}">${lab}</span> <span class="acc ${o.accion}">${o.accion}</span>${o.titulo}</span>
+        <span class="badge b-mut">${o.impacto}</span></div>
+      ${ruta}<div class="why">${o.why}</div>${iter}
+      <div class="chk" data-i="${i}">
+        <button class="cbtn ${st.estado==='hecho'?'on-done':''}" data-a="hecho">✓ Hecho</button>
+        <button class="cbtn ${st.estado==='no'?'on-skip':''}" data-a="no">✕ No lo hago</button>
+        <button class="cbtn ${st.obs?'on-note':''}" data-a="note">💬 Observación</button>
+        <input class="motivo" data-i="${i}" placeholder="¿Por qué no lo hacés?" value="${esc(st.motivo||'')}" ${st.estado==='no'?'':'hidden'}>
+        <textarea class="obsin" data-i="${i}" placeholder="Observación o cambio que querés hacerle" ${st.obs||st._noteOpen?'':'hidden'}>${esc(st.obs||'')}</textarea>
+      </div></div>`;
+  }).join("");
+  updateProgress();
+}
+function updateProgress(){
+  const done=Object.values(state).filter(x=>x.estado==="hecho").length;
+  const skip=Object.values(state).filter(x=>x.estado==="no").length;
+  document.getElementById("chkProgress").innerHTML=`<b style="color:var(--green)">${done}</b> hechas · <b style="color:var(--red)">${skip}</b> descartadas · de ${d.ordenes.length}`;
+}
+document.getElementById("orders").addEventListener("click",e=>{
+  const b=e.target.closest(".cbtn"); if(!b)return;
+  const i=b.closest(".chk").dataset.i, a=b.dataset.a; state[i]=state[i]||{};
+  if(a==="hecho") state[i].estado=state[i].estado==="hecho"?"":"hecho";
+  if(a==="no") state[i].estado=state[i].estado==="no"?"":"no";
+  if(a==="note") state[i]._noteOpen=!state[i]._noteOpen;
+  saveState(state); renderOrders();
+});
+document.getElementById("orders").addEventListener("input",e=>{
+  const i=e.target.dataset.i; if(i==null)return; state[i]=state[i]||{};
+  if(e.target.classList.contains("motivo")) state[i].motivo=e.target.value;
+  if(e.target.classList.contains("obsin")) state[i].obs=e.target.value;
+  saveState(state); updateProgress();
+});
+function copyBitacora(){
+  let out=`## ${d.actualizado} — bitácora Meta\n`;
+  d.ordenes.forEach((o,i)=>{const st=state[i]||{};
+    const mark=st.estado==="hecho"?"[x]":st.estado==="no"?"[-]":"[ ]";
+    let line=`- ${mark} ${o.accion.toUpperCase()} ${o.ruta.anuncio} (${o.ruta.conjunto} / ${o.ruta.campana})`;
+    if(st.estado==="hecho") line+=" — HECHO";
+    if(st.estado==="no") line+=` — NO LO HAGO${st.motivo?": "+st.motivo:""}`;
+    if(st.obs) line+=` — OBS: ${st.obs}`;
+    out+=line+"\n";
+  });
+  navigator.clipboard.writeText(out).then(()=>{document.getElementById("bitHint").innerHTML="✅ Bitácora copiada. Pegámela en el chat o en <b>meta_dashboard/BITACORA.md</b>.";});
+}
+function resetDay(){if(confirm("¿Reiniciar las marcas de hoy?")){state={};saveState(state);renderOrders();}}
+renderOrders();
+
+// PLAN SEMANAL
+const ps=d.plan_semanal||{};
+document.getElementById("planFecha").textContent=ps.actualizado?`— actualizado ${ps.actualizado}`:"";
+document.getElementById("planFoco").textContent=ps.foco||"—";
+document.getElementById("planEscalar").innerHTML=(ps.escalar||[]).map(x=>`<li>${x}</li>`).join("");
+document.getElementById("planMatar").innerHTML=(ps.matar||[]).map(x=>`<li>${x}</li>`).join("");
+document.getElementById("planTest").innerHTML=(ps.testear||[]).map(t=>`<div class="row"><div><b>${t.id}</b> · ${t.angulo}</div><span class="tag">${t.prod}</span></div>`).join("");
+document.getElementById("planIter").innerHTML=(ps.iteraciones||[]).map(it=>`<div class="row"><div><b>${it.ruta}</b><div class="xs mut">${it.brief}</div></div></div>`).join("");
+document.getElementById("planSubir").innerHTML=ps.subir?`⏱️ <b>Subir:</b> ${ps.subir}`:"";
+
+// VENTAS
+document.querySelector("#ventas tbody").innerHTML=d.ventas_campanas.map(c=>`<tr>
+  <td><span class="dot" style="background:${estColor(c.est)}"></span>${c.n}<div class="xs mut">${c.est}</div></td>
+  <td class="num">${fmt(c.spend)}</td><td class="num">${c.ventas}</td>
+  <td class="num"><span class="roaspill" style="background:${roasColor(c.roas)}22;color:${roasColor(c.roas)}">${cma(c.roas)}</span></td></tr>`).join("");
+
+// ANGLES
+const estB={ESCALAR:"b-green",ITERAR:"b-amber",PAUSAR:"b-red"};
+document.getElementById("angles").innerHTML=d.angulos.map(a=>`
+  <div style="border-bottom:1px solid var(--line);padding:8px 0">
+    <div style="display:flex;justify-content:space-between;align-items:center"><span>${a.n}</span><span><span class="tag">ROAS ${a.roas}</span> <span class="badge ${estB[a.estado]}">${a.estado}</span></span></div>
+    <div class="bar"><i style="width:${a.nivel}%;background:${a.nivel>75?'var(--green)':a.nivel>40?'var(--amber)':'var(--red)'}"></i></div></div>`).join("");
+
+// WINNERS / LOSERS
+const adRow=a=>`<div class="row"><div><b>${a.anuncio}</b>
+    <div class="xs mut">📦 ${a.conjunto} · 📣 ${a.campana}</div>
+    <div class="xs mut">${fmt(a.spend)} · ${a.est}</div></div>
+  <span class="roaspill" style="background:${roasColor(a.roas)}22;color:${roasColor(a.roas)}">${cma(a.roas)}</span></div>`;
+document.getElementById("winners").innerHTML=d.ganadores.map(adRow).join("");
+document.getElementById("losers").innerHTML=d.perdedores.map(adRow).join("");
+
+// INTELIGENCIA
+document.getElementById("intelReco").innerHTML=(d.inteligencia.recomendaciones||[]).map(r=>`<div class="row sm">${r}</div>`).join("");
+document.getElementById("intelPend").innerHTML=(d.inteligencia.pendientes||[]).map(p=>`<span class="tag">🧪 ${p}</span>`).join("");
+function copyNote(){const t=document.getElementById("noteBox").value.trim();if(!t)return;
+  const bullet="- "+t.replace(/\n+/g," ");
+  navigator.clipboard.writeText(bullet).then(()=>{document.getElementById("noteHint").innerHTML="✅ Copiado: <code>"+esc(bullet)+"</code> — pegalo en 'Mis recomendaciones' de INTELIGENCIA.md";});}
+
+// ROADMAP
+document.getElementById("roadmap").innerHTML=d.roadmap.map((r,i)=>`<div class="step"><div class="n">${i+1}</div>
+  <div style="flex:1"><div style="font-weight:700">${r.fase} <span class="badge b-green" style="margin-left:6px">${r.roas}</span></div>
+  <div class="mut sm" style="margin-top:3px">${r.txt}</div></div></div>`).join("");
+
+document.getElementById("foot").innerHTML=`Generado por el agente Meta de Acrule · datos vía Meta Marketing API · ${d.actualizado}. Órdenes de ejecución manual en Ads Manager (conectores de lectura).`;
+
+// FRESCURA DE DATOS + AUTO-REFRESCO
+(function(){
+  const hoy=new Date().toLocaleDateString("en-CA"); // YYYY-MM-DD local
+  const hora=new Date().toLocaleTimeString("es-AR",{hour:"2-digit",minute:"2-digit"});
+  const f=document.getElementById("fresh");
+  if(d.actualizado===hoy){
+    f.innerHTML=`<span style="color:var(--green)">🟢 Datos de hoy</span> · cargado ${hora}`;
+  }else{
+    f.innerHTML=`<span style="color:var(--amber)">🟠 Mostrando datos del ${d.actualizado} — el agente todavía no corrió hoy</span> · <span onclick="location.reload()" style="cursor:pointer;color:var(--blue);text-decoration:underline">refrescar</span>`;
+  }
+  // auto-refresco cada 30 min, salvo que estés escribiendo
+  setInterval(function(){
+    const a=document.activeElement;
+    if(a&&(a.tagName==="TEXTAREA"||a.tagName==="INPUT"))return;
+    location.reload();
+  },30*60*1000);
+})();
+</script>
+</body>
+</html>
