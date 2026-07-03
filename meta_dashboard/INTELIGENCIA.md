@@ -22,6 +22,7 @@ sobre las reglas automáticas** del PLAYBOOK.
 - **Campaña corregida (29 jun):** "TEST Ang ABO Huerta 12 24 32" fue reemplazada por **"TEST Ang ABO Huerta 12 24 32 2"** (la vieja tenía catálogo dinámico mal armado). H-04 "Vivís en depto" y los tests viven ahora en la campaña **"...32 2"**. Referir siempre a la nueva.
 - **Fatiga/ampliar: SOLO flaggear anuncios ACTIVE con frecuencia alta.** Nunca proponer refrescar/ampliar anuncios PAUSADOS (confunde). Verificar effective_status=ACTIVE antes de una orden de fatiga.
 - **Órdenes de mantenimiento (P4) deben nombrar anuncio/conjunto/campaña EXACTOS y activos** — nada de "varias/varios".
+- **Mensajes: evaluar por TEMPERATURA de audiencia, no con un target plano.** Los conjuntos FRÍO (audiencia nueva) sí apuntan al target $400/conv. Los conjuntos TIBIO/CALIENTE (retargeting, gente que ya interactuó) legítimamente cuestan MÁS por conversación porque la audiencia es más calificada y convierte mejor — NO pausarlos por costo alto. Si un conjunto tibio/caliente rinde caro, la orden correcta es **iterar el creativo (mejorar CTR) o crear un conjunto nuevo a esa misma audiencia con otros creativos**, no apagarlo. Sólo el frío se corta por costo.
 
 ## 📐 Parámetros del negocio (ver `contexto/KPIS_FINANCIEROS_2026.md`)
 - Ticket Mini LED $218.900 · Mini sin LED $121.900 · Huerta 12/24/32 $348.900/$398.900/$486.300 · Curso $68.000 · Ebook $24.480.

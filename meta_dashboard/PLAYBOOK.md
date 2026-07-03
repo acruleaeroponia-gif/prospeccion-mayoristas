@@ -33,7 +33,8 @@ Objetivo = **costo por mensaje** (`cost_per_result`) y **cantidad de mensajes** 
 | Costo/msj entre 1–1,6× target | 🟡 MEDIO | Iterar creativo/audiencia |
 | Costo/msj > 1,6× target o > 2× el mejor conjunto | 🔴 CARO | Pausar conjunto |
 | Audiencia < 50k en conjunto de mensajes | 📉 ANGOSTA | Ampliar antes de pausar |
-- Benchmark actual: mejor conjunto "CONJUNTO A Frío" = $494/msj. Usar como vara.
+- Benchmark actual: mejor conjunto "CONJUNTO A Frío" = $494/msj. Usar como vara SOLO para conjuntos FRÍOS.
+- **Segmentar por temperatura:** FRÍO (audiencia nueva) se juzga contra el target $400 y se corta si es caro. TIBIO/CALIENTE (retargeting) cuesta más por conversación a propósito (audiencia calificada que convierte mejor) → NO cortar por costo; si rinde caro, iterar creativo o armar conjunto nuevo a esa audiencia para subir CTR.
 - Campañas de mensajes: `CBO Mensajes Huertas` (1447...) y `CBO Emprendedores Mensajes`.
 - Si Mariano define en INTELIGENCIA el % de mensajes→venta, recalcular si el canal rinde de verdad.
 

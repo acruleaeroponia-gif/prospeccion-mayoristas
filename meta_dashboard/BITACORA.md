@@ -19,6 +19,14 @@ Formato: `[x]` hecho · `[-]` no lo hago (con motivo) · `[ ]` pendiente · `OBS
 - [x] ESCALAR Fácil + cocina — HECHO — OBS: subí solo +15%, no +25%, por las dudas
 -->
 
+## 2026-07-03 — bitácora Meta
+- [-] APAGAR conjunto 'tibio Comparaciones' (CBO Mensajes Huertas) — NO LO HAGO: el conjunto TIBIO se le muestra a gente que YA interactuó con nosotros (audiencia calificada). Es más caro por conversación pero la audiencia vale más. Foco correcto: crear un conjunto NUEVO a esa misma audiencia tibia con OTROS creativos para mejorar el CTR, no apagarlo.
+- [x] APAGAR conjunto 'Viejos que funcionaron' (CBO Huerta 12 24 32) — HECHO
+- [x] ESCALAR 'video 5 - Copia 2' (La mejor huerta / CBO Mini huerta led) — HECHO
+- [x] ESCALAR campaña 'CBO Mini huerta led' — HECHO
+- [x] ITERAR 'Tu cocina con Mini LED' (Fácil + cocina / CBO Mini huerta led) — HECHO
+- [x] MANTENER tests en aprendizaje (TEST Ang ABO 2 + Iteración Cocina) — HECHO (no los tocó)
+
 ## 2026-06-29 — bitácora Meta
 - [x] APAGAR estatico 3 - Copia 2 (La mejor huerta cualquier espacio / CBO Mini huerta led) — HECHO
 - [x] APAGAR (todo el conjunto) (Caliente Iteraciones / CBO Mensajes Huertas) — HECHO
