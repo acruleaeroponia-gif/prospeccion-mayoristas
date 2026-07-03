@@ -118,22 +118,22 @@
 ============================================================ -->
 <script id="data">
 const DASH = {
-  cuenta:"Acrule Publicidad", moneda:"ARS", actualizado:"2026-07-02",
-  ventana:"Últimos 30 días (2 jun – 1 jul 2026)", objetivo_roas:6,
+  cuenta:"Acrule Publicidad", moneda:"ARS", actualizado:"2026-07-03",
+  ventana:"Últimos 30 días (3 jun – 2 jul 2026)", objetivo_roas:6,
 
-  roas_30d:2.69, roas_7d:2.71, spend_30d:8946485, spend_7d:2716079,
-  ctr_30d:2.72, ctr_7d:2.26, cpc_30d:186.83, cpc_7d:283.01,
-  reach_30d:702071, freq_30d:2.51, opportunity_score:57, tendencia:"subiendo",
+  roas_30d:2.62, roas_7d:2.58, spend_30d:9197308, spend_7d:2716079,
+  ctr_30d:2.69, ctr_7d:2.30, cpc_30d:192.69, cpc_7d:275.76,
+  reach_30d:705044, freq_30d:2.51, opportunity_score:57, tendencia:"estable",
 
   fin:{ margen_bruto:65, break_even_roas:3.4, resultado:"pérdida",
         ads_pct_fact:31, cac_ads:77222, aov:199004 },
 
-  msj:{ mensajes_30d:1346, spend_30d:1076992, costo_prom:800, target_costo:400,
+  msj:{ mensajes_30d:1345, spend_30d:1097666, costo_prom:816, target_costo:400,
         mejor:"FRIO Iteraciones ($831/msg)", peor:"tibio Comparaciones ($1.142/msg)" },
 
   // OBSERVACIONES DEL DÍA — el agente piensa en voz alta, alineado al objetivo
   observaciones:[
-    { ic:"✅", txt:"<b>Tus movidas de ayer funcionaron:</b> el ROAS subió 2,58 → <b>2,69</b> y la tendencia 7d (2,71) dejó de caer. 'video 3' reactivado ya rinde <b>6,33</b> y la campaña que escalaste sostiene 3,93. Vas bien." },
+    { ic:"📊", txt:"ROAS 30d en <b>2,62</b> (venías de 2,58 hace una semana). Se enfrió un toque vs ayer (7d 2,58) — dentro del ruido normal. Tu campaña escalada sostiene <b>3,87</b> y la nueva <b>TEST Ang ABO 2 se afirma en 4,02</b>. Seguís rumbo al break-even 3,4." },
     { ic:"🚀", txt:"Tu nueva campaña <b>'TEST Ang ABO Huerta 12 24 32 2'</b> arrancó en ROAS <b>4,01</b> — bien armada. <b>Dejala 7 días sin tocar</b> para que Meta aprenda; recién el lunes decidimos escalar." },
     { ic:"🎯", txt:"Seguís <b>debajo del break-even</b> (2,69 vs 3,4): faltan ~0,7 puntos. La palanca está en concentrar en los formatos ganadores de cocina (<b>carrusel 1: 6,99 · video 3: 6,33</b>) y cortar los mensajes caros." },
     { ic:"⚠️", txt:"Ojo: <b>'Tu cocina con Mini LED' cayó de 4,70 a 2,22</b> — se está gastando/fatigando. Va a iteración esta semana. Y 'tibio Comparaciones' (mensajes) está en $1.142/conv, muy por encima del target $400." }
@@ -202,16 +202,16 @@ const DASH = {
   },
 
   ventas_campanas:[
-    { n:"CBO Mini huerta led", est:"ACTIVE", spend:3171403, roas:3.93, ventas:51 },
-    { n:"CBO MINI HUERTA ABIERTO", est:"ACTIVE", spend:2109129, roas:2.69, ventas:30 },
-    { n:"TEST Ang ABO Huerta 12 24 32 2", est:"ACTIVE", spend:134206, roas:4.01, ventas:2 },
-    { n:"ABO MODULAR ABIERTO", est:"PAUSED", spend:1558120, roas:2.77, ventas:33 },
-    { n:"CBO Huerta 12 24 32", est:"ACTIVE", spend:163592, roas:1.29, ventas:2 },
+    { n:"CBO Mini huerta led", est:"ACTIVE", spend:3377921, roas:3.87, ventas:53 },
+    { n:"CBO MINI HUERTA ABIERTO", est:"ACTIVE", spend:2152306, roas:2.59, ventas:30 },
+    { n:"TEST Ang ABO Huerta 12 24 32 2", est:"ACTIVE", spend:188247, roas:4.02, ventas:3 },
+    { n:"ABO MODULAR ABIERTO", est:"PAUSED", spend:1480106, roas:2.45, ventas:26 },
+    { n:"CBO Huerta 12 24 32", est:"ACTIVE", spend:184535, roas:1.14, ventas:2 },
     { n:"CBO Ebook", est:"PAUSED", spend:201511, roas:1.08, ventas:9 }
   ],
   mensajes_campanas:[
-    { n:"CBO Mensajes Huertas", est:"ACTIVE", spend:886642, mensajes:999, costo:888 },
-    { n:"CBO Emprendedores Mensajes", est:"ACTIVE", spend:190351, mensajes:347, costo:549 }
+    { n:"CBO Mensajes Huertas", est:"ACTIVE", spend:890048, mensajes:970, costo:918 },
+    { n:"CBO Emprendedores Mensajes", est:"ACTIVE", spend:207618, mensajes:375, costo:554 }
   ],
   ganadores:[
     { anuncio:"video 5 - Copia 2", conjunto:"La mejor huerta", campana:"Mini huerta led", roas:19.27, spend:57215, est:"ACTIVE" },
