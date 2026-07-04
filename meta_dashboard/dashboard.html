@@ -118,60 +118,58 @@
 ============================================================ -->
 <script id="data">
 const DASH = {
-  cuenta:"Acrule Publicidad", moneda:"ARS", actualizado:"2026-07-03",
-  ventana:"Últimos 30 días (3 jun – 2 jul 2026)", objetivo_roas:6,
+  cuenta:"Acrule Publicidad", moneda:"ARS", actualizado:"2026-07-04",
+  ventana:"Últimos 30 días (4 jun – 3 jul 2026)", objetivo_roas:6,
 
-  roas_30d:2.62, roas_7d:2.58, spend_30d:9197327, spend_7d:2842604,
-  ctr_30d:2.69, ctr_7d:2.30, cpc_30d:192.69, cpc_7d:275.74,
-  reach_30d:705044, freq_30d:2.51, opportunity_score:37, tendencia:"estable",
+  roas_30d:2.63, roas_7d:2.63, spend_30d:9351548, spend_7d:2822294,
+  ctr_30d:2.68, ctr_7d:2.29, cpc_30d:196.97, cpc_7d:274.49,
+  reach_30d:697812, freq_30d:2.54, opportunity_score:41, tendencia:"estable",
 
   fin:{ margen_bruto:65, break_even_roas:3.4, resultado:"pérdida",
         ads_pct_fact:31, cac_ads:77222, aov:199004 },
 
-  msj:{ mensajes_30d:1345, spend_30d:1097666, costo_prom:816, target_costo:400,
-        mejor:"FRIO Iteraciones ($818/msg)", peor:"tibio Comparaciones ($1.144/msg)" },
+  msj:{ mensajes_30d:1334, spend_30d:1094654, costo_prom:820, target_costo:400,
+        mejor:"CBO Emprendedores Mensajes ($553/msg)", peor:"tibio Comparaciones ($1.109/msg)" },
 
   // OBSERVACIONES DEL DÍA — el agente piensa en voz alta, alineado al objetivo
   observaciones:[
-    { ic:"🎯", txt:"<b>El ROAS se amesetó:</b> 2,69 → <b>2,62</b> (30d) y los 7d están en <b>2,58</b>, apenas por debajo. No se rompió nada, pero dejó de subir y seguís bajo el break-even (3,4). El trabajo de hoy es <b>cortar las fugas</b>, no escalar — el escalado lo define el cerebro del lunes." },
-    { ic:"🏆", txt:"<b>El motor sigue firme:</b> el conjunto Innovación+Cocina rinde <b>4,28</b> con video 3 (<b>5,17</b>), carrusel 1 (<b>6,78</b>) y 'La huerta del futuro' (<b>5,35</b>), todos con frecuencia sana (~1,3). El ADN que gana no cambia: producto en la cocina, en video/carrusel — le muestra a la compradora (depto, cocina) que es fácil y le da 'su propia comida'." },
-    { ic:"⚠️", txt:"<b>Ojo: 'estatico cocina' está PAUSADO.</b> Era el motor histórico (ROAS <b>3,83</b>, 19 ventas, $1,3M invertido). Si lo pausaste por fatiga, ok; si fue sin querer, reactivarlo suma — y puede explicar parte del amesetamiento. Verificá por qué está apagado." },
-    { ic:"💬", txt:"<b>Mensajes sigue caro:</b> promedio <b>$816/conv</b>, 2× el target ($400). Lo barato está en FRÍO (FRIO Iteraciones $818, Abierto emprendedores $546). <b>'tibio Comparaciones' ($1.144)</b> sigue prendido quemando plata — es el corte de hoy." }
+    { ic:"🎯", txt:"<b>El ROAS frenó la caída:</b> 2,62 → <b>2,63</b> (30d) y los 7d <b>subieron de 2,58 a 2,63</b> — ya no cae, empató al 30d. Seguís bajo el break-even (3,4), pero se estabilizó. El trabajo de hoy es <b>cerrar las últimas fugas activas</b>, no escalar — el escalado lo define el cerebro del lunes." },
+    { ic:"🏆", txt:"<b>El motor sigue firme:</b> el conjunto Innovación+Cocina rinde <b>4,02</b> ($2,5M, 43 ventas) con video 3 (<b>4,34</b>), carrusel 1 (<b>5,60</b>) y 'La huerta del futuro' (<b>5,04</b>), frecuencias sanas (1,3–1,5). El ADN que gana no cambia: producto en la cocina, en video/carrusel — le muestra a la compradora (depto, cocina) que es fácil y le da 'su propia comida'." },
+    { ic:"💬", txt:"<b>Cortaste TODO el canal Mensajes:</b> ambas campañas (CBO Mensajes Huertas y CBO Emprendedores Mensajes) figuran <b>PAUSADAS</b>. Respetado — es tu decisión de reformular la audiencia tibia con creativos nuevos. Ojo: WhatsApp cerraba ventas que el píxel no ve; cuando reactives, arrancá por FRÍO (lo más barato: $545–808/conv), no por tibio." },
+    { ic:"🩸", txt:"<b>Fugas nuevas de VENTAS (el corte de hoy):</b> Carrito abandonados en <b>0,76</b> ($61k, Meta lo marca como audiencia estrecha = fatiga) y dos anuncios quemando +$45k con <b>0 ventas</b> (estatico 2 - Copia 2, RES-01). Apagándolos, Meta reasigna esa plata a los ganadores del mismo conjunto (video 5: 14,99; RES-02: 4,11)." },
+    { ic:"⚠️", txt:"<b>Watch:</b> 'Sin Esfuerzo · Audiencia Amplia' (CBO Huerta 12 24 32) lleva <b>$27k con 0 ventas</b> y es un ángulo que Meta ya descartó. Todavía bajo el umbral de $30k; si cruza sin vender, se corta. Es lo único activo que quedó en esa campaña (le cortaste 'Viejos que funcionaron' ayer)." }
   ],
 
   ordenes:[
-    { p:"p1", accion:"apagar", titulo:"Apagá el conjunto de mensajes más caro (sigue activo)",
-      ruta:{campana:"CBO Mensajes Huertas", conjunto:"tibio Comparaciones", anuncio:"(todo el conjunto)"},
-      impacto:"Baja el costo por conversación",
-      why:"Costo por conversación <b>$1.144</b> = 2,9× el target ($400) y el más caro activo. Era la orden de ayer y sigue prendido. El volumen de mensajes barato está en FRÍO (FRIO Iteraciones $818), no acá." },
-    { p:"p1", accion:"apagar", titulo:"Cortá el conjunto 'Viejos que funcionaron' (arrastra abajo)",
-      ruta:{campana:"CBO Huerta 12 24 32", conjunto:"Viejos que funcionaron", anuncio:"(todo el conjunto)"},
-      impacto:"Frena una fuga de plata",
-      why:"ROAS <b>1,24</b> con <b>$169.629</b> gastados (bien pasado el umbral de $30k) — pierde plata sostenido y deja la campaña entera en 1,14. Son anuncios viejos reciclados; el ángulo Huertas grandes que SÍ vende (H-04, 6,50) vive en el TEST, dejalo trabajar ahí. La semana de gracia ya pasó." },
-    { p:"p2", accion:"escalar", titulo:"Vigilá el super-ganador de bajo volumen",
+    { p:"p1", accion:"apagar", titulo:"Apagá Carrito abandonados — pierde plata y está fatigado",
+      ruta:{campana:"CBO Carrito abandonados", conjunto:"Oferta Cupon 5%off", anuncio:"(todo el conjunto)"},
+      impacto:"Frena una fuga de $61k",
+      why:"ROAS <b>0,76</b> con <b>$61.478</b> (bien pasado el umbral de $30k) y 1 sola venta. Meta lo marcó como <b>audiencia estrecha (1.000 personas)</b> = frecuencia altísima y fatiga. El retargeting de carrito debería ser lo MÁS rentable; a 0,76 el combo oferta/creativo no funciona. Pausalo — el lunes se reformula con audiencia más amplia o mejor gancho." },
+    { p:"p1", accion:"apagar", titulo:"Cortá 'estatico 2 - Copia 2' (0 ventas, arrastra al conjunto)",
+      ruta:{campana:"CBO Mini huerta led", conjunto:"La mejor huerta cualquier espacio", anuncio:"estatico 2 - Copia 2"},
+      impacto:"Concentra plata en el super-ganador",
+      why:"<b>0 ventas</b> con <b>$46.745</b> y frecuencia 1,91 — en el MISMO conjunto donde <b>video 5 - Copia 2</b> rinde <b>14,99</b>. Apagando el estático muerto, Meta redirige ese presupuesto al video que sí vende. Fuga limpia de cortar." },
+    { p:"p1", accion:"apagar", titulo:"Cortá 'RES-01 · Un cliente + frase' (0 ventas con $55k)",
+      ruta:{campana:"CBO - MINI HUERTA - ABIERTO", conjunto:"reseñas Iteracion", anuncio:"RES-01 · Un cliente + frase"},
+      impacto:"Libera plata del conjunto que sí convierte",
+      why:"<b>0 ventas</b> con <b>$55.664</b> pese a CTR alto (3,25%): engancha pero no vende. Vive en 'reseñas Iteracion' (conjunto sano, 3,13) al lado de RES-02 (<b>4,11</b>) y RES-03 (<b>3,69</b>). Cortalo para que el presupuesto vaya a los RES que convierten." },
+    { p:"p2", accion:"escalar", titulo:"Vigilá el super-ganador de bajo volumen (no lo toques)",
       ruta:{campana:"CBO Mini huerta led", conjunto:"La mejor huerta cualquier espacio", anuncio:"video 5 - Copia 2"},
-      impacto:"Puede ser oro o puntual",
-      why:"ROAS <b>16,53</b> con poco gasto ($67k) — sostuvo el pico un día más (venía en 19). Todavía es poca plata: dejalo juntar volumen 3-4 días. Si mantiene >5, su formato (video, ticket alto) es un molde a replicar el lunes.",
-      detalle:"No lo toques; observá. El lunes el cerebro semanal decide si escala." },
-    { p:"p4", accion:"escalar", titulo:"NO re-escales la campaña motor hoy (dejala correr)",
+      impacto:"Puede ser molde a replicar",
+      why:"ROAS <b>14,99</b> con solo <b>$73.558</b> y 4 ventas — sostiene el pico 3 días seguidos (venía 16,53 / 19). Todavía es poca plata para escalar; dejalo juntar volumen. Si mantiene >5, su molde (video, ticket alto, 'cualquier espacio') se replica el lunes.",
+      detalle:"No lo toques hoy; observá. El lunes el cerebro semanal decide si escala." },
+    { p:"p4", accion:"escalar", titulo:"NO re-escales la campaña motor (la escalaste ayer)",
       ruta:{campana:"CBO Mini huerta led", conjunto:"(campaña CBO — no tocar)", anuncio:"—"},
       impacto:"Respetar la ventana de aprendizaje",
-      why:"Sostiene ROAS <b>3,87</b> con $3,38M — es el motor. Pero ya la escalaste hace pocos días; subirla otra vez hoy resetea el aprendizaje de Meta (regla: no tocar <7 días). El diario no cambia presupuestos por rutina — el lunes se evalúa el próximo +%." },
-    { p:"p3", accion:"iterar", titulo:"Encolá para el domingo: refrescar 'Tu cocina con Mini LED'",
-      ruta:{campana:"CBO Mini huerta led", conjunto:"Fácil + cocina", anuncio:"estatico Tu cocina con Mini LED"},
-      impacto:"Recuperar un ganador caído",
-      why:"Venía en ROAS <b>4,70</b> y sigue en <b>2,18</b> — el concepto funciona, el creativo se quemó. No lo pauses aún (frecuencia sana 1,65); prepará el refresco para subir el domingo, no hoy.",
-      iteraciones:[
-        "Mismo concepto (Mini LED en la cocina) con HOOK nuevo: '¿Cuánto gastás en verdura por mes?' / 'Tu cocina puede producir su propia comida'.",
-        "Pasalo a VIDEO 9:16 con audio — los formatos video/carrusel son los que ganan (carrusel 1: 6,78, video 3: 5,17). Meta también lo sugiere (Reels 9:16, -8% costo).",
-        "Sumá prueba social arriba: '+3.000 familias ya cultivan en su cocina'.",
-        "3 variantes de copy para que Meta elija la mejor."
-      ],
-      ejemplo:"Brief Lucas (domingo): reel 12s con la huerta encendida en la mesada de noche ('no necesita sol') + plato fresco al final + zócalo '6 cuotas sin interés'." },
-    { p:"p4", accion:"ampliar", titulo:"No toques los tests — dejalos madurar",
-      ruta:{campana:"TEST Ang ABO Huerta 12 24 32 2 + Iteración Cocina", conjunto:"(en aprendizaje)", anuncio:"—"},
+      why:"Sostiene ROAS <b>3,81</b> con $3,54M y 55 ventas — el motor. La escalaste ayer (03/07); volver a subirla hoy resetea el aprendizaje de Meta (regla: no tocar <7 días). El diario no cambia presupuestos por rutina — el lunes se evalúa el próximo +%." },
+    { p:"p4", accion:"ampliar", titulo:"No toques los tests — están dando señales, dejalos madurar",
+      ruta:{campana:"TEST Ang ABO 2 + TEST Huertas 5 ángulos Sem 22-28", conjunto:"(en aprendizaje)", anuncio:"—"},
       impacto:"Respetar el aprendizaje de Meta",
-      why:"'TEST Ang ABO 2' (4,02) trae FAM·Videos (conjunto en 10,04) y Semana 2 (4,38); 'Iteración Cocina' es nuevo y aún sin ventas. Todos en aprendizaje — tocarlos resetea todo. El lunes el cerebro semanal decide qué escalar." }
+      why:"'TEST Ang ABO 2' rinde <b>4,07</b>; dentro de los tests de Semana 2, <b>FAM·Videos</b> vuela a <b>8,33</b> (ad H-02 a 6,60) y 'Test Huertas Semana 2' a 3,53. Todos en aprendizaje — tocarlos ahora resetea todo. El lunes el cerebro semanal decide qué escalar." },
+    { p:"p4", accion:"iterar", titulo:"Vigilá el refresco de 'Tu cocina con Mini LED' (lo iteraste ayer)",
+      ruta:{campana:"CBO Mini huerta led", conjunto:"Fácil + cocina", anuncio:"estatico Tu cocina con Mini LED"},
+      impacto:"Confirmar si el concepto revive",
+      why:"Sigue en <b>2,10</b> pero ya cargaste la iteración ayer (03/07); el creativo nuevo necesita días para salir de aprendizaje. No lo toques: dale la semana y el lunes se mide si recuperó el 4,70 histórico o se pausa (frecuencia sana 1,67)." }
   ],
 
   // PLAN DE LA SEMANA (lo llena el agente de los lunes)
@@ -195,29 +193,31 @@ const DASH = {
   },
 
   ventas_campanas:[
-    { n:"CBO Mini huerta led", est:"ACTIVE", spend:3377921, roas:3.87, ventas:53 },
-    { n:"CBO MINI HUERTA ABIERTO", est:"ACTIVE", spend:2152306, roas:2.59, ventas:30 },
-    { n:"TEST Ang ABO Huerta 12 24 32 2", est:"ACTIVE", spend:188247, roas:4.02, ventas:3 },
-    { n:"ABO MODULAR ABIERTO", est:"PAUSED", spend:1480106, roas:2.45, ventas:26 },
-    { n:"CBO Huerta 12 24 32", est:"ACTIVE", spend:184535, roas:1.14, ventas:2 },
-    { n:"CBO Ebook", est:"PAUSED", spend:201511, roas:1.08, ventas:9 }
+    { n:"CBO Mini huerta led", est:"ACTIVE", spend:3535219, roas:3.81, ventas:55 },
+    { n:"CBO - MINI HUERTA - ABIERTO", est:"ACTIVE", spend:2174414, roas:2.55, ventas:31 },
+    { n:"ABO MODULAR ABIERTO", est:"PAUSED", spend:1414305, roas:2.49, ventas:25 },
+    { n:"TEST Ang ABO Huerta 12 24 32 2", est:"ACTIVE", spend:231874, roas:4.07, ventas:4 },
+    { n:"CBO Ebook", est:"PAUSED", spend:201511, roas:1.08, ventas:9 },
+    { n:"CBO Huerta 12 24 32", est:"ACTIVE", spend:200631, roas:1.05, ventas:2 },
+    { n:"CBO Carrito abandonados", est:"ACTIVE", spend:61478, roas:0.76, ventas:1 }
   ],
   mensajes_campanas:[
-    { n:"CBO Mensajes Huertas", est:"ACTIVE", spend:890048, mensajes:970, costo:918 },
-    { n:"CBO Emprendedores Mensajes", est:"ACTIVE", spend:207618, mensajes:375, costo:554 }
+    { n:"CBO Mensajes Huertas", est:"PAUSED", spend:881163, mensajes:948, costo:930 },
+    { n:"CBO Emprendedores Mensajes", est:"PAUSED", spend:213491, mensajes:386, costo:553 }
   ],
   ganadores:[
-    { anuncio:"video 5 - Copia 2", conjunto:"La mejor huerta", campana:"Mini huerta led", roas:16.53, spend:66679, est:"ACTIVE" },
-    { anuncio:"carrusel 1", conjunto:"Innovación + Cocina", campana:"Mini huerta led", roas:6.78, spend:240729, est:"ACTIVE" },
-    { anuncio:"La huerta del futuro", conjunto:"Fácil + cocina", campana:"Mini huerta led", roas:5.35, spend:198439, est:"ACTIVE" },
-    { anuncio:"video 3", conjunto:"Innovación + Cocina", campana:"Mini huerta led", roas:5.17, spend:531431, est:"ACTIVE" },
-    { anuncio:"RES-03 · Antes/Ahora", conjunto:"reseñas Iteracion", campana:"MINI HUERTA ABIERTO", roas:3.91, spend:277481, est:"ACTIVE" },
-    { anuncio:"RES-02 · Collage +3.000 familias", conjunto:"reseñas Iteracion", campana:"MINI HUERTA ABIERTO", roas:2.69, spend:209974, est:"ACTIVE" }
+    { anuncio:"video 5 - Copia 2", conjunto:"La mejor huerta", campana:"Mini huerta led", roas:14.99, spend:73558, est:"ACTIVE" },
+    { anuncio:"ACRULE_VID_FAM_H02 (test)", conjunto:"FAM · Videos Sem2", campana:"TEST Huertas Sem2", roas:6.60, spend:51354, est:"ACTIVE" },
+    { anuncio:"carrusel 1", conjunto:"Innovación + Cocina", campana:"Mini huerta led", roas:5.60, spend:291295, est:"ACTIVE" },
+    { anuncio:"La huerta del futuro", conjunto:"Fácil + cocina", campana:"Mini huerta led", roas:5.04, spend:210504, est:"ACTIVE" },
+    { anuncio:"video 3", conjunto:"Innovación + Cocina", campana:"Mini huerta led", roas:4.34, spend:659555, est:"ACTIVE" },
+    { anuncio:"RES-02 · Collage +3.000 familias", conjunto:"reseñas Iteracion", campana:"MINI HUERTA ABIERTO", roas:4.11, spend:232884, est:"ACTIVE" }
   ],
   perdedores:[
-    { anuncio:"Viejos que funcionaron (conjunto)", conjunto:"Viejos que funcionaron", campana:"CBO Huerta 12 24 32", roas:1.24, spend:169629, est:"ACTIVE" },
-    { anuncio:"Tu cocina con Mini LED (cayó de 4,70)", conjunto:"Fácil + cocina", campana:"Mini huerta led", roas:2.18, spend:100460, est:"ACTIVE" },
-    { anuncio:"estatico 2 - Copia 2 (0 ventas)", conjunto:"La mejor huerta", campana:"Mini huerta led", roas:0, spend:49064, est:"ACTIVE" }
+    { anuncio:"Oferta Cupon 5%off (conjunto entero)", conjunto:"Oferta Cupon 5%off", campana:"CBO Carrito abandonados", roas:0.76, spend:61478, est:"ACTIVE" },
+    { anuncio:"RES-01 · Un cliente + frase (0 ventas)", conjunto:"reseñas Iteracion", campana:"MINI HUERTA ABIERTO", roas:0, spend:55664, est:"ACTIVE" },
+    { anuncio:"estatico 2 - Copia 2 (0 ventas)", conjunto:"La mejor huerta", campana:"Mini huerta led", roas:0, spend:46745, est:"ACTIVE" },
+    { anuncio:"Tu cocina con Mini LED (iterado 03/07)", conjunto:"Fácil + cocina", campana:"Mini huerta led", roas:2.10, spend:103951, est:"ACTIVE" }
   ],
   angulos:[
     { n:"🍳 Cocina (carrusel/video)", roas:"5,2–16", estado:"ESCALAR", nivel:96 },
@@ -237,7 +237,7 @@ const DASH = {
     pendientes:["H-03 ROI","H-08 cosecha 3 sem","H-09 tu balcón alcanza","H-12 la que crece","H-14 sin morir","H-05 re-test (mapa)","H-07 re-test (ocupada)"]
   },
   roadmap:[
-    { fase:"Semana 1 — Cruzar break-even", roas:"2,62 → 3,4", txt:"Escalar CBO Mini huerta led, replicar formatos carrusel/video de cocina, cortar fugas (tibio Comparaciones, Viejos que funcionaron). ROAS amesetado en 2,6: falta cortar lo que arrastra." },
+    { fase:"Semana 1 — Cruzar break-even", roas:"2,63 → 3,4", txt:"Escalar CBO Mini huerta led, replicar formatos carrusel/video de cocina, cortar fugas (Carrito abandonados 0,76, anuncios 0-ventas). ROAS frenó la caída en 2,63: falta seguir cortando lo que arrastra y concentrar en los ganadores." },
     { fase:"Semana 2-3 — Concentrar", roas:"→ 4,2", txt:"Todo a cocina, futuro, depto en formato carrusel/video. Iterar los que caen. Quick-wins Meta." },
     { fase:"Semana 4-6 — Iterar", roas:"→ 5,0", txt:"2-3 creativos nuevos/semana sobre ganadores. Refrescar fatiga. Retargeting." },
     { fase:"Semana 6+ — Apalancar AOV", roas:"→ 6,0", txt:"Bundles, cuotas, order-bump + subir conversión del checkout. Escalar sin techo." }
