@@ -19,6 +19,9 @@ Formato: `[x]` hecho · `[-]` no lo hago (con motivo) · `[ ]` pendiente · `OBS
 - [x] ESCALAR Fácil + cocina — HECHO — OBS: subí solo +15%, no +25%, por las dudas
 -->
 
+## 2026-07-04 — decisión estratégica
+- [x] APAGAR campañas de MENSAJES (CBO Mensajes Huertas + CBO Emprendedores Mensajes) — HECHO. Motivo: las ventas de WhatsApp no vienen de esos anuncios sino de gente que entra por un anuncio de VENTAS/web y desde el sitio escribe. Las conversaciones de las campañas de mensajes no compraban. Foco 100% en las campañas de ventas que quedan corriendo.
+
 ## 2026-07-03 — bitácora Meta
 - [-] APAGAR conjunto 'tibio Comparaciones' (CBO Mensajes Huertas) — NO LO HAGO: el conjunto TIBIO se le muestra a gente que YA interactuó con nosotros (audiencia calificada). Es más caro por conversación pero la audiencia vale más. Foco correcto: crear un conjunto NUEVO a esa misma audiencia tibia con OTROS creativos para mejorar el CTR, no apagarlo.
 - [x] APAGAR conjunto 'Viejos que funcionaron' (CBO Huerta 12 24 32) — HECHO

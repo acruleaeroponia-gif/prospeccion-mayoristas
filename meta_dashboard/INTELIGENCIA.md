@@ -24,6 +24,11 @@ sobre las reglas automáticas** del PLAYBOOK.
 - **Órdenes de mantenimiento (P4) deben nombrar anuncio/conjunto/campaña EXACTOS y activos** — nada de "varias/varios".
 - **Mensajes: evaluar por TEMPERATURA de audiencia, no con un target plano.** Los conjuntos FRÍO (audiencia nueva) sí apuntan al target $400/conv. Los conjuntos TIBIO/CALIENTE (retargeting, gente que ya interactuó) legítimamente cuestan MÁS por conversación porque la audiencia es más calificada y convierte mejor — NO pausarlos por costo alto. Si un conjunto tibio/caliente rinde caro, la orden correcta es **iterar el creativo (mejorar CTR) o crear un conjunto nuevo a esa misma audiencia con otros creativos**, no apagarlo. Sólo el frío se corta por costo.
 
+### 🔴 DECISIÓN CENTRAL (04/07): campañas de MENSAJES apagadas — foco 100% en VENTAS
+- **Las campañas de Mensajes dedicadas NO generan las ventas de WhatsApp.** La gente que compra por WhatsApp entró por un anuncio de VENTAS/web, navegó el sitio y desde ahí escribió — no vino de los anuncios de las campañas de mensajes. Sus conversaciones eran baratas pero NO compraban (por eso su ROAS 0,13–0,59 era REAL, no un error de medición).
+- **Decisión de Mariano: campañas de Mensajes APAGADAS.** El agente NO debe recomendar reactivarlas ni crear nuevas campañas de mensajes. Foco 100% en campañas de VENTAS (OUTCOME_SALES), que son las que alimentan tanto las compras web como las de WhatsApp.
+- **Corolario de medición:** el ROAS real de las campañas de ventas es MÁS ALTO que el del píxel, porque parte de su tráfico convierte por WhatsApp (el píxel de compra web no lo cuenta). Tenerlo en cuenta al juzgar si una campaña de ventas "rinde": puede rendir más de lo que muestra el número.
+
 ## 📐 Parámetros del negocio (ver `contexto/KPIS_FINANCIEROS_2026.md`)
 - Ticket Mini LED $218.900 · Mini sin LED $121.900 · Huerta 12/24/32 $348.900/$398.900/$486.300 · Curso $68.000 · Ebook $24.480.
 - **Margen bruto: 65%.** AOV ~$199-234k. CAC Meta ~$77k.

@@ -25,7 +25,10 @@ las **órdenes del día**. Mariano las ejecuta en Ads Manager (los conectores MC
 | CTR < 1,3% | 👎 CREATIVO FLOJO | Pausar anuncio o nuevo hook |
 | Audiencia < 50k (anomaly narrow) | 📉 ANGOSTA | Ampliar / Advantage+ Audience |
 
-### CAMPAÑAS DE MENSAJES — NO se juzgan por ROAS
+### CAMPAÑAS DE MENSAJES — APAGADAS por decisión (04/07)
+> Mariano las apagó: las ventas de WhatsApp no vienen de estas campañas sino del tráfico de las campañas de VENTAS (la gente entra por un anuncio web y escribe desde el sitio). NO recomendar reactivarlas ni crear nuevas. Foco 100% en VENTAS. Ver INTELIGENCIA.md. La lógica de abajo queda de referencia por si en el futuro se reactiva algún conjunto.
+
+### (Referencia) CAMPAÑAS DE MENSAJES — NO se juzgan por ROAS
 Objetivo = **costo por mensaje** (`cost_per_result`) y **cantidad de mensajes** (`results`, "Messaging conversations started"). El `purchase_roas` acá es irrelevante, ignoralo.
 | Condición | Veredicto | Orden |
 |---|---|---|
