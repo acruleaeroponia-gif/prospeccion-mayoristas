@@ -27,8 +27,8 @@ sobre las reglas automáticas** del PLAYBOOK.
 ### 🔬 FLUJO DE TESTING → ESCALA (aclarado 06/07) — cómo lee los lunes el cerebro
 - Las campañas **TEST son ABO y SOLO para testear** ángulos/creativos. Corren **7 días** sin tocar.
 - **Los creativos/videos que funcionan se ESCALAN a la CBO** (ej. `CBO Huerta 12 24 32 2`) **usando el mismo post (postID)** — así se conserva la prueba social/engagement acumulado del anuncio.
-- Sobre lo que funciona: **iterar más** y hacer más variantes. Lo que no funciona: **apagar**.
-- **Tarea de los LUNES del cerebro semanal:** bajar a nivel ANUNCIO dentro de cada conjunto de test y decir **qué video/creativo funcionó** (por ROAS + ventas) y cuál no. Recomendación por cada uno: **escalar a la CBO (vía postID)** o **apagar**. No quedarse en métricas de campaña — el valor es "de este conjunto, ganó el video X, escalalo; el resto apagá".
+- **El ángulo ganador se multiplica, no se congela:** además de subirlo a la CBO por postID, hay que **ITERARLO** (producir variantes nuevas del MISMO ángulo ganador — otro hook/formato/pieza) para seguir alimentando `CBO Huerta 12 24 32 2` con más de lo que ya gana. La CBO es el "estanque" de ganadores; los ganadores del test + sus iteraciones son lo que se mete ahí. Lo que no funciona: **apagar**.
+- **Tarea de los LUNES del cerebro semanal:** bajar a nivel ANUNCIO dentro de cada conjunto de test y decir **qué ángulo/video ganó** (por ROAS + ventas). Por cada ganador, entregar: (a) recomendación de escalar a `CBO Huerta 12 24 32 2` por postID, y (b) un **brief de iteración de ese ángulo** (2-3 variantes) para producir. Por cada perdedor: apagar. No quedarse en métricas de campaña — el valor es "de este conjunto ganó el ángulo X → escalalo Y iteralo así; el resto apagá".
 - Cadencia: cada lunes Mariano sube el test de la semana siguiente (ej. hoy sube el de Semana 3).
 
 ### 🔴 DECISIÓN CENTRAL (04/07): campañas de MENSAJES apagadas — foco 100% en VENTAS
