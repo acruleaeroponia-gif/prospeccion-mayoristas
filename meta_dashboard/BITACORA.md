@@ -19,6 +19,14 @@ Formato: `[x]` hecho · `[-]` no lo hago (con motivo) · `[ ]` pendiente · `OBS
 - [x] ESCALAR Fácil + cocina — HECHO — OBS: subí solo +15%, no +25%, por las dudas
 -->
 
+## 2026-07-06 — bitácora Meta (lunes)
+- [x] ESCALAR campaña 'CBO Mini huerta led' (+20% a nivel campaña) — HECHO
+- [~] ITERAR RES-02 · Collage +3.000 familias — quiere 2 iteraciones MÁS (llegar a 5 en total).
+- [~] ITERAR carrusel 1 / video 3 (Innovación+Cocina) — quiere 3 iteraciones de CADA UNO para crear un CONJUNTO NUEVO con esas iteraciones.
+- [x] ITERAR 'Tu cocina con Mini LED' — HECHO
+- [i] Flujo testing aclarado (ver INTELIGENCIA): TEST = ABO solo testeo 7 días → los que funcionan se escalan a la CBO (Huerta 12 24 32 2) por postID → iterar más sobre lo que funciona, apagar lo que no. Los lunes el cerebro debe decir QUÉ video funcionó por conjunto de test. Hoy sube el test de la Semana 3.
+- [ ] NUEVO: crear campaña del CURSO "Cultiva desde 0" + ebook de regalo.
+
 ## 2026-07-04 — decisión estratégica
 - [x] APAGAR campañas de MENSAJES (CBO Mensajes Huertas + CBO Emprendedores Mensajes) — HECHO. Motivo: las ventas de WhatsApp no vienen de esos anuncios sino de gente que entra por un anuncio de VENTAS/web y desde el sitio escribe. Las conversaciones de las campañas de mensajes no compraban. Foco 100% en las campañas de ventas que quedan corriendo.
 

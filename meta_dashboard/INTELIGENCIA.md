@@ -24,6 +24,13 @@ sobre las reglas automáticas** del PLAYBOOK.
 - **Órdenes de mantenimiento (P4) deben nombrar anuncio/conjunto/campaña EXACTOS y activos** — nada de "varias/varios".
 - **Mensajes: evaluar por TEMPERATURA de audiencia, no con un target plano.** Los conjuntos FRÍO (audiencia nueva) sí apuntan al target $400/conv. Los conjuntos TIBIO/CALIENTE (retargeting, gente que ya interactuó) legítimamente cuestan MÁS por conversación porque la audiencia es más calificada y convierte mejor — NO pausarlos por costo alto. Si un conjunto tibio/caliente rinde caro, la orden correcta es **iterar el creativo (mejorar CTR) o crear un conjunto nuevo a esa misma audiencia con otros creativos**, no apagarlo. Sólo el frío se corta por costo.
 
+### 🔬 FLUJO DE TESTING → ESCALA (aclarado 06/07) — cómo lee los lunes el cerebro
+- Las campañas **TEST son ABO y SOLO para testear** ángulos/creativos. Corren **7 días** sin tocar.
+- **Los creativos/videos que funcionan se ESCALAN a la CBO** (ej. `CBO Huerta 12 24 32 2`) **usando el mismo post (postID)** — así se conserva la prueba social/engagement acumulado del anuncio.
+- Sobre lo que funciona: **iterar más** y hacer más variantes. Lo que no funciona: **apagar**.
+- **Tarea de los LUNES del cerebro semanal:** bajar a nivel ANUNCIO dentro de cada conjunto de test y decir **qué video/creativo funcionó** (por ROAS + ventas) y cuál no. Recomendación por cada uno: **escalar a la CBO (vía postID)** o **apagar**. No quedarse en métricas de campaña — el valor es "de este conjunto, ganó el video X, escalalo; el resto apagá".
+- Cadencia: cada lunes Mariano sube el test de la semana siguiente (ej. hoy sube el de Semana 3).
+
 ### 🔴 DECISIÓN CENTRAL (04/07): campañas de MENSAJES apagadas — foco 100% en VENTAS
 - **Las campañas de Mensajes dedicadas NO generan las ventas de WhatsApp.** La gente que compra por WhatsApp entró por un anuncio de VENTAS/web, navegó el sitio y desde ahí escribió — no vino de los anuncios de las campañas de mensajes. Sus conversaciones eran baratas pero NO compraban (por eso su ROAS 0,13–0,59 era REAL, no un error de medición).
 - **Decisión de Mariano: campañas de Mensajes APAGADAS.** El agente NO debe recomendar reactivarlas ni crear nuevas campañas de mensajes. Foco 100% en campañas de VENTAS (OUTCOME_SALES), que son las que alimentan tanto las compras web como las de WhatsApp.
