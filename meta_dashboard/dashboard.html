@@ -137,7 +137,8 @@ const DASH = {
     { ic:"🎯", txt:"<b>Las ventas PURAS ya cruzaron el break-even:</b> el 3,17 blended está diluido por ~$204k de gasto residual de Mensajes (apagado a mitad de semana, ~0 ingreso web). Descontándolo, las ventas rinden <b>~3,40</b> — el break-even. Con el corolario WhatsApp (tráfico de ventas que cierra por chat, invisible al píxel), el ROAS económico real es aún mayor. La semana que viene, sin arrastre, el blended imprime 3,4+ solo." },
     { ic:"🏆", txt:"<b>Tres pozos calientes confirmados — la compradora compra DESEO, no ahorro:</b> (1) COMUNIDAD: 'RES-02 · +3.000 familias' explotó a <b>9,64</b> (prueba social contra el miedo 'se me mueren'); (2) COCINA: carrusel 1 (4,18), video 4 (4,73), video 5 (9,48); (3) FAMILIAR: FAM·Videos (5,88). Lo que engancha y NO vende son los de ahorro/económico (ECO Videos: CTR 3,68% y 0 ventas). Toda la producción nueva pesca en esos tres pozos." },
     { ic:"⚠️", txt:"<b>Riesgo #1 de la semana = FATIGA del ganador:</b> 'CBO MINI HUERTA ABIERTO' va a freq <b>3,41</b> y 'reseñas Iteracion' (donde vive RES-02 9,64) a <b>3,34</b>, pegado al techo 3,5. Sin audiencia fresca, el mejor anuncio del mes se quema en días → prioridad #1: clonar RES-02 a un conjunto FRÍO nuevo. Segunda señal: 'video 3' cayó de 4,34 a <b>2,89</b> siendo el de más gasto ($583k)." },
-    { ic:"🆕", txt:"<b>onlypocket — winner nuevo a entender:</b> campaña nueva con <b>ROAS 5,21</b> ($86k, freq 1,12, nombres genéricos AD1/ADSET1). Rinde y tiene margen limpio de escala. Averiguar qué producto/audiencia es antes de escalar. 'TEST Ang ABO 2' se afirma en 3,16 (CTR 3,05%): candidata madura si sostiene." }
+    { ic:"🆕", txt:"<b>onlypocket — winner nuevo a entender:</b> campaña nueva con <b>ROAS 5,21</b> ($86k, freq 1,12, nombres genéricos AD1/ADSET1). Rinde y tiene margen limpio de escala. Averiguar qué producto/audiencia es antes de escalar. 'TEST Ang ABO 2' se afirma en 3,16 (CTR 3,05%): candidata madura si sostiene." },
+    { ic:"📚", txt:"<b>Nueva palanca de ALTO MARGEN — Campaña CURSO:</b> el curso 'Cultiva desde 0' + ebook de regalo es DIGITAL (margen ~95% → break-even ROAS <b>~1,5</b>, vs 3,4 de las huertas). Con ROAS 2 ya es muy rentable, y encima calienta compradores para la huerta. Ángulo: 'las plantas no se te mueren por falta de mano, sino de MÉTODO'. Arrancar como test ABO con 5 estáticos. Brief: meta_dashboard/briefs/BRIEF_2026-07-06.md." }
   ],
 
   ordenes:[
@@ -168,6 +169,17 @@ const DASH = {
       ruta:{campana:"onlypocket + TEST Ang ABO Huerta 12 24 32 2", conjunto:"(en aprendizaje)", anuncio:"—"},
       impacto:"Candidatas a escalar",
       why:"'onlypocket' rinde <b>5,21</b> (nueva) y 'TEST Ang ABO 2' <b>3,16</b> con 5 ventas. Las dos prometen pero están aprendiendo — tocarlas ahora resetea. Si sostienen el viernes, se escalan." },
+    { p:"p2", accion:"escalar", titulo:"Lanzá la campaña del CURSO (margen 95%, break-even ~1,5)",
+      ruta:{campana:"CBO Curso Cultiva desde 0 (nueva)", conjunto:"Test ABO 5 ángulos", anuncio:"5 estáticos 'método' + ebook regalo"},
+      impacto:"Con ROAS 2 ya es muy rentable",
+      why:"El curso es digital: margen ~95%, break-even ROAS <b>~1,5</b> (vs 3,4 de las huertas). Con 2x ya ganás, y encima calienta la audiencia para comprar la huerta después. Ángulo madre: 'no se te mueren por falta de mano, sino de MÉTODO'.",
+      iteraciones:[
+        "Armala en Ads Manager como test ABO (7 días) con los 5 estáticos de ángulo (copys ya existen en tus docs).",
+        "Audiencias: frío intereses hidroponía/cocina saludable + lookalike compradores + retarget web 30d.",
+        "Gancho: 'Curso completo + Ebook de regalo (11 manuales) · acceso de por vida'. Presupuesto bajo ($15-20k/día).",
+        "Los ángulos que cierran → escalar a CBO por postID."
+      ],
+      ejemplo:"Brief completo (estáticos + videos + estructura) en meta_dashboard/briefs/BRIEF_2026-07-06.md, bloque D." },
     { p:"p1", accion:"iterar", titulo:"Último aviso para 'Tu cocina con Mini LED' (2,03)",
       ruta:{campana:"CBO Mini huerta led", conjunto:"Fácil + cocina", anuncio:"estatico Tu cocina con Mini LED"},
       impacto:"Recuperar o pausar",
