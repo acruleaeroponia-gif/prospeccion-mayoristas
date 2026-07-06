@@ -28,6 +28,14 @@ sobre las reglas automáticas** del PLAYBOOK.
 - Las campañas **TEST (ABO) son SOLO para testear** si un ángulo funciona — **NUNCA para escalar.** Presupuesto acotado y parejo; **no subir presupuesto en la campaña de test.** La pregunta que responde es "¿este ángulo vende, sí o no?", nada más.
 - **Apagar rápido lo que no funciona:** apenas un ángulo muestra que no cierra (0 ventas + CTR/CPA malo con poco gasto), se **apaga de inmediato** — NO se deja correr los 7 días "por las dudas" ni se gasta de más. Los 7 días son el TECHO máximo, no un piso obligatorio. Solo los que muestran señal de venta se dejan madurar.
 - **Escalar es SOLO en la CBO** (Huerta 12 24 32 2), nunca en el test. El test descubre; la CBO escala.
+
+### 📐 ESTÁNDAR DE BRIEFS (obligatorio)
+Todo brief para Lucas (semanal, iteración, test o campaña nueva) se arma con la plantilla
+`meta_dashboard/briefs/PLANTILLA_BRIEF.md`. **Cada pieza SIEMPRE lleva los 4 campos:** 🎯 Objetivo ·
+❤️ Sentimiento · 🖼️ Imagen/Fondo (con slides si es carrusel, guion por segundos si es video) ·
+✍️ Copy (título + texto + CTA). Más las reglas de marca al inicio (paleta, tipografía, formatos,
+producto real, ubicación, política). Nunca entregar una pieza suelta sin ese detalle. Guardar cada
+brief en `meta_dashboard/briefs/BRIEF_YYYY-MM-DD.md` y, si Mariano lo pide, subirlo a Google Drive.
 - **Los creativos/videos que funcionan se ESCALAN a la CBO** (ej. `CBO Huerta 12 24 32 2`) **usando el mismo post (postID)** — así se conserva la prueba social/engagement acumulado del anuncio.
 - **El ángulo ganador se multiplica, no se congela:** además de subirlo a la CBO por postID, hay que **ITERARLO** (producir variantes nuevas del MISMO ángulo ganador — otro hook/formato/pieza) para seguir alimentando `CBO Huerta 12 24 32 2` con más de lo que ya gana. La CBO es el "estanque" de ganadores; los ganadores del test + sus iteraciones son lo que se mete ahí. Lo que no funciona: **apagar**.
 - **Tarea de los LUNES del cerebro semanal:** bajar a nivel ANUNCIO dentro de cada conjunto de test y decir **qué ángulo/video ganó** (por ROAS + ventas). Por cada ganador, entregar: (a) recomendación de escalar a `CBO Huerta 12 24 32 2` por postID, y (b) un **brief de iteración de ese ángulo** (2-3 variantes) para producir. Por cada perdedor: apagar. No quedarse en métricas de campaña — el valor es "de este conjunto ganó el ángulo X → escalalo Y iteralo así; el resto apagá".
