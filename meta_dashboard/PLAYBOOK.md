@@ -41,7 +41,12 @@ Objetivo = **costo por mensaje** (`cost_per_result`) y **cantidad de mensajes** 
 - Campañas de mensajes: `CBO Mensajes Huertas` (1447...) y `CBO Emprendedores Mensajes`.
 - Si Mariano define en INTELIGENCIA el % de mensajes→venta, recalcular si el canal rinde de verdad.
 
-### Reglas de escalado (no romper el aprendizaje)
+### TEST vs ESCALA (regla madre)
+- La campaña **TEST (ABO) NO se escala nunca** — es solo para descubrir si un ángulo vende. No subir su presupuesto.
+- Lo que en el test **no vende se APAGA de inmediato** (no esperar los 7 días ni gastar de más). El objetivo es la respuesta sí/no, no el volumen.
+- **Escalar es SOLO en la CBO** (Huerta 12 24 32 2), donde se llevan los ganadores del test (por postID + iteraciones).
+
+### Reglas de escalado (no romper el aprendizaje) — aplican a la CBO, no al test
 - Subir presupuesto **máx +20-25% por día** por ad set. Nunca duplicar de golpe.
 - No tocar un ad set con < 50 conversiones / aún en "learning" salvo que sangre.
 - Al liberar budget de lo que se corta, **reasignarlo a ganadores existentes**, no a campañas nuevas.
