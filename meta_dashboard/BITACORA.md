@@ -19,6 +19,13 @@ Formato: `[x]` hecho · `[-]` no lo hago (con motivo) · `[ ]` pendiente · `OBS
 - [x] ESCALAR Fácil + cocina — HECHO — OBS: subí solo +15%, no +25%, por las dudas
 -->
 
+## 2026-07-07 — bitácora Meta
+- [-] APAGAR conjunto 'Iteración Cocina' (CBO Mini huerta led) — NO LO HAGO: 0 ventas pero desde el 1/7 solo gastó $28k y tiene **3 carritos** → hay señal, puede andar con más presupuesto. (Regla: no apagar si gasto bajo + hay carritos.)
+- [x] APAGAR 'RES-04 · Capturas de WhatsApp' (reseñas Iteracion / CBO - MINI HUERTA - ABIERTO) — HECHO (perdedor conocido, ROAS 0)
+- [x] AMPLIAR 'AD1' (ADSET1 / onlypocket) — HECHO
+- [x] AMPLIAR 'RES-02 · Collage +3.000 familias' (reseñas Iteracion / CBO - MINI HUERTA - ABIERTO) — HECHO (protección anti-fatiga, prioridad #1)
+- [x] ESCALAR 'video 3' (Innovación + Cocina / CBO Mini huerta led) — HECHO
+
 ## 2026-07-06 — bitácora Meta (lunes)
 - [x] ESCALAR campaña 'CBO Mini huerta led' (+20% a nivel campaña) — HECHO
 - [~] ITERAR RES-02 · Collage +3.000 familias — quiere 2 iteraciones MÁS (llegar a 5 en total).

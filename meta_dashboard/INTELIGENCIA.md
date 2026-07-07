@@ -39,6 +39,9 @@ sobre las reglas automáticas** del PLAYBOOK.
 ### 🔁 ITERACIÓN (regla fija)
 La iteración se hace con los **ANUNCIOS GANADORES de la campaña TEST**: se iteran (variantes) y se suben a la **CBO Huerta 12 24 32 2**. El test descubre el ganador; la iteración + la CBO lo escalan.
 
+### 🛒 SEÑAL DE CARRITOS antes de apagar (regla fija)
+No apagar por "0 ventas" a secas. Si el gasto es bajo (< ~$30k) **y hay carritos (add-to-cart ≥ 2-3)**, hay señal de que puede cerrar con más presupuesto/tiempo → NO apagar, darle budget. Apagar solo cuando: 0 ventas **+** gasto suficiente **+** SIN carritos (o CTR muy bajo). Los carritos son el indicador temprano de que el ángulo/creativo engancha aunque todavía no cierre (ej: 'Iteración Cocina' 07/07 — $28k, 0 ventas pero 3 carritos → se mantiene).
+
 ### 📐 ESTÁNDAR DE BRIEFS (obligatorio)
 Todo brief para Lucas (semanal, iteración, test o campaña nueva) se arma con la plantilla
 `meta_dashboard/briefs/PLANTILLA_BRIEF.md`. **Cada pieza SIEMPRE lleva los 4 campos:** 🎯 Objetivo ·
