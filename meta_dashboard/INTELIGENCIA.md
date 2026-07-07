@@ -29,6 +29,16 @@ sobre las reglas automáticas** del PLAYBOOK.
 - **Apagar rápido lo que no funciona:** apenas un ángulo muestra que no cierra (0 ventas + CTR/CPA malo con poco gasto), se **apaga de inmediato** — NO se deja correr los 7 días "por las dudas" ni se gasta de más. Los 7 días son el TECHO máximo, no un piso obligatorio. Solo los que muestran señal de venta se dejan madurar.
 - **Escalar es SOLO en la CBO** (Huerta 12 24 32 2), nunca en el test. El test descubre; la CBO escala.
 
+### 🧪 COMPOSICIÓN SEMANAL DEL TEST (regla fija de Mariano) = 6 anuncios
+- **2 anuncios** del **ÁNGULO GANADOR** de la semana anterior (confirmar y seguir montándolo).
+- **1 anuncio** de un **ÁNGULO QUE NO FUNCIONÓ pero con OTRO FORMATO** (segunda oportunidad — quizás falló el creativo, no el ángulo).
+- **3 ÁNGULOS NUEVOS** a testear.
+- Los 3 nuevos se generan con la **MATRIZ DRO**: Dolor × Resultado deseado × Objeción → cada combinación distinta = un ángulo nuevo. Se testean diferentes ángulos; los que funcionan se escalan.
+- **Implicancia de tiempos:** los **2 (ganador)** y el **1 (re-test)** dependen de los resultados de la semana anterior → se definen el LUNES con datos. Los **3 nuevos** se pueden pre-producir siempre (no dependen de resultados).
+
+### 🔁 ITERACIÓN (regla fija)
+La iteración se hace con los **ANUNCIOS GANADORES de la campaña TEST**: se iteran (variantes) y se suben a la **CBO Huerta 12 24 32 2**. El test descubre el ganador; la iteración + la CBO lo escalan.
+
 ### 📐 ESTÁNDAR DE BRIEFS (obligatorio)
 Todo brief para Lucas (semanal, iteración, test o campaña nueva) se arma con la plantilla
 `meta_dashboard/briefs/PLANTILLA_BRIEF.md`. **Cada pieza SIEMPRE lleva los 4 campos:** 🎯 Objetivo ·
