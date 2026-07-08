@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Panel Cata — Acrule Rosario</title>
+<style>
+  :root {
+    --verde: #1d7a3a;
+    --verde-claro: #d4f4dd;
+    --verde-oscuro: #0d5522;
+    --azul: #075e54;
+    --naranja: #c24600;
+    --naranja-claro: #ffe0b2;
+    --rosa: #dc2743;
+    --gris-bg: #f5f7fa;
+    --gris-borde: #e0e4e8;
+    --texto: #1a1a1a;
+    --texto-suave: #65676b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0; padding: 0;
+    background: var(--gris-bg);
+    color: var(--texto);
+    line-height: 1.55;
+    display: flex;
+    min-height: 100vh;
+  }
+  aside {
+    width: 260px;
+    background: #fff;
+    border-right: 1px solid var(--gris-borde);
+    padding: 20px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+  aside h1 { color: var(--verde); font-size: 20px; margin: 0 0 4px; }
+  aside .sub { color: var(--texto-suave); font-size: 12px; margin-bottom: 20px; }
+  aside nav a {
+    display: block;
+    padding: 10px 12px;
+    margin-bottom: 4px;
+    color: var(--texto);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background .15s;
+  }
+  aside nav a:hover { background: var(--verde-claro); }
+  aside nav a.active { background: var(--verde); color: #fff; font-weight: 600; }
+  aside nav .grupo { color: var(--texto-suave); font-size: 11px; text-transform: uppercase; margin: 16px 0 6px; padding: 0 12px; letter-spacing: .5px; }
+  aside .stats-mini { padding: 12px; background: var(--verde-claro); border-radius: 8px; margin-top: 16px; font-size: 13px; }
+  aside .stats-mini b { color: var(--verde-oscuro); font-size: 20px; }
+
+  main {
+    flex: 1;
+    padding: 32px 48px;
+    max-width: 1000px;
+  }
+  section { display: none; }
+  section.active { display: block; }
+  h2 { color: var(--verde-oscuro); font-size: 28px; margin: 0 0 8px; }
+  h3 { color: var(--verde); font-size: 20px; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--verde-claro); }
+  h4 { color: var(--texto); font-size: 15px; margin: 18px 0 8px; text-transform: uppercase; letter-spacing: .5px; }
+  .lead { font-size: 16px; color: var(--texto-suave); margin: 0 0 20px; }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 14px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    border-left: 4px solid var(--verde);
+  }
+  .card.warn { border-left-color: var(--naranja); background: #fffaf3; }
+  .card.info { border-left-color: var(--azul); }
+  .card.rosa { border-left-color: var(--rosa); background: #fff5f8; }
+
+  .msg {
+    background: #fff8d6;
+    padding: 14px 16px;
+    border-radius: 8px;
+    border-left: 3px solid #25d366;
+    font-size: 14.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    position: relative;
+    margin: 8px 0 4px;
+  }
+  .msg.ig { border-left-color: #dc2743; background: #f8f0fc; }
+  .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 10px;
+    font-size: 12px;
+    background: #fff;
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .copy-btn:hover { background: var(--verde-claro); }
+  .copy-btn.ok { background: var(--verde); color: #fff; border-color: var(--verde); }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--gris-borde); font-size: 14px; }
+  th { background: var(--verde); color: #fff; font-weight: 600; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--gris-bg); }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 12px; margin: 16px 0; }
+  .kpi { background: #fff; padding: 16px; border-radius: 10px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+  .kpi .n { font-size: 32px; font-weight: 700; color: var(--verde); display: block; }
+  .kpi .l { font-size: 12px; color: var(--texto-suave); text-transform: uppercase; letter-spacing: .5px; }
+
+  .obj { background: #fff; padding: 14px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid var(--rosa); }
+  .obj .q { font-weight: 600; color: var(--rosa); margin-bottom: 6px; font-size: 14px; }
+  .obj .q::before { content: "❓ "; }
+  .obj .a { font-size: 14px; }
+  .obj .a::before { content: "→ "; color: var(--verde); font-weight: bold; }
+
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .badge.alta { background: var(--verde-claro); color: var(--verde-oscuro); }
+  .badge.media { background: #fff3cd; color: #856404; }
+  .badge.hot { background: var(--naranja-claro); color: var(--naranja); }
+  .badge.info { background: #e0e7ff; color: #3730a3; }
+
+  ul { padding-left: 20px; }
+  ul li { margin-bottom: 6px; }
+  .destacado { background: var(--verde-claro); padding: 12px 16px; border-radius: 8px; font-weight: 600; color: var(--verde-oscuro); margin: 12px 0; }
+
+  /* ==== DASHBOARD LEADS ==== */
+  .filtros-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; align-items: center; }
+  .filtros-bar button { padding: 8px 14px; border: 1px solid var(--gris-borde); background: #fff; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; }
+  .filtros-bar button.active { background: var(--verde); color: #fff; border-color: var(--verde); }
+  .filtros-bar input { flex: 1; min-width: 200px; padding: 8px 12px; border: 1px solid var(--gris-borde); border-radius: 6px; font-size: 14px; }
+
+  .lead-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    border-left: 4px solid var(--verde);
+    transition: all .2s;
+  }
+  .lead-card.contactado { border-left-color: var(--azul); background: #f0f7ff; }
+  .lead-card.respondio { border-left-color: var(--naranja); background: #fff8f0; }
+  .lead-card.interesado { border-left-color: #ff6b00; background: #fff5eb; }
+  .lead-card.cliente { border-left-color: #ffd700; background: #fffbe6; }
+  .lead-card.no-interesado { border-left-color: #ccc; opacity: .5; }
+  .lead-card.hidden { display: none; }
+
+  .lead-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+  .lead-name { font-size: 16px; font-weight: 600; flex: 1; }
+  .lead-num { background: #e7f3ff; color: var(--verde-oscuro); padding: 2px 8px; border-radius: 5px; font-size: 12px; font-weight: 600; }
+  .lead-meta { color: var(--texto-suave); font-size: 12.5px; margin-bottom: 8px; }
+  .lead-meta a { color: var(--verde); text-decoration: none; }
+  .lead-msg { background: #fffbea; padding: 10px 12px; border-radius: 6px; font-size: 13.5px; line-height: 1.5; margin: 8px 0; border-left: 2px solid #25d366; }
+  .lead-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+  .lead-actions .btn { padding: 7px 12px; border-radius: 6px; border: none; cursor: pointer; font-size: 12.5px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .btn-wa { background: #25d366; color: #fff; }
+  .btn-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: #fff; }
+  .btn-copy { background: #f0f0f0; color: #000; }
+  .btn-copy.ok { background: var(--verde); color: #fff; }
+  .btn-estado { background: #fff; border: 1px solid var(--gris-borde); color: #000; }
+  select.estado-select { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--gris-borde); font-size: 12.5px; }
+
+  .empty {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 10px;
+    color: var(--texto-suave);
+  }
+  .empty h3 { border: none; padding: 0; color: var(--texto-suave); }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .media-slot {
+    background: #fff;
+    border: 2px dashed var(--gris-borde);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 13px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .media-slot.hasfile { border-style: solid; border-color: var(--verde); background: var(--verde-claro); color: var(--verde-oscuro); }
+  .media-slot img, .media-slot video { max-width: 100%; max-height: 200px; border-radius: 6px; }
+
+  .step { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px dashed var(--gris-borde); }
+  .step-num { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--verde); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+  .step-body h5 { margin: 0 0 4px; font-size: 15px; }
+  .step-body p { margin: 0; font-size: 14px; color: var(--texto-suave); }
+
+  @media (max-width: 800px) {
+    body { flex-direction: column; }
+    aside { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--gris-borde); }
+    main { padding: 20px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<aside>
+  <h1>📘 Panel Cata</h1>
+  <div class="sub">Acrule Rosario · v2.0</div>
+  <nav>
+    <a href="#inicio" class="nav-link active" data-target="inicio">🏠 Inicio</a>
+    <div class="grupo">Prospección</div>
+    <a href="#dashboard" class="nav-link" data-target="dashboard">📋 Leads Viveros</a>
+    <a href="#viveros" class="nav-link" data-target="viveros">🌱 Guía Viveros</a>
+    <a href="#restaurantes" class="nav-link" data-target="restaurantes">🍽️ Guía Restaurantes</a>
+    <a href="#colaboraciones" class="nav-link" data-target="colaboraciones">🤝 Colaboraciones</a>
+    <div class="grupo">Operación</div>
+    <a href="#rutina" class="nav-link" data-target="rutina">📅 Rutina diaria</a>
+    <a href="#materiales" class="nav-link" data-target="materiales">📎 Materiales</a>
+    <a href="#kpis" class="nav-link" data-target="kpis">📊 KPIs</a>
+    <a href="#objeciones" class="nav-link" data-target="objeciones">🛡️ Objeciones</a>
+  </nav>
+  <div class="stats-mini">
+    Leads totales<br>
+    <b id="mini-total">0</b>
+  </div>
+</aside>
+
+<main>
+
+<!-- ================= INICIO ================= -->
+<section id="inicio" class="active">
+  <h2>🌱 Panel de prospección Rosario</h2>
+  <p class="lead">Todo lo que Cata necesita para prospectar en frío desde su escritorio. Sin visitas presenciales — 100% remoto vía WhatsApp e Instagram.</p>
+
+  <div class="card">
+    <h4>🎯 Cómo funciona el panel</h4>
+    <p><b>Todas las mañanas de lunes a viernes</b>, un agente automático busca 10 nuevos viveros en Rosario, saca su Instagram y WhatsApp, y los deja cargados en la sección <b>📋 Leads Viveros</b>.</p>
+    <p>Cata solo tiene que:</p>
+    <ol>
+      <li>Abrir la sección <b>📋 Leads Viveros</b></li>
+      <li>Ver los 10 nuevos del día</li>
+      <li>Hacer clic en <b>Copiar</b> → el mensaje está listo</li>
+      <li>Hacer clic en <b>Abrir WhatsApp</b> o <b>Abrir Instagram</b></li>
+      <li>Pegar y mandar</li>
+      <li>Marcar el estado en el desplegable (Contactado / Respondió / Interesado / Cliente / No interesado)</li>
+    </ol>
+  </div>
+
+  <div class="card info">
+    <h4>💰 Los 3 segmentos y cómo cobra Cata</h4>
+    <table>
+      <thead>
+        <tr><th>Segmento</th><th>Estrategia</th><th>Modelo</th><th>Comisión Cata</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🌱 <b>Viveros</b></td><td>Prospección 100% remota</td><td>Mayorista 30-35% off</td><td>5% del valor</td></tr>
+        <tr><td>🍽️ <b>Restaurantes</b></td><td>Venta remota + programa QP</td><td>Venta directa + comisión 10% al restaurante</td><td>5%</td></tr>
+        <tr><td>🤝 <b>Colaboraciones</b></td><td>Contactar referentes / cuentas de campo</td><td>Canje o comisión por promoción</td><td>5% de ventas generadas</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card warn">
+    <h4>⚡ Filosofía Acrule</h4>
+    <ul>
+      <li><b>Comunidad, no ventas.</b> Ayudamos a la gente a cultivar sus propios alimentos.</li>
+      <li><b>Tono cálido, nunca invasivo.</b> "No me interesa" = agradecer y seguir.</li>
+      <li><b>Prueba social siempre:</b> mencionar Vivero Agustín, Aires de Cultivo.</li>
+      <li><b>Nunca prometer lo que no podemos cumplir.</b> Ante duda: "te averiguo y te confirmo".</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= DASHBOARD LEADS ================= -->
+<section id="dashboard">
+  <h2>📋 Leads Viveros — Rosario</h2>
+  <p class="lead" id="dash-status">Cargando leads...</p>
+
+  <div class="kpi-grid">
+    <div class="kpi"><span class="n" id="kpi-total">0</span><span class="l">Total leads</span></div>
+    <div class="kpi"><span class="n" id="kpi-sin">0</span><span class="l">Sin contactar</span></div>
+    <div class="kpi"><span class="n" id="kpi-contactado">0</span><span class="l">Contactados</span></div>
+    <div class="kpi"><span class="n" id="kpi-respondio">0</span><span class="l">Respondieron</span></div>
+    <div class="kpi"><span class="n" id="kpi-cliente">0</span><span class="l">Clientes</span></div>
+  </div>
+
+  <div class="filtros-bar">
+    <button class="filtro-btn active" data-filtro="todos">Todos</button>
+    <button class="filtro-btn" data-filtro="Sin contactar">Sin contactar</button>
+    <button class="filtro-btn" data-filtro="Contactado">Contactados</button>
+    <button class="filtro-btn" data-filtro="Respondió">Respondieron</button>
+    <button class="filtro-btn" data-filtro="Interesado">Interesados</button>
+    <button class="filtro-btn" data-filtro="Cliente">Clientes</button>
+    <input type="text" id="busqueda" placeholder="🔍 Buscar por nombre...">
+    <button class="btn btn-copy" onclick="exportarProgreso()">💾 Exportar progreso</button>
+  </div>
+
+  <div id="leads-container"></div>
+</section>
+
+<!-- ================= VIVEROS GUIA ================= -->
+<section id="viveros">
+  <h2>🌱 Guía de venta — Viveros</h2>
+  <p class="lead">Todo lo que hay que saber para cerrar viveros. La mecánica está en el dashboard — acá está la teoría.</p>
+
+  <h3>👤 Perfil ideal</h3>
+  <div class="card">
+    <ul>
+      <li>Vivero <b>barrial o boutique</b> en Rosario y área metro (Fisherton, Funes, Roldán, Villa Gob. Gálvez).</li>
+      <li>Vende plantas de interior, aromáticas, huerta o accesorios de jardín.</li>
+      <li>Instagram activo (más de 500 seguidores, posteos recientes).</li>
+      <li>Dueño-atendedor (no cadenas tipo Easy).</li>
+    </ul>
+  </div>
+
+  <h3>💰 Propuesta comercial</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>Escala de compra</th><th>Descuento</th></tr></thead>
+      <tbody>
+        <tr><td>Más de $3.000.000</td><td><b>30% off precio público</b></td></tr>
+        <tr><td>Más de $5.000.000</td><td><b>35% off precio público</b></td></tr>
+      </tbody>
+    </table>
+    <div class="destacado">🤝 Consignación disponible caso por caso según ubicación y flujo.</div>
+    <p><b>Beneficios extra:</b></p>
+    <ul>
+      <li>Reposición rápida (3-5 días).</li>
+      <li>Material de exhibición (carteles, catálogo).</li>
+      <li>Capacitación virtual al equipo.</li>
+      <li>Zona de exclusividad si compran volumen.</li>
+    </ul>
+  </div>
+
+  <h3>💬 Mensajes iniciales (los del dashboard usan estos)</h3>
+  <h4>WhatsApp</h4>
+  <div class="msg">
+<button class="copy-btn" onclick="copiar(this)">📋 Copiar</button>Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros y ahora queremos sumar más.
+
+Te cuento por qué te escribo a [NOMBRE]: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.
+
+¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso, solo para que lo veas 🌱</div>
+
+  <h4>Instagram DM</h4>
+  <div class="msg ig">
+<button class="copy-btn" onclick="copiar(this)">📋 Copiar</button>Hola! ¿Cómo andás? Soy Cata de Acrule Hidroponía. Vi lo que hacen en [NOMBRE] y me copó un montón.
+
+Fabricamos huertas hidropónicas y estamos armando una red de viveros en Rosario que las tengan disponibles para reventa. Ya trabajamos con Vivero Agustín y Aires de Cultivo. Creemos que podría encajar muy bien con lo que ustedes ofrecen.
+
+¿Te copa que te pase la info y las condiciones mayoristas? Sin compromiso 🌱</div>
+
+  <h3>🎤 Cómo cerrar (100% remoto — WhatsApp)</h3>
+  <div class="card">
+    <p><b>Si contestan interesados</b>, seguí este flujo:</p>
+
+    <h4>Paso 1 — Descubrimiento (mensajes)</h4>
+    <p>"Buenísimo que te interese! Antes de mandarte todo, ¿me contás rápido: hoy venden algo de huerta o aromáticas? ¿Cuánto stock manejan del rubro plantas?"</p>
+
+    <h4>Paso 2 — Mandar material</h4>
+    <p>Envío por WhatsApp:</p>
+    <ol>
+      <li>Video del producto (30 seg).</li>
+      <li>Catálogo PDF con precios público y mayorista.</li>
+      <li>Foto de un vivero cliente actual (Vivero Agustín).</li>
+    </ol>
+
+    <h4>Paso 3 — Proponer combo prueba</h4>
+    <p>"Para arrancar sin invertir mucho de una, te propongo un <b>combo de prueba: 3 mini huertas + 2 huertas de 12 plantas</b>. Con eso probás si se venden y coordinamos reposición."</p>
+
+    <h4>Paso 4 — Cierre</h4>
+    <p>Si dice sí: coordinar transferencia + entrega. Si duda: "Te dejo la info y te reescribo el jueves, ¿te parece?"</p>
+  </div>
+
+  <h3>🛡️ Objeciones frecuentes</h3>
+  <div class="obj">
+    <div class="q">"Ya vendo huertas de otra marca"</div>
+    <div class="a">"Bárbaro, ¿qué te parece si comparamos? Nos diferenciamos por [soporte / diseño / origen argentino]. Te dejo una unidad para que la evalúes 15 días sin costo."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"No tengo espacio en el local"</div>
+    <div class="a">"La mini ocupa 30x40cm, entra en cualquier estante. Y armamos un cartel colgante. ¿Te muestro cómo lo hicieron en Aires de Cultivo?"</div>
+  </div>
+  <div class="obj">
+    <div class="q">"No sé si se va a vender acá"</div>
+    <div class="a">"Justo por eso ofrecemos consignación en algunos casos: te dejo 3 unidades, si en 60 días no se vendieron las retiro. Sin riesgo."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"¿Y si el cliente tiene un problema con la huerta?"</div>
+    <div class="a">"Toda huerta viene con garantía y soporte directo con nosotros. Vos derivás el contacto y nosotros nos ocupamos."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"El precio me parece alto"</div>
+    <div class="a">"¿Comparado con qué? Nuestro precio público es X, con 30% off te queda a Y. Y el margen te da para promocionarla en tus redes. ¿Querés que te muestre el ejemplo de otro vivero?"</div>
+  </div>
+</section>
+
+<!-- ================= RESTAURANTES ================= -->
+<section id="restaurantes">
+  <h2>🍽️ Guía de venta — Restaurantes</h2>
+  <p class="lead">Ticket alto, ciclo más largo. Todo remoto: WhatsApp + video llamada.</p>
+
+  <h3>👤 Perfil ideal</h3>
+  <div class="card">
+    <ul>
+      <li>Bistros, veganos, vegetarianos, gourmet, farm-to-table, hoteles boutique con carta propia.</li>
+      <li>Chefs que usan hierbas frescas (albahaca, tomillo, romero) y verdes de hoja (rúcula, brotes).</li>
+      <li>Que comuniquen valores de "producto fresco / de estación / propio" en sus redes.</li>
+      <li>Ticket medio-alto (justifica la inversión).</li>
+      <li>Zonas Rosario: Pichincha, Puerto Norte, centro, Fisherton, Funes zona gastronómica.</li>
+    </ul>
+  </div>
+
+  <h3>💰 Propuesta comercial</h3>
+  <div class="card">
+    <h4>1. Venta directa de la huerta con luces</h4>
+    <p>El restaurante compra una o varias huertas con luces LED para producir hierbas y verdes propios todo el año.</p>
+
+    <h4>2. Programa QP (valor agregado)</h4>
+    <p>El restaurante ofrece nuestras huertas a sus comensales. Por cada venta referida, se lleva <b>10% de comisión</b>.</p>
+    <div class="destacado">💡 Convierte la huerta del restaurante en un canal de venta pasivo — no solo produce hierbas, también genera ingresos.</div>
+  </div>
+
+  <h3>💬 Mensajes iniciales</h3>
+  <h4>WhatsApp</h4>
+  <div class="msg">
+<button class="copy-btn" onclick="copiar(this)">📋 Copiar</button>Buenas, ¿cómo estás? Soy Cata, escribo de Acrule Hidroponía.
+
+Te contacto porque vi la propuesta de [RESTAURANTE] y me pareció que hay mucha sinergia. Fabricamos huertas hidropónicas con luces LED que se instalan directo en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.
+
+Muchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único.
+
+¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso.</div>
+
+  <h4>Instagram DM</h4>
+  <div class="msg ig">
+<button class="copy-btn" onclick="copiar(this)">📋 Copiar</button>Hola! Soy Cata de Acrule Hidroponía. Nos dedicamos a fabricar huertas con luces LED para que restaurantes tengan hierbas y verdes propios todo el año, directo en la cocina.
+
+Vi la propuesta de [RESTAURANTE] y me encantó — creo que una huerta viva en su cocina o salón les puede sumar mucho, para la carta y visualmente.
+
+¿Se lo puedo mostrar al chef con un video? Prometo no robarles tiempo 🌿</div>
+
+  <h3>📞 Cierre por videollamada (10-15 min)</h3>
+  <div class="card">
+    <h4>Antes de la llamada</h4>
+    <p>Mandarle por WhatsApp: video del producto instalado + PDF con especificaciones + una foto de un chef usando huerta viva.</p>
+
+    <h4>Durante la llamada</h4>
+    <p><b>Bloque 1 — Descubrimiento (3 min):</b> Preguntar por hierbas, proveedores, problemas de calidad.</p>
+    <p><b>Bloque 2 — Presentación (5 min):</b> Compartir pantalla con video/fotos del producto en cocinas reales.</p>
+    <p><b>Bloque 3 — Programa QP (2 min):</b> Explicar comisión del 10% como valor agregado.</p>
+    <p><b>Bloque 4 — Cierre (2 min):</b></p>
+    <ul>
+      <li><b>Opción A:</b> "¿Arrancamos con una unidad de prueba? Si en 60 días no te convence, te devuelvo la plata."</li>
+      <li><b>Opción B:</b> "Te mando propuesta escrita. ¿Coordinamos otra llamada con el dueño?"</li>
+    </ul>
+  </div>
+
+  <h3>🛡️ Objeciones frecuentes</h3>
+  <div class="obj">
+    <div class="q">"¿Y quién la cuida? No tenemos tiempo"</div>
+    <div class="a">"Baja mantención — 5 min por semana revisar agua. Capacitamos al equipo y quedamos disponibles."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"¿Y si se rompe algo? No podemos parar el servicio"</div>
+    <div class="a">"Garantía, stock de recambio. Si falla algo, en 24hs se resuelve."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"No tengo espacio en la cocina"</div>
+    <div class="a">"La chica ocupa 60x40cm. Y varios chefs la ponen en el salón como plus estético."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"Prefiero mi proveedor de siempre"</div>
+    <div class="a">"No tenés que reemplazarlo del todo. Muchos usan la huerta como fuente principal de albahaca y rúcula (más volátiles) y siguen con el proveedor para el resto."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"¿Cuánto sale?"</div>
+    <div class="a"><i>Nunca dar precio sin presentar valor primero.</i> "Depende del modelo, entre X e Y. Pero antes quiero mostrarte el producto en la videollamada, ¿te viene bien tal día?"</div>
+  </div>
+</section>
+
+<!-- ================= COLABORACIONES ================= -->
+<section id="colaboraciones">
+  <h2>🤝 Colaboraciones y referentes</h2>
+  <p class="lead">Reemplazamos la venta directa a emprendedores por <b>alianzas con referentes y páginas de campo</b> que nos promocionen a sus audiencias. Es más escalable y trae leads calificados.</p>
+
+  <div class="card info">
+    <h4>🎯 Objetivo</h4>
+    <p>Conseguir 3-5 referentes activos por trimestre que nos promocionen en sus redes a cambio de canje de producto, comisión por venta, o combinación.</p>
+  </div>
+
+  <h3>👤 A quién buscar</h3>
+  <div class="card">
+    <h4>Tipos de referentes</h4>
+    <ul>
+      <li>🌾 <b>Cuentas de campo / vida rural</b> (Instagram, YouTube, TikTok) — chacareros, agricultura urbana, permacultura.</li>
+      <li>🌿 <b>Influencers de sustentabilidad</b> — vida verde, sin plástico, cero desperdicio.</li>
+      <li>🍽️ <b>Chefs y foodies</b> con foco en producto propio / farm-to-table.</li>
+      <li>🏠 <b>Cuentas de deco/hogar</b> con público ABC1 interesado en sumar plantas al hogar.</li>
+      <li>📺 <b>Programas de TV/radio locales</b> con secciones de campo, agricultura o vida sana.</li>
+      <li>🎓 <b>Escuelas agropecuarias o cursos online</b> de huerta orgánica.</li>
+    </ul>
+
+    <h4>Filtros de calidad</h4>
+    <ul>
+      <li>Mínimo <b>5.000 seguidores</b> reales (revisar engagement, no comprado).</li>
+      <li>Audiencia argentina (o principalmente).</li>
+      <li>Contenido reciente y frecuente.</li>
+      <li>Que ya haya promocionado otros productos (indica que acepta colaboraciones).</li>
+    </ul>
+  </div>
+
+  <h3>💰 Modelos de colaboración</h3>
+  <div class="card">
+    <h4>Opción A — Canje puro</h4>
+    <p>Le regalamos 1 huerta a cambio de 2-3 posteos (reel, stories, foto en su feed). Ideal para referentes chicos-medianos.</p>
+
+    <h4>Opción B — Canje + código descuento</h4>
+    <p>Le regalamos la huerta + le damos un código único (ej. "MARIA10") para su audiencia. Por cada venta con su código, le pagamos 10% de comisión. Win-win.</p>
+
+    <h4>Opción C — Solo comisión (afiliado)</h4>
+    <p>Sin canje inicial. Le damos código único y 15% de comisión por venta. Para referentes grandes que ya tienen sus productos.</p>
+
+    <h4>Opción D — Contenido pago</h4>
+    <p>Le pagamos honorarios fijos por 1 mes de contenido (X posteos + Y stories). Solo para referentes muy grandes con alto ROI comprobado.</p>
+  </div>
+
+  <h3>🔍 Dónde encontrarlos</h3>
+  <div class="grid-2">
+    <div class="card info">
+      <h4>Instagram</h4>
+      <p>Hashtags <b>#huertaargentina #campoargentino #vidaenelcampo #agriculturaurbana #huertaencasa #hidroponia</b>. Ver cuentas con 5k-100k.</p>
+    </div>
+    <div class="card info">
+      <h4>YouTube</h4>
+      <p>Buscar "huerta orgánica argentina", "vida rural", "agricultura urbana". Revisar canales con 10k+ suscriptores.</p>
+    </div>
+    <div class="card info">
+      <h4>TikTok</h4>
+      <p>Contenido de campo, cocina, sustentabilidad, decoración con plantas. Muy joven, muy escalable.</p>
+    </div>
+    <div class="card info">
+      <h4>Radio y TV locales</h4>
+      <p>Programas de campo (LT8 Rosario, radios provinciales). Contactar productores.</p>
+    </div>
+  </div>
+
+  <h3>💬 Mensaje inicial a referente</h3>
+  <div class="msg">
+<button class="copy-btn" onclick="copiar(this)">📋 Copiar</button>Hola [NOMBRE]! Soy Cata de Acrule Hidroponía. Sigo tu cuenta hace tiempo y me encanta el contenido que hacés sobre [huerta/campo/vida rural/etc].
+
+Te escribo porque creo que podría haber una colaboración muy natural entre lo que hacés y lo que fabricamos: huertas hidropónicas para hogar, con capacitación completa. La idea es que tu audiencia pueda cultivar sus propios alimentos en casa, sin importar el espacio.
+
+Tengo 3 formas de armar la colaboración (canje puro, canje + código de descuento con comisión, o solo afiliación con comisión). Podemos ver cuál te sirve más.
+
+¿Te interesa que te cuente en detalle? Quedo atenta.</div>
+
+  <h3>🛡️ Objeciones frecuentes</h3>
+  <div class="obj">
+    <div class="q">"No hago colaboraciones"</div>
+    <div class="a">"Perfecto, entiendo. ¿Te dejo la info por si en el futuro cambia algo? Igual me encantó tu contenido, seguí así."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"¿Cuánto pagan?"</div>
+    <div class="a">"Depende del formato que elijas. Con canje + código, ganás por cada venta. Contame qué te sirve más y armamos algo a medida."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"Mandame el producto y veo si lo posteo"</div>
+    <div class="a">"Sí, hacemos canje pero con compromiso mínimo: 1 reel + 3 stories. Sin eso no podemos mandar. ¿Te sirve así?"</div>
+  </div>
+  <div class="obj">
+    <div class="q">"Necesito ver el producto primero"</div>
+    <div class="a">"Te mando video y catálogo. Si te convence, armamos la colab. Si no, sin drama."</div>
+  </div>
+</section>
+
+<!-- ================= RUTINA ================= -->
+<section id="rutina">
+  <h2>📅 Rutina diaria de Cata (100% remota)</h2>
+  <p class="lead">Trabajo desde casa/oficina. 6-7 horas de dedicación por día.</p>
+
+  <div class="card">
+    <h4>🌅 9:00 - 10:00 — Preparación</h4>
+    <ul>
+      <li>Abrir el <b>Panel Cata</b>. Ver los 10 nuevos leads del día (viene solo el agente).</li>
+      <li>Revisar respuestas de ayer en WhatsApp e Instagram.</li>
+      <li>Priorizar leads calientes (Interesados, Respondieron).</li>
+    </ul>
+
+    <h4>💬 10:00 - 12:30 — Prospección viveros</h4>
+    <ul>
+      <li>Mandar los <b>10 mensajes iniciales de viveros del día</b> (del dashboard).</li>
+      <li>3-5 minutos entre mensaje y mensaje. Ir marcando "Contactado" en cada uno.</li>
+      <li>Personalizar con el nombre del vivero antes de mandar.</li>
+    </ul>
+
+    <h4>🍽️ 12:30 - 14:00 — Restaurantes o Colaboraciones</h4>
+    <ul>
+      <li><b>Lunes y Miércoles:</b> Prospectar 3-5 restaurantes (buscar en IG por hashtag, mandar mensaje).</li>
+      <li><b>Martes y Jueves:</b> Prospectar 3-5 referentes/colaboraciones.</li>
+      <li><b>Viernes:</b> Follow-ups + preparación de la semana.</li>
+    </ul>
+
+    <h4>📞 14:30 - 17:00 — Respuestas + videollamadas</h4>
+    <ul>
+      <li>Responder a los que contestaron.</li>
+      <li>Videollamadas agendadas (restaurantes / referentes / viveros interesados).</li>
+      <li>Mandar catálogo, videos, propuestas por WhatsApp.</li>
+    </ul>
+
+    <h4>🔄 17:00 - 17:30 — Follow-ups</h4>
+    <ul>
+      <li>Segundo toque a leads sin respuesta hace 3-5 días.</li>
+      <li>Recordatorio a los que quedaron en pensar/consultar.</li>
+    </ul>
+
+    <h4>📝 17:30 - 18:00 — Cierre del día</h4>
+    <ul>
+      <li>Actualizar estados en el dashboard.</li>
+      <li>Mandar a Mariano resumen: <b>contactados / respondieron / videollamadas hechas / cierres</b>.</li>
+    </ul>
+  </div>
+
+  <h3>🎯 Metas semanales</h3>
+  <div class="kpi-grid">
+    <div class="kpi"><span class="n">50</span><span class="l">Viveros nuevos</span></div>
+    <div class="kpi"><span class="n">15</span><span class="l">Restaurantes nuevos</span></div>
+    <div class="kpi"><span class="n">5</span><span class="l">Colaboraciones nuevas</span></div>
+    <div class="kpi"><span class="n">3</span><span class="l">Cierres esperados</span></div>
+  </div>
+
+  <h3>⏰ Límites importantes</h3>
+  <div class="card warn">
+    <ul>
+      <li><b>Máximo 20 mensajes/día por WhatsApp</b> desde el mismo número (evitar bloqueo).</li>
+      <li><b>Máximo 30 DMs/día por Instagram</b> desde la cuenta business (evitar shadowban).</li>
+      <li><b>No contactar después de las 21hs</b>.</li>
+      <li><b>Domingo libre.</b></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= MATERIALES ================= -->
+<section id="materiales">
+  <h2>📎 Materiales de venta</h2>
+  <p class="lead">Todo lo que Cata usa para presentar el producto. Reemplazá los slots vacíos arrastrando el archivo a la carpeta <b>playbook_cata/media/</b> y renombrando según indicado.</p>
+
+  <div class="card info">
+    <h4>📁 Dónde poner los archivos</h4>
+    <p>Ruta local en el mac: <code>Desktop/Claude code/Pospectador mayoristas/playbook_cata/media/</code></p>
+    <p>Nombres esperados:</p>
+    <ul>
+      <li><code>mini_huerta.jpg</code> — foto del producto mini</li>
+      <li><code>huerta_12.jpg</code> — foto de la huerta de 12 plantas</li>
+      <li><code>huerta_luces.jpg</code> — foto de la huerta con luces (restaurantes)</li>
+      <li><code>video_producto.mp4</code> — video 30 seg del producto</li>
+      <li><code>video_testimonio.mp4</code> — testimonio Vivero Agustín u otro cliente</li>
+      <li><code>catalogo.pdf</code> — catálogo con precios público</li>
+      <li><code>lista_mayorista.pdf</code> — precios mayoristas viveros</li>
+      <li><code>propuesta_restaurantes.pdf</code> — propuesta comercial + programa QP</li>
+    </ul>
+  </div>
+
+  <h3>🖼️ Producto — Mini huerta</h3>
+  <div class="grid-3">
+    <div class="media-slot" id="slot-mini_huerta">
+      <div>📷 mini_huerta.jpg</div>
+      <div style="font-size:11px;margin-top:6px;">Poner en /media/</div>
+    </div>
+    <div class="media-slot" id="slot-huerta_12">
+      <div>📷 huerta_12.jpg</div>
+      <div style="font-size:11px;margin-top:6px;">Poner en /media/</div>
+    </div>
+    <div class="media-slot" id="slot-huerta_luces">
+      <div>📷 huerta_luces.jpg</div>
+      <div style="font-size:11px;margin-top:6px;">Poner en /media/</div>
+    </div>
+  </div>
+
+  <h3>🎥 Videos</h3>
+  <div class="grid-2">
+    <div class="media-slot" id="slot-video_producto">
+      <div>🎥 video_producto.mp4</div>
+      <div style="font-size:11px;margin-top:6px;">Video 30 seg del producto</div>
+    </div>
+    <div class="media-slot" id="slot-video_testimonio">
+      <div>🎥 video_testimonio.mp4</div>
+      <div style="font-size:11px;margin-top:6px;">Testimonio de cliente</div>
+    </div>
+  </div>
+
+  <h3>📄 PDFs comerciales</h3>
+  <ul>
+    <li><a id="link-catalogo" href="media/catalogo.pdf" target="_blank">📄 Catálogo con precios público</a></li>
+    <li><a id="link-lista_mayorista" href="media/lista_mayorista.pdf" target="_blank">📄 Lista de precios mayorista (viveros)</a></li>
+    <li><a id="link-propuesta_restaurantes" href="media/propuesta_restaurantes.pdf" target="_blank">📄 Propuesta comercial restaurantes + programa QP</a></li>
+  </ul>
+
+  <div class="card warn">
+    <h4>❌ Cosas que Cata NUNCA debe hacer</h4>
+    <ul>
+      <li>Inventar cosas sobre el producto. Ante duda: "te averiguo y te confirmo".</li>
+      <li>Prometer plazos de entrega sin confirmar stock con Mariano.</li>
+      <li>Dar descuentos por afuera de la política.</li>
+      <li>Hablar mal de competidores.</li>
+      <li>Contactar al mismo lead más de 3 veces sin respuesta.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= KPIS ================= -->
+<section id="kpis">
+  <h2>📊 Métricas y KPIs</h2>
+  <p class="lead">Lo que se mide, mejora. Reporte diario de Cata a Mariano.</p>
+
+  <h3>🎯 KPIs esperados por segmento</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>Segmento</th><th>Contacto/día</th><th>Tasa respuesta</th><th>Tasa cierre</th></tr></thead>
+      <tbody>
+        <tr><td>🌱 Viveros</td><td>10</td><td>25-35%</td><td>5-8%</td></tr>
+        <tr><td>🍽️ Restaurantes</td><td>3-5</td><td>20-30%</td><td>3-5%</td></tr>
+        <tr><td>🤝 Colaboraciones</td><td>2-3</td><td>15-25%</td><td>10-15%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>📈 Metas mensuales</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>Métrica</th><th>Mes 1</th><th>Mes 3</th></tr></thead>
+      <tbody>
+        <tr><td>Viveros contactados</td><td>200</td><td>250</td></tr>
+        <tr><td>Restaurantes contactados</td><td>60</td><td>80</td></tr>
+        <tr><td>Referentes contactados</td><td>15</td><td>20</td></tr>
+        <tr><td>Videollamadas hechas</td><td>15</td><td>30</td></tr>
+        <tr><td>Cierres viveros</td><td>3</td><td>8</td></tr>
+        <tr><td>Cierres restaurantes</td><td>1</td><td>3</td></tr>
+        <tr><td>Colaboraciones activas</td><td>2</td><td>5</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>📝 Plantilla de reporte diario</h3>
+  <div class="msg">
+<button class="copy-btn" onclick="copiar(this)">📋 Copiar plantilla</button>Reporte del [FECHA]
+
+📊 Prospección hoy:
+- Viveros contactados: [X]
+- Restaurantes: [X]
+- Colaboraciones: [X]
+
+💬 Respuestas recibidas: [X]
+- Positivas: [X] | Negativas: [X]
+
+📞 Videollamadas: [X]
+
+⭐ Leads calientes:
+- [Nombre] - [Estado]
+
+🏆 Cierres del día: [X]
+
+🧠 Aprendizajes:
+[Qué funcionó / qué no]
+
+📅 Plan mañana:
+[Prioridades]</div>
+</section>
+
+<!-- ================= OBJECIONES ================= -->
+<section id="objeciones">
+  <h2>🛡️ Manual de objeciones</h2>
+  <p class="lead">Estudiá estas para responder sin trabarte.</p>
+
+  <h3>Genéricas (todos los segmentos)</h3>
+  <div class="obj">
+    <div class="q">"No me interesa"</div>
+    <div class="a">"Entendido, gracias por el tiempo. Cualquier cosa quedamos por acá. Buen día." <i>(nunca insistir).</i></div>
+  </div>
+  <div class="obj">
+    <div class="q">"Ahora no puedo hablar"</div>
+    <div class="a">"Sin problema. ¿Cuándo te viene bien? Me acomodo a tu horario."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"Mandame info por escrito"</div>
+    <div class="a">"Perfecto. Te mando ahora. ¿Te sirve que te reescriba el [día] para responder dudas?"</div>
+  </div>
+  <div class="obj">
+    <div class="q">"¿Cómo conseguiste mi contacto?"</div>
+    <div class="a">"Vi tu Instagram / Google. Prospectamos negocios que creemos que pueden estar interesados. Si preferís no ser contactado, avisame."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"Voy a pensarlo"</div>
+    <div class="a">"Buenísimo. ¿Qué te queda por definir? Así te ayudo a resolver dudas. Si no, te llamo el [día]."</div>
+  </div>
+
+  <h3>Precio</h3>
+  <div class="obj">
+    <div class="q">"Es caro"</div>
+    <div class="a">"¿Comparado con qué? Nuestro precio incluye [X]. Si no cierra, tenemos [alternativa]. ¿Cuál te sirve más?"</div>
+  </div>
+  <div class="obj">
+    <div class="q">"No tengo presupuesto ahora"</div>
+    <div class="a">"Entiendo. ¿Cuándo te vendría bien retomarlo?"</div>
+  </div>
+
+  <h3>Confianza</h3>
+  <div class="obj">
+    <div class="q">"No los conozco"</div>
+    <div class="a">"Somos Acrule, fabricamos desde hace X años. Ya trabajamos con Vivero Agustín, Aires de Cultivo. Podés verificar en @acrulehidroponia."</div>
+  </div>
+  <div class="obj">
+    <div class="q">"¿Y si me estafan?"</div>
+    <div class="a">"Trabajamos con factura, garantía por escrito, y podés ver referencias reales. ¿Querés el contacto de un cliente actual?"</div>
+  </div>
+</section>
+
+</main>
+
+<script>
+  // ==== DATA (se actualiza cuando corre el agente diario) ====
+  const EMBEDDED_LEADS = {"updated_at": "2026-07-08", "next_batch_date": "2026-07-09", "total": 20, "leads": [{"id": 1, "nombre": "Vivero Higa", "direccion": "San Martín 1175, Rosario Centro", "instagram": "viverohiga", "whatsapp": "+543414214171", "calificacion": "Alta", "motivo": "Vivero céntrico consolidado, IG activo (Higa Plantas), venta minorista/insumos, potencial revendedor", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-04-23", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Higa: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 2, "nombre": "Vivero Cafe Begonia", "direccion": "Alvear 1071, Rosario Centro", "instagram": "vivero.begoniarosario", "whatsapp": "", "calificacion": "Alta", "motivo": "26K seguidores IG, vivero+café con alto flujo, público consumidor de plantas indoor/outdoor", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-04-23", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Cafe Begonia: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 3, "nombre": "Rosario Nativas", "direccion": "San Juan 5014, Rosario", "instagram": "rosarionativas", "whatsapp": "+5493412636960", "calificacion": "Alta", "motivo": "19K seguidores, vivero+paisajismo activo, clientela premium jardines", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-04-23", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Rosario Nativas: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 4, "nombre": "Vivero Diseño Verde", "direccion": "Presidente Roca 302, Rosario Centro", "instagram": "", "whatsapp": "+543414491751", "calificacion": "Media", "motivo": "Vivero céntrico verificado en guías, sin IG confirmado pero contacto directo", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-04-23", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Diseño Verde: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 5, "nombre": "Vivero Gold Garden", "direccion": "Av. Eva Perón 7822, Fisherton, Rosario", "instagram": "", "whatsapp": "", "calificacion": "Media", "motivo": "Vivero grande de Fisherton con FB activo, zona objetivo", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-04-23", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Gold Garden: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 6, "nombre": "Vivero Lomas de Fisherton", "direccion": "Juan J. Paso 7567, Fisherton, Rosario", "instagram": "", "whatsapp": "+543414514797", "calificacion": "Media", "motivo": "Vivero establecido en Fisherton", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-04-23", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Lomas de Fisherton: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 7, "nombre": "Vivero Terra Funes", "direccion": "San José 2090, Funes", "instagram": "viveroterrafunes", "whatsapp": "+543413081120", "calificacion": "Alta", "motivo": "Vivero+parquizaciones en Funes con IG y FB activos", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-04-23", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Terra Funes: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 8, "nombre": "Vivero Los Aljibes", "direccion": "Galindo 3044, Funes", "instagram": "losaljibes.vivero", "whatsapp": "", "calificacion": "Alta", "motivo": "Manejado por Ing. Agrónoma Andrea, IG activo 2K+ seguidores, perfil profesional ideal", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-04-23", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Los Aljibes: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 9, "nombre": "Vivero Timbo Funes", "direccion": "Funes, Santa Fe", "instagram": "viverotimbofunes", "whatsapp": "", "calificacion": "Media", "motivo": "Vivero de Funes con IG activo", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-04-23", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Timbo Funes: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 10, "nombre": "Vivero San Sebastián", "direccion": "San Sebastián 163, Roldán", "instagram": "", "whatsapp": "", "calificacion": "Alta", "motivo": "Vivero Roldán con FB activo, ofrece plantines/aromáticas/insumos", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-04-23", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero San Sebastián: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 11, "nombre": "Vivero La Oruguita (Plantas Nativas Rosario)", "direccion": "Provincias Unidas 150, Echesortu, Rosario", "instagram": "nativasrosario", "whatsapp": "", "calificacion": "Alta", "motivo": "IG activo de plantas nativas para mariposas/polinizadores en Echesortu (zona objetivo), proyecto familiar, revende plantas", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-07-08", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero La Oruguita (Plantas Nativas Rosario): vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 12, "nombre": "Viveromania", "direccion": "Pasco 7186, Rosario", "instagram": "viveromania", "whatsapp": "", "calificacion": "Alta", "motivo": "Vivero con showroom + tienda online (viveromania.com.ar), IG activo 'Plantas y Macetas', envíos en Rosario", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-07-08", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Viveromania: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 13, "nombre": "Vivero del Golf", "direccion": "Av. Jorge Newbery 9320, Fisherton, Rosario", "instagram": "viverodelgolf", "whatsapp": "+543414224649", "calificacion": "Alta", "motivo": "Vivero grande camino a Funes/Fisherton (zona objetivo), IG y FB activos, comercializa plantas e insumos de jardín", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-07-08", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero del Golf: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 14, "nombre": "Vivero Naranjo en Flor", "direccion": "Dieciséis de Enero 8628, Rosario", "instagram": "vivero_naranjo_en_flor", "whatsapp": "+5493413019033", "calificacion": "Alta", "motivo": "Vivero y deco con web propia, IG activo, WhatsApp verificado, amplia variedad de plantas e insumos", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-07-08", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Naranjo en Flor: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 15, "nombre": "Florería y Vivero El Ángel", "direccion": "Gálvez 040, Roldán", "instagram": "elangel_viveroroldan", "whatsapp": "+5493413250549", "calificacion": "Alta", "motivo": "Vivero+florería en Roldán (zona objetivo) con IG activo, buena reputación 4.3, revende plantas y deco", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-07-08", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Florería y Vivero El Ángel: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 16, "nombre": "Vivero Jardín (Junco)", "direccion": "Roldán, Santa Fe", "instagram": "jardinroldanjunco", "whatsapp": "", "calificacion": "Media", "motivo": "Vivero de Roldán con IG activo, zona objetivo", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-07-08", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Jardín (Junco): vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 17, "nombre": "Vivero Zona Norte", "direccion": "Zona Norte, Rosario", "instagram": "viverorosarionorte", "whatsapp": "", "calificacion": "Alta", "motivo": "Vivero mayorista y minorista con IG activo, ofrece mantenimiento y armado de jardines con envío — perfil de reventa ideal", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-07-08", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Zona Norte: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 18, "nombre": "Vivero Isla Verde VIP", "direccion": "Rosario", "instagram": "islaverdevip", "whatsapp": "", "calificacion": "Media", "motivo": "Vivero de Rosario con IG activo, venta de plantas", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-07-08", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Isla Verde VIP: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 19, "nombre": "Vivero Paraíso Rosario", "direccion": "Rosario", "instagram": "viveroparaiso_rosario", "whatsapp": "", "calificacion": "Media", "motivo": "Vivero de Rosario con IG activo (@viveroparaiso_rosario)", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-07-08", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Paraíso Rosario: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}, {"id": 20, "nombre": "Vriksa", "direccion": "Rosario", "instagram": "", "whatsapp": "", "calificacion": "Media", "motivo": "Vivero físico + tienda online (vriksa.com.ar), plantas interior/exterior, árboles y suculentas; sin IG/tel confirmado", "estado": "Sin contactar", "fecha_contacto": null, "fecha_agregado": "2026-07-08", "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vriksa: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱", "notas": ""}]};
+  const LEADS_DATA_URL = 'data/leads.json';
+  const STORAGE_KEY = 'acrule_leads_estado_v2';
+
+  // ==== NAV ====
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.dataset.target;
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(target).classList.add('active');
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      window.scrollTo(0, 0);
+      if (target === 'dashboard') cargarLeads();
+    });
+  });
+
+  // ==== COPY BUTTONS (mensajes generales) ====
+  function copiar(btn) {
+    const msg = btn.parentElement;
+    const text = msg.textContent.replace('📋 Copiar','').replace('📋 Copiar plantilla','').trim();
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = '✅ Copiado!';
+      btn.classList.add('ok');
+      setTimeout(() => { btn.textContent = orig; btn.classList.remove('ok'); }, 1500);
+    });
+  }
+
+  // ==== LEADS DASHBOARD ====
+  let allLeads = [];
+  let localEstados = {};
+  let filtroActual = 'todos';
+  let busquedaActual = '';
+
+  function cargarEstados() {
+    try { localEstados = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+    catch(e) { localEstados = {}; }
+  }
+
+  function guardarEstados() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(localEstados));
+  }
+
+  async function cargarLeads() {
+    cargarEstados();
+    try {
+      const res = await fetch(LEADS_DATA_URL);
+      const data = await res.json();
+      allLeads = data.leads || [];
+      const status = document.getElementById('dash-status');
+      if (data.updated_at) {
+        status.innerHTML = `Última actualización: <b>${data.updated_at}</b> · ${allLeads.length} leads cargados. Próxima búsqueda: <b>${data.next_batch_date || 'próximo día hábil'}</b>`;
+      }
+      renderLeads();
+    } catch(e) {
+      // Fallback: usar datos embebidos si fetch falla (file://)
+      if (typeof EMBEDDED_LEADS !== 'undefined') {
+        allLeads = EMBEDDED_LEADS.leads || [];
+        document.getElementById('dash-status').innerHTML = `📦 ${allLeads.length} leads cargados (modo offline)`;
+        renderLeads();
+      } else {
+        document.getElementById('dash-status').innerHTML = '⚠️ No se pudieron cargar los leads. Verificá que exista <code>data/leads.json</code> o abrí la página con un servidor local.';
+      }
+    }
+  }
+
+  function renderLeads() {
+    const container = document.getElementById('leads-container');
+    container.innerHTML = '';
+
+    // Aplicar estado local a cada lead
+    const leadsConEstado = allLeads.map(l => ({
+      ...l,
+      estado: localEstados[l.id]?.estado || l.estado || 'Sin contactar',
+      fecha_contacto: localEstados[l.id]?.fecha_contacto || l.fecha_contacto || null,
+    }));
+
+    // Estadísticas
+    const total = leadsConEstado.length;
+    const sin = leadsConEstado.filter(l => l.estado === 'Sin contactar').length;
+    const contactado = leadsConEstado.filter(l => l.estado === 'Contactado').length;
+    const respondio = leadsConEstado.filter(l => ['Respondió','Interesado'].includes(l.estado)).length;
+    const cliente = leadsConEstado.filter(l => l.estado === 'Cliente').length;
+    document.getElementById('kpi-total').textContent = total;
+    document.getElementById('kpi-sin').textContent = sin;
+    document.getElementById('kpi-contactado').textContent = contactado;
+    document.getElementById('kpi-respondio').textContent = respondio;
+    document.getElementById('kpi-cliente').textContent = cliente;
+    document.getElementById('mini-total').textContent = total;
+
+    // Filtrar
+    let filtrados = leadsConEstado;
+    if (filtroActual !== 'todos') filtrados = filtrados.filter(l => l.estado === filtroActual);
+    if (busquedaActual) {
+      const q = busquedaActual.toLowerCase();
+      filtrados = filtrados.filter(l => (l.nombre || '').toLowerCase().includes(q));
+    }
+
+    if (filtrados.length === 0) {
+      container.innerHTML = '<div class="empty"><h3>Sin leads aún</h3><p>El agente diario carga 10 viveros nuevos cada mañana de lunes a viernes. Volvé mañana o pasado si estás empezando.</p></div>';
+      return;
+    }
+
+    // Ordenar: Interesado > Respondió > Sin contactar > Contactado > resto
+    const ord = {'Interesado':0,'Respondió':1,'Sin contactar':2,'Contactado':3,'Cliente':4,'No interesado':5};
+    filtrados.sort((a,b) => (ord[a.estado] ?? 9) - (ord[b.estado] ?? 9));
+
+    filtrados.forEach(lead => {
+      const card = document.createElement('div');
+      const estadoClass = lead.estado.toLowerCase().replace(' ','-').replace('ó','o').replace('í','i');
+      card.className = `lead-card ${estadoClass}`;
+
+      const wa = (lead.whatsapp || '').replace(/\D/g,'');
+      const ig = (lead.instagram || '').replace('@','');
+      const msg = lead.mensaje || generarMensaje(lead.nombre);
+      const waLink = wa ? `https://wa.me/${wa}?text=${encodeURIComponent(msg)}` : null;
+      const igLink = ig && ig !== '-' ? `https://instagram.com/${ig}` : null;
+      const califBadge = lead.calificacion ? `<span class="badge ${lead.calificacion === 'Alta' ? 'alta' : 'media'}">${lead.calificacion}</span>` : '';
+
+      card.innerHTML = `
+        <div class="lead-head">
+          <span class="lead-num">#${lead.id}</span>
+          <span class="lead-name">${escape(lead.nombre)}</span>
+          ${califBadge}
+          <span class="badge info">${escape(lead.estado)}</span>
+        </div>
+        <div class="lead-meta">
+          📍 ${escape(lead.direccion || 'Rosario')}
+          ${ig && ig !== '-' ? ` · <a href="${igLink}" target="_blank">@${ig}</a>` : ''}
+          ${wa ? ` · 📱 +${wa}` : ''}
+        </div>
+        <div class="lead-msg" data-msg-id="${lead.id}">${escape(msg)}</div>
+        <div class="lead-actions">
+          <button class="btn btn-copy" onclick="copiarMensaje(${lead.id}, this)">📋 Copiar mensaje</button>
+          ${waLink ? `<a class="btn btn-wa" href="${waLink}" target="_blank" onclick="marcarContactado(${lead.id})">💚 WhatsApp</a>` : ''}
+          ${igLink ? `<a class="btn btn-ig" href="${igLink}" target="_blank" onclick="marcarContactado(${lead.id})">📸 Instagram</a>` : ''}
+          <select class="estado-select" onchange="cambiarEstado(${lead.id}, this.value)">
+            <option value="Sin contactar" ${lead.estado==='Sin contactar'?'selected':''}>⏳ Sin contactar</option>
+            <option value="Contactado" ${lead.estado==='Contactado'?'selected':''}>✉️ Contactado</option>
+            <option value="Respondió" ${lead.estado==='Respondió'?'selected':''}>💬 Respondió</option>
+            <option value="Interesado" ${lead.estado==='Interesado'?'selected':''}>⭐ Interesado</option>
+            <option value="Cliente" ${lead.estado==='Cliente'?'selected':''}>🏆 Cliente</option>
+            <option value="No interesado" ${lead.estado==='No interesado'?'selected':''}>❌ No interesado</option>
+          </select>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function escape(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function generarMensaje(nombre) {
+    return `Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a ${nombre}: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱`;
+  }
+
+  function copiarMensaje(id, btn) {
+    const msgEl = document.querySelector(`[data-msg-id="${id}"]`);
+    if (!msgEl) return;
+    navigator.clipboard.writeText(msgEl.textContent).then(() => {
+      btn.textContent = '✅ Copiado!';
+      btn.classList.add('ok');
+      setTimeout(() => { btn.textContent = '📋 Copiar mensaje'; btn.classList.remove('ok'); }, 1500);
+    });
+  }
+
+  function marcarContactado(id) {
+    setTimeout(() => {
+      if (!localEstados[id] || localEstados[id].estado === 'Sin contactar') {
+        cambiarEstado(id, 'Contactado');
+      }
+    }, 3000);
+  }
+
+  function cambiarEstado(id, nuevo) {
+    const hoy = new Date().toISOString().split('T')[0];
+    localEstados[id] = { estado: nuevo, fecha_contacto: hoy };
+    guardarEstados();
+    renderLeads();
+  }
+
+  function exportarProgreso() {
+    const blob = new Blob([JSON.stringify(localEstados, null, 2)], {type:'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `progreso_cata_${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+  }
+
+  // Filtros
+  document.querySelectorAll('.filtro-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filtroActual = btn.dataset.filtro;
+      renderLeads();
+    });
+  });
+  document.getElementById('busqueda').addEventListener('input', e => {
+    busquedaActual = e.target.value;
+    renderLeads();
+  });
+
+  // ==== MEDIA CHECK ====
+  const mediaFiles = ['mini_huerta.jpg','huerta_12.jpg','huerta_luces.jpg','video_producto.mp4','video_testimonio.mp4'];
+  mediaFiles.forEach(f => {
+    const slotId = 'slot-' + f.split('.')[0];
+    const slot = document.getElementById(slotId);
+    if (!slot) return;
+    const ext = f.split('.').pop();
+    const url = `media/${f}`;
+    if (['jpg','png','jpeg','webp'].includes(ext)) {
+      const img = new Image();
+      img.onload = () => { slot.innerHTML = `<img src="${url}" alt="${f}">`; slot.classList.add('hasfile'); };
+      img.src = url;
+    } else if (ext === 'mp4') {
+      fetch(url, {method:'HEAD'}).then(r => {
+        if (r.ok) { slot.innerHTML = `<video src="${url}" controls></video>`; slot.classList.add('hasfile'); }
+      }).catch(()=>{});
+    }
+  });
+
+  // ==== INIT ====
+  cargarLeads();
+</script>
+</body>
+</html>
