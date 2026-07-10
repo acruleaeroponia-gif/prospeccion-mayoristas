@@ -19,6 +19,14 @@ Formato: `[x]` hecho · `[-]` no lo hago (con motivo) · `[ ]` pendiente · `OBS
 - [x] ESCALAR Fácil + cocina — HECHO — OBS: subí solo +15%, no +25%, por las dudas
 -->
 
+## 2026-07-10 — bitácora Meta
+- [x] ESCALAR 'AD1' (ADSET1 / onlypocket) — HECHO
+- [x] ITERAR 'video 3' (Innovación + Cocina / CBO Mini huerta led) — HECHO (refresco del ganador de cocina)
+- [x] AMPLIAR 'RES-02 · Collage +3.000 familias' (reseñas Iteracion / CBO - MINI HUERTA - ABIERTO) — HECHO (anti-fatiga)
+- [x] ESCALAR 'video 3 - Copia 2' / 'video 5 - Copia 2' (La mejor huerta cualquier espacio / CBO Mini huerta led) — HECHO
+- [x] REACTIVAR 'estatico cocina' (Innovación + Cocina / CBO Mini huerta led) — HECHO
+- [-] ITERAR conjunto 'Test Huertas Semana 2' (TEST Ang ABO Huerta 12 24 32 2) — NO LO HAGO: en el TEST no se itera; el que gasta de más y no vende ni tiene carritos se APAGA. (Regla: iterar es solo para ganadores → CBO.)
+
 ## 2026-07-09 — bitácora Meta
 - [x] APAGAR conjunto 'Iteración Cocina' (CBO Mini huerta led) — HECHO. Cierra el ciclo: se mantuvo el 07/07 por 3 carritos, pero en 2 días no convirtió → afuera (la señal de carritos no se transformó en venta).
 - [x] ESCALAR 'AD1' (ADSET1 / onlypocket) — HECHO

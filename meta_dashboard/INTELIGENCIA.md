@@ -42,6 +42,9 @@ La iteración se hace con los **ANUNCIOS GANADORES de la campaña TEST**: se ite
 ### 🛒 SEÑAL DE CARRITOS antes de apagar (regla fija)
 No apagar por "0 ventas" a secas. Si el gasto es bajo (< ~$30k) **y hay carritos (add-to-cart ≥ 2-3)**, hay señal de que puede cerrar con más presupuesto/tiempo → NO apagar, darle budget. Apagar solo cuando: 0 ventas **+** gasto suficiente **+** SIN carritos (o CTR muy bajo). Los carritos son el indicador temprano de que el ángulo/creativo engancha aunque todavía no cierre (ej: 'Iteración Cocina' 07/07 — $28k, 0 ventas pero 3 carritos → se mantiene).
 
+### 🚫 En el TEST no se ITERA (regla fija)
+Nunca ordenar "iterar" un conjunto/anuncio de la campaña de TEST. En el test solo hay dos salidas: **ganador → mover a la CBO 12 24 32 2 (+ iterar allá)** · **perdedor (gasta de más + no vende + sin carritos) → apagar.** El re-test de un ángulo perdedor se hace con un CREATIVO NUEVO dentro del batch de la semana siguiente (el "1 re-test con otro formato"), no iterando el anuncio del test. Iterar = solo sobre ganadores, y siempre en la CBO.
+
 ### 📐 ESTÁNDAR DE BRIEFS (obligatorio)
 Todo brief para Lucas (semanal, iteración, test o campaña nueva) se arma con la plantilla
 `meta_dashboard/briefs/PLANTILLA_BRIEF.md`. **Cada pieza SIEMPRE lleva los 4 campos:** 🎯 Objetivo ·
