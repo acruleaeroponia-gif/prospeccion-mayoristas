@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-07-10",
-  "next_batch_date": "2026-07-13",
-  "total": 40,
+  "next_batch_date": "2026-07-11",
+  "total": 43,
   "leads": [
     {
       "id": 1,
@@ -18,7 +18,8 @@
       "notas": "",
       "numero_verificado": "unverified",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 2,
@@ -35,7 +36,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 3,
@@ -52,7 +54,8 @@
       "notas": "",
       "numero_verificado": "unverified",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 4,
@@ -69,7 +72,8 @@
       "notas": "",
       "numero_verificado": "unverified",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 5,
@@ -86,7 +90,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 6,
@@ -103,7 +108,8 @@
       "notas": "",
       "numero_verificado": "unverified",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 7,
@@ -120,7 +126,8 @@
       "notas": "",
       "numero_verificado": "unverified",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 8,
@@ -137,7 +144,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 9,
@@ -154,7 +162,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 10,
@@ -171,7 +180,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 11,
@@ -188,7 +198,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 12,
@@ -205,7 +216,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 13,
@@ -222,7 +234,8 @@
       "notas": "",
       "numero_verificado": "unverified",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 14,
@@ -239,7 +252,8 @@
       "notas": "",
       "numero_verificado": "unverified",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 15,
@@ -256,7 +270,8 @@
       "notas": "",
       "numero_verificado": "unverified",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 16,
@@ -273,7 +288,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 17,
@@ -290,7 +306,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 18,
@@ -307,7 +324,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 19,
@@ -324,7 +342,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 20,
@@ -341,7 +360,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "whatsapp"
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 21,
@@ -357,8 +377,12 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Jardín de Aromas Rosario: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "",
       "numero_verificado": "verified",
-      "fuentes_numero": ["https://www.jardindearomas.com.ar/", "https://rincondelasflores.com.ar/floreria/jardin-de-aromas/"],
-      "canal_preferido": "whatsapp"
+      "fuentes_numero": [
+        "https://www.jardindearomas.com.ar/",
+        "https://rincondelasflores.com.ar/floreria/jardin-de-aromas/"
+      ],
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 22,
@@ -374,8 +398,12 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Bamboo Vivero: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "",
       "numero_verificado": "verified",
-      "fuentes_numero": ["https://www.yelp.com/biz/bamboo-vivero-rosario", "https://www.facebook.com/viverobamboo/"],
-      "canal_preferido": "whatsapp"
+      "fuentes_numero": [
+        "https://www.yelp.com/biz/bamboo-vivero-rosario",
+        "https://www.facebook.com/viverobamboo/"
+      ],
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 23,
@@ -391,8 +419,12 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero El Jardinero: vi tu local y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "",
       "numero_verificado": "verified",
-      "fuentes_numero": ["https://www.argentino.com.ar/vivero-el-jardinero-F1A0FC80019D1", "https://www.cylex.com.ar/rosario/vivero-el-jardinero-11188511.html"],
-      "canal_preferido": "whatsapp"
+      "fuentes_numero": [
+        "https://www.argentino.com.ar/vivero-el-jardinero-F1A0FC80019D1",
+        "https://www.cylex.com.ar/rosario/vivero-el-jardinero-11188511.html"
+      ],
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 24,
@@ -409,7 +441,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 25,
@@ -425,8 +458,11 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Agroecológico Rosario: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Número (0341 462-4827) aparece en 1 sola fuente — reconfirmar antes de llamar.",
       "numero_verificado": "unverified",
-      "fuentes_numero": ["https://www.instagram.com/viveroagroecologicotpprosario/"],
-      "canal_preferido": "instagram"
+      "fuentes_numero": [
+        "https://www.instagram.com/viveroagroecologicotpprosario/"
+      ],
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 26,
@@ -443,7 +479,8 @@
       "notas": "Growshop — buen canal de reventa. Teléfono publicado con prefijo +5411 (Buenos Aires), no confirmado para el local de Rosario.",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 27,
@@ -459,8 +496,11 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Parque Alegre: vi tu propuesta y me pareció que encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Número (0341 214-2760) aparece en 1 sola fuente (argentino.com.ar) — reconfirmar.",
       "numero_verificado": "unverified",
-      "fuentes_numero": ["https://www.argentino.com.ar/villa-gobernador-galvez/plantas+y+viveros"],
-      "canal_preferido": "instagram"
+      "fuentes_numero": [
+        "https://www.argentino.com.ar/villa-gobernador-galvez/plantas+y+viveros"
+      ],
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 28,
@@ -476,8 +516,11 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero de mi Tierra: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y arma mini jardines se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Número (0341 610-4535) aparece en 1 sola fuente — reconfirmar antes de llamar.",
       "numero_verificado": "unverified",
-      "fuentes_numero": ["https://www.facebook.com/p/Vivero-De-Mi-Tierra-100057663750516/"],
-      "canal_preferido": "instagram"
+      "fuentes_numero": [
+        "https://www.facebook.com/p/Vivero-De-Mi-Tierra-100057663750516/"
+      ],
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 29,
@@ -493,8 +536,11 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Vive Verde: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Número (341 228-3166) aparece en 1 sola fuente y el prefijo no es el típico de Rosario — reconfirmar.",
       "numero_verificado": "unverified",
-      "fuentes_numero": ["https://viveroviveverde.site/"],
-      "canal_preferido": "instagram"
+      "fuentes_numero": [
+        "https://viveroviveverde.site/"
+      ],
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 30,
@@ -511,7 +557,8 @@
       "notas": "",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 31,
@@ -527,8 +574,13 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Sannabis Growshop: vi que manejan insumos de cultivo y me pareció que la propuesta encaja perfecto — el público que cultiva se copa con una mini huerta hidropónica lista para usar.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Growshop — excelente canal de reventa para hidroponía. Tel/WhatsApp 341-2404556.",
       "numero_verificado": "verified",
-      "fuentes_numero": ["https://www.yelp.com.ar/biz/sannabis-rosario", "https://www.sannabis.com.ar/", "https://www.globuya.com/AR/Rosario/1554710248104056/Sannabis-Growshop"],
-      "canal_preferido": "whatsapp"
+      "fuentes_numero": [
+        "https://www.yelp.com.ar/biz/sannabis-rosario",
+        "https://www.sannabis.com.ar/",
+        "https://www.globuya.com/AR/Rosario/1554710248104056/Sannabis-Growshop"
+      ],
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 32,
@@ -544,8 +596,11 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Verde y Ambar: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que cultiva se copa con una mini huerta hidropónica.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Growshop. WhatsApp 341-319-2429 (fig. tel local +54 341 250-8757). Número en 1 fuente — reconfirmar.",
       "numero_verificado": "unverified",
-      "fuentes_numero": ["https://www.facebook.com/verdeyambarrosario/"],
-      "canal_preferido": "instagram"
+      "fuentes_numero": [
+        "https://www.facebook.com/verdeyambarrosario/"
+      ],
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 33,
@@ -562,7 +617,8 @@
       "notas": "Growshop. No se encontró teléfono confiable — contactar por IG/web.",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 34,
@@ -578,8 +634,11 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Hidroponia Rosario: manejan justo el mundo de la hidroponía y la huerta sustentable, así que una mini huerta lista para usar les puede sumar como producto terminado para revender.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Rubro hidroponía — encaje perfecto con Acrule. WhatsApp 341-259-0161 en 1 fuente — reconfirmar.",
       "numero_verificado": "unverified",
-      "fuentes_numero": ["https://hidroponiarosario.com/contact/"],
-      "canal_preferido": "instagram"
+      "fuentes_numero": [
+        "https://hidroponiarosario.com/contact/"
+      ],
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 35,
@@ -596,7 +655,8 @@
       "notas": "Growshop. No se encontró teléfono confiable — contactar por IG/web.",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 36,
@@ -612,8 +672,12 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Green Zone: vi que manejan accesorios de cultivo y me pareció que la propuesta encaja perfecto — el público que cultiva se copa con una mini huerta hidropónica.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Growshop. Tel 0341 15-211-0120 en directorios — reconfirmar antes de llamar.",
       "numero_verificado": "unverified",
-      "fuentes_numero": ["https://ar.polomap.com/rosario/4255", "https://www.argentino.com.ar/green-zone-grow-accesorios-para-cultivo-F120CC40012D145"],
-      "canal_preferido": "whatsapp"
+      "fuentes_numero": [
+        "https://ar.polomap.com/rosario/4255",
+        "https://www.argentino.com.ar/green-zone-grow-accesorios-para-cultivo-F120CC40012D145"
+      ],
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 37,
@@ -629,8 +693,11 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a El Capullo: vi que manejan cultivo y me pareció que la propuesta encaja perfecto — el público que cultiva se copa con una mini huerta hidropónica.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Growshop. Tel 341-367-4969 en 1 fuente (argentino.com.ar) — reconfirmar.",
       "numero_verificado": "unverified",
-      "fuentes_numero": ["https://www.argentino.com.ar/el-capullo-grow-shop-F120CC4011BD144"],
-      "canal_preferido": "whatsapp"
+      "fuentes_numero": [
+        "https://www.argentino.com.ar/el-capullo-grow-shop-F120CC4011BD144"
+      ],
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
     },
     {
       "id": 38,
@@ -646,8 +713,11 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Tierra: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Tel 341-635-2032 aparece solo en el posteo de Facebook — reconfirmar.",
       "numero_verificado": "unverified",
-      "fuentes_numero": ["https://www.facebook.com/viverotierrarosario/"],
-      "canal_preferido": "instagram"
+      "fuentes_numero": [
+        "https://www.facebook.com/viverotierrarosario/"
+      ],
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 39,
@@ -664,7 +734,8 @@
       "notas": "No se encontró teléfono confiable — contactar por IG.",
       "numero_verificado": "no_number",
       "fuentes_numero": [],
-      "canal_preferido": "instagram"
+      "canal_preferido": "instagram",
+      "tipo": "vivero"
     },
     {
       "id": 40,
@@ -680,7 +751,74 @@
       "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Jade Vivero: vi tu local y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
       "notas": "Tel 341-447-0588 (línea fija) verificado en opendi + infoisinfo. Ojo: es fijo, quizá no reciba WhatsApp — probar llamado.",
       "numero_verificado": "verified",
-      "fuentes_numero": ["https://www.opendi.com.ar/rosario-santa-fe/19044.html", "https://rosario.infoisinfo-ar.com/ficha/jade-vivero/181758"],
+      "fuentes_numero": [
+        "https://www.opendi.com.ar/rosario-santa-fe/19044.html",
+        "https://rosario.infoisinfo-ar.com/ficha/jade-vivero/181758"
+      ],
+      "canal_preferido": "whatsapp",
+      "tipo": "vivero"
+    },
+    {
+      "id": 41,
+      "tipo": "restaurante",
+      "nombre": "Refinería",
+      "direccion": "Rawson 443, Barrio Refinería, Rosario",
+      "instagram": "refineriarestaurant",
+      "whatsapp": "+5493416951250",
+      "calificacion": "Alta",
+      "motivo": "Bistró de alta gama con cocina de producto, ingredientes de estación y ciclo mensual de chefs invitados; IG 37k. Chef Carlos Avalle. Referente premium de Rosario.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-10",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Refinería y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Chef: Carlos Avalle",
+      "numero_verificado": "verified",
+      "fuentes_numero": [
+        "https://www.instagram.com/refineriarestaurant/",
+        "https://www.lanacion.com.ar/lifestyle/un-restaurante-barrio-antonio-berni-pinto-cuadro-nid2243982/"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 42,
+      "tipo": "restaurante",
+      "nombre": "Ajoarriero",
+      "direccion": "Riccheri 301, Pichincha, Rosario",
+      "instagram": "ajoarriero_",
+      "whatsapp": "+543414384500",
+      "calificacion": "Alta",
+      "motivo": "Cocina de autor mediterránea-sudamericana en Pichincha, menús de pasos y coctelería de autor, ambiente íntimo premium. Chefs Pedro Jacobo y Belén Grandi.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-10",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Ajoarriero y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Chefs: Pedro Jacobo y Belén Grandi. Número no confirmado en 2 fuentes — verificar antes de mandar.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://www.instagram.com/ajoarriero_/",
+        "https://www.tripadvisor.com/Restaurant_Review-g312809-d2650131-Reviews-Ajoarriero-Rosario_Province_of_Santa_Fe_Litoral.html"
+      ],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 43,
+      "tipo": "restaurante",
+      "nombre": "Fausta Cocina",
+      "direccion": "Av. Cándido Carballo 148, Puerto Norte, Rosario",
+      "instagram": "faustacocina",
+      "whatsapp": "+543414362720",
+      "calificacion": "Alta",
+      "motivo": "Restaurante del Puerto Norte Design Hotel con vista al Paraná, propuesta gourmet foto-friendly en zona premium.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-10",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Fausta Cocina y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Ubicado en Puerto Norte Design Hotel",
+      "numero_verificado": "verified",
+      "fuentes_numero": [
+        "https://www.instagram.com/faustacocina/",
+        "https://www.puertonortehotel.com/"
+      ],
       "canal_preferido": "whatsapp"
     }
   ]
