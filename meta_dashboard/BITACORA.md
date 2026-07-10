@@ -19,6 +19,14 @@ Formato: `[x]` hecho · `[-]` no lo hago (con motivo) · `[ ]` pendiente · `OBS
 - [x] ESCALAR Fácil + cocina — HECHO — OBS: subí solo +15%, no +25%, por las dudas
 -->
 
+## 2026-07-09 — bitácora Meta
+- [x] APAGAR conjunto 'Iteración Cocina' (CBO Mini huerta led) — HECHO. Cierra el ciclo: se mantuvo el 07/07 por 3 carritos, pero en 2 días no convirtió → afuera (la señal de carritos no se transformó en venta).
+- [x] ESCALAR 'AD1' (ADSET1 / onlypocket) — HECHO
+- [x] REACTIVAR 'estatico cocina' (Innovación + Cocina / CBO Mini huerta led) — HECHO
+- [x] AMPLIAR 'RES-02 · Collage +3.000 familias' (reseñas Iteracion / CBO - MINI HUERTA - ABIERTO) — HECHO (anti-fatiga)
+- [x] ESCALAR 'video 3' (Innovación + Cocina / CBO Mini huerta led) — HECHO
+- [x] ESCALAR 'video 5 - Copia 2' (La mejor huerta cualquier espacio / CBO Mini huerta led) — HECHO
+
 ## 2026-07-07 — bitácora Meta
 - [-] APAGAR conjunto 'Iteración Cocina' (CBO Mini huerta led) — NO LO HAGO: 0 ventas pero desde el 1/7 solo gastó $28k y tiene **3 carritos** → hay señal, puede andar con más presupuesto. (Regla: no apagar si gasto bajo + hay carritos.)
 - [x] APAGAR 'RES-04 · Capturas de WhatsApp' (reseñas Iteracion / CBO - MINI HUERTA - ABIERTO) — HECHO (perdedor conocido, ROAS 0)
