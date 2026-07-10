@@ -42,6 +42,12 @@ La iteración se hace con los **ANUNCIOS GANADORES de la campaña TEST**: se ite
 ### 🛒 SEÑAL DE CARRITOS antes de apagar (regla fija)
 No apagar por "0 ventas" a secas. Si el gasto es bajo (< ~$30k) **y hay carritos (add-to-cart ≥ 2-3)**, hay señal de que puede cerrar con más presupuesto/tiempo → NO apagar, darle budget. Apagar solo cuando: 0 ventas **+** gasto suficiente **+** SIN carritos (o CTR muy bajo). Los carritos son el indicador temprano de que el ángulo/creativo engancha aunque todavía no cierre (ej: 'Iteración Cocina' 07/07 — $28k, 0 ventas pero 3 carritos → se mantiene).
 
+### 😴 PROCEDIMIENTO ANTI-FATIGA (cómo buscar audiencia NUEVA)
+Cuando un ganador sube de frecuencia (>3), la audiencia del conjunto se saturó. Quien define a quién le llega es el CONJUNTO, no el anuncio → para gente nueva hay que **abrir un conjunto nuevo**, no solo ampliar el mismo (ampliar el mismo conjunto NO trae gente nueva). Jugada = 2 palancas juntas:
+1. **Conjunto FRÍO nuevo** = duplicar el ganador a un conjunto nuevo con audiencia fresca: **Advantage+ Audience** (Meta busca gente nueva sola) o lookalike nuevo/broad, **excluyendo compradores 180d + engagers** para no repetir gente.
+2. **Ángulo nuevo** = sumar una variante del ganador con otro ángulo (entra a otro sub-segmento y resetea la fatiga del creativo).
+El conjunto nuevo abre el pool; el ángulo nuevo refresca el mensaje. Ampliar frecuencia/presupuesto del conjunto viejo NO resuelve fatiga.
+
 ### 🚫 En el TEST no se ITERA (regla fija)
 Nunca ordenar "iterar" un conjunto/anuncio de la campaña de TEST. En el test solo hay dos salidas: **ganador → mover a la CBO 12 24 32 2 (+ iterar allá)** · **perdedor (gasta de más + no vende + sin carritos) → apagar.** El re-test de un ángulo perdedor se hace con un CREATIVO NUEVO dentro del batch de la semana siguiente (el "1 re-test con otro formato"), no iterando el anuncio del test. Iterar = solo sobre ganadores, y siempre en la CBO.
 
