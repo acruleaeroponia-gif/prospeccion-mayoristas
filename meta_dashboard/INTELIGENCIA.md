@@ -48,6 +48,9 @@ Cuando un ganador sube de frecuencia (>3), la audiencia del conjunto se saturó.
 2. **Ángulo nuevo** = sumar una variante del ganador con otro ángulo (entra a otro sub-segmento y resetea la fatiga del creativo).
 El conjunto nuevo abre el pool; el ángulo nuevo refresca el mensaje. Ampliar frecuencia/presupuesto del conjunto viejo NO resuelve fatiga.
 
+### 🚀 ESTRUCTURAS DE ESCALADO (ver `meta_dashboard/ESTRUCTURAS_ESCALADO.md`)
+Para EXPLOTAR ganadores validados hay 5 estructuras: **onlypocket** (1 ganador, budget=CPA) · **Cost Cap** (cuenta floja, ventas a costo objetivo) · **Bid Cap** (ganador 4+ ventas, escalado con límites de puja) · **Blueprint** (ráfaga time-boxed) · **Deep Pocket** (4-5 ganadores con 10-15 ventas → romperla, CBO $100k/$200k día, Nº conjuntos = budget÷CPA). Todas: mismos ganadores por postID, mismo link, matar conjuntos perdedores al día 3, escalar duplicando. **Tarea del cerebro:** cuando se den las condiciones (ej. ≥4-5 ganadores 7d con buen ROAS+CPA), AVISAR qué estructura corresponde y con qué números — Mariano la crea en Ads Manager.
+
 ### 🚫 En el TEST no se ITERA (regla fija)
 Nunca ordenar "iterar" un conjunto/anuncio de la campaña de TEST. En el test solo hay dos salidas: **ganador → mover a la CBO 12 24 32 2 (+ iterar allá)** · **perdedor (gasta de más + no vende + sin carritos) → apagar.** El re-test de un ángulo perdedor se hace con un CREATIVO NUEVO dentro del batch de la semana siguiente (el "1 re-test con otro formato"), no iterando el anuncio del test. Iterar = solo sobre ganadores, y siempre en la CBO.
 
