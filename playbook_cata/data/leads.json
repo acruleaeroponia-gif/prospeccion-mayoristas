@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-10",
-  "next_batch_date": "2026-07-11",
-  "total": 43,
+  "updated_at": "2026-07-13",
+  "next_batch_date": "2026-07-14",
+  "total": 53,
   "leads": [
     {
       "id": 1,
@@ -818,6 +818,205 @@
       "fuentes_numero": [
         "https://www.instagram.com/faustacocina/",
         "https://www.puertonortehotel.com/"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 44,
+      "tipo": "vivero",
+      "nombre": "Terra Plant Shop",
+      "direccion": "Santiago 235, Rosario Centro",
+      "instagram": "terraviverorosario",
+      "whatsapp": "+543415212437",
+      "calificacion": "Alta",
+      "motivo": "Vivero/plant shop céntrico con 22K seguidores en IG, plantas de interior/exterior y decoración; público consumidor ideal para mini huerta. Teléfono verificado en 2 directorios.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-13",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Terra Plant Shop: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Tel fijo 0341 521-2437 — quizá no reciba WhatsApp, probar llamado o IG. 22K seguidores.",
+      "numero_verificado": "verified",
+      "fuentes_numero": [
+        "https://nicelocal.ar/rosario/shops/vivero_terra_rosario/",
+        "https://argentinafirm.com/santa-fe/vivero-terra-rosario-307577"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 45,
+      "tipo": "vivero",
+      "nombre": "Coba Vivero Diseño",
+      "direccion": "San Juan 5014, Rosario",
+      "instagram": "coba_vivero",
+      "whatsapp": "+543414382717",
+      "calificacion": "Alta",
+      "motivo": "Vivero con foco en diseño de espacios verdes e IG activo (@coba_vivero); clientela premium de jardinería/deco. Teléfono verificado en 2 fuentes.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-13",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Coba Vivero: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Tel fijo 0341 438-2717. Comparte zona con Rosario Nativas (San Juan al 5000).",
+      "numero_verificado": "verified",
+      "fuentes_numero": [
+        "https://empresasderosario.com/pagina/Coba-Vivero/",
+        "https://www.guiaurbana.com.ar/empresas/coba-vivero-rosario"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 46,
+      "tipo": "vivero",
+      "nombre": "Jardín El Ceibo",
+      "direccion": "Gral. Tomás de Iriarte 3847, Rosario",
+      "instagram": "jardinelceibo",
+      "whatsapp": "+543414540717",
+      "calificacion": "Alta",
+      "motivo": "Vivero y florería consolidado con web propia (elceibovivero.com.ar) e IG activo; amplia variedad de plantas y accesorios. Teléfono verificado en 3 directorios independientes.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-13",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Jardín El Ceibo: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Tel fijo 0341 454-0717 (1 directorio da 628-0950, minoritario). Vivero+florería.",
+      "numero_verificado": "verified",
+      "fuentes_numero": [
+        "https://ar.near-place.com/vivero-jardin-el-ceibo-iriarte-3847-rosario",
+        "https://ar.todosnegocios.com/vivero-jardin-el-ceibo-0341-454-0717",
+        "https://www.guiaurbana.com.ar/empresas/jardin-el-ceibo-rosario"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 47,
+      "tipo": "vivero",
+      "nombre": "Vivero Jardín Banci",
+      "direccion": "Roldán, Santa Fe",
+      "instagram": "viverojardinbanci",
+      "whatsapp": "+543414962491",
+      "calificacion": "Alta",
+      "motivo": "Vivero familiar en Roldán (zona objetivo) desde 1955, 4 generaciones, IG activo (3K+); plantas, frutales, aromáticas y accesorios. Número en 1 fuente explícita.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-13",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Jardín Banci: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Tel 0341 496-2491 (todosnegocios). Un origen alternativo da 546-3480 — reconfirmar antes de llamar.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://ar.todosnegocios.com/vivero-banci-0341-496-2491"
+      ],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 48,
+      "tipo": "vivero",
+      "nombre": "Vivero Garden (Pérez)",
+      "direccion": "Ruta 33 km 847, Pérez (Gran Rosario)",
+      "instagram": "viverogardenperez",
+      "whatsapp": "",
+      "calificacion": "Media",
+      "motivo": "Vivero sobre Ruta 33 en Pérez (Gran Rosario, zona objetivo), IG activo, atención diaria 8-18h; venta de plantas e insumos. Sin teléfono confirmable.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-13",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Garden: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "No se encontró teléfono confiable — contactar por IG.",
+      "numero_verificado": "no_number",
+      "fuentes_numero": [],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 49,
+      "tipo": "vivero",
+      "nombre": "Misión del Alma Vivero",
+      "direccion": "Funes, Santa Fe",
+      "instagram": "misiondelalmavivero",
+      "whatsapp": "",
+      "calificacion": "Media",
+      "motivo": "Vivero de Funes (zona objetivo) con IG activo; venta de plantas de interior y jardín. Sin teléfono confirmable en 2 fuentes.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-13",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Misión del Alma: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "No se encontró teléfono confiable — contactar por IG.",
+      "numero_verificado": "no_number",
+      "fuentes_numero": [],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 50,
+      "tipo": "vivero",
+      "nombre": "Vivero El Ceibo (Carrasco)",
+      "direccion": "Carrasco (Gran Rosario), Santa Fe",
+      "instagram": "elceibo_vivero",
+      "whatsapp": "",
+      "calificacion": "Media",
+      "motivo": "Vivero de la zona de Carrasco/Pérez (Gran Rosario) con fuerte presencia en redes (18K+ en FB) e IG activo; venta de plantas. Distinto de Jardín El Ceibo. Sin teléfono confirmable.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-13",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero El Ceibo: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "OJO: no confundir con Jardín El Ceibo (Iriarte 3847, Rosario). Este es @elceibo_vivero de Carrasco. Sin teléfono confiable — contactar por IG.",
+      "numero_verificado": "no_number",
+      "fuentes_numero": [],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 51,
+      "tipo": "restaurante",
+      "nombre": "Negre",
+      "direccion": "Güemes 2587, Rosario",
+      "instagram": "negrerestaurant",
+      "whatsapp": "+5493416470732",
+      "calificacion": "Alta",
+      "motivo": "Fine dining de cocina de producto con HUERTA PROPIA en terraza + verduras agroecológicas del programa Parques Huerta municipal; chef Diego Tapia (ex Azafrán). Encaje perfecto farm-to-table. Reservas por Meitre.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-13",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Negre y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Proyecto de Fernando Santarelli y Melina Ocampo, chef Diego Tapia (ex Azafrán). Ya trabajan con huerta propia — encaje ideal. Tel 341 647-0732 en 1 fuente — reconfirmar. Reservas: negre.meitre.com.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://salpimenta.com.ar/negre-cocina-de-producto-rosario/"
+      ],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 52,
+      "tipo": "restaurante",
+      "nombre": "Terco",
+      "direccion": "Pichincha, Rosario",
+      "instagram": "terco.restaurante",
+      "whatsapp": "+5493413201001",
+      "calificacion": "Alta",
+      "motivo": "Restaurante de autor en Pichincha (zona premium), estética cuidada con materiales rústicos y platos con personalidad; IG 16K activo. Reinterpretaciones audaces, propuesta experiencial foto-friendly.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-13",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Terco y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Proyecto de Juan y José. WhatsApp de reservas 341 320-1001 (publicado en IG, 1 fuente) — reconfirmar.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://www.instagram.com/terco.restaurante/"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 53,
+      "tipo": "restaurante",
+      "nombre": "Lova",
+      "direccion": "9 de Julio 1680, Rosario",
+      "instagram": "lova_restaurant",
+      "whatsapp": "+543414472774",
+      "calificacion": "Media",
+      "motivo": "Cocina y coctelería de autor con local establecido y estética cuidada; carta de brasas, mariscos y pastas. Menos farm-to-table pero ticket medio-alto. Teléfono verificado en 2 fuentes.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-13",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Lova y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Tel fijo 0341 447-2774 — quizá no reciba WhatsApp, probar llamado. Perfil más parrilla/brasas que farm-to-table.",
+      "numero_verificado": "verified",
+      "fuentes_numero": [
+        "https://www.paginasamarillas.com.ar/fichas/lova-restaurant_14382041",
+        "https://www.guiaurbana.com.ar/empresas/lova-restaurant-rosario"
       ],
       "canal_preferido": "whatsapp"
     }
