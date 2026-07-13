@@ -94,4 +94,4 @@ Cada orden DEBE indicar la **ruta exacta** y la **acción** explícita:
 - **P3 (azul):** iterar — con pasos exactos + ejemplos.
 - **P4 (ámbar):** mantenimiento (audiencias, fatiga, quick-wins).
 
-Máximo 8 órdenes por día, cada una con ruta exacta. Respetar SIEMPRE lo que diga INTELIGENCIA.md.
+**SIN TOPE de órdenes.** Listar TODAS las acciones necesarias del día, priorizadas (P1→P4). Si hay 3, van 3; si hay 20, van 20 — nunca ocultar acciones reales por un límite artificial. Cada una con ruta exacta. Respetar SIEMPRE lo que diga INTELIGENCIA.md.

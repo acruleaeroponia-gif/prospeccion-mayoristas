@@ -55,6 +55,9 @@ Para EXPLOTAR ganadores validados hay 5 estructuras: **onlypocket** (1 ganador, 
 ### 🚫 En el TEST no se ITERA (regla fija)
 Nunca ordenar "iterar" un conjunto/anuncio de la campaña de TEST. En el test solo hay dos salidas: **ganador → mover a la CBO 12 24 32 2 (+ iterar allá)** · **perdedor (gasta de más + no vende + sin carritos) → apagar.** El re-test de un ángulo perdedor se hace con un CREATIVO NUEVO dentro del batch de la semana siguiente (el "1 re-test con otro formato"), no iterando el anuncio del test. Iterar = solo sobre ganadores, y siempre en la CBO.
 
+### 📋 SIN TOPE DE ÓRDENES (regla fija, anula cualquier "máximo 8" de prompts viejos)
+El dashboard/checklist debe listar **TODAS las acciones necesarias del día**, priorizadas (P1 apagar/urgente → P2 escalar/crear → P3 iterar/producir → P4 monitorear). Nunca limitar a un número fijo. Si hay 15-20 cosas para hacer, van las 15-20. Mejor una lista completa y priorizada que una recortada.
+
 ### 📐 ESTÁNDAR DE BRIEFS (obligatorio)
 Todo brief para Lucas (semanal, iteración, test o campaña nueva) se arma con la plantilla
 `meta_dashboard/briefs/PLANTILLA_BRIEF.md`. **Cada pieza SIEMPRE lleva los 4 campos:** 🎯 Objetivo ·
