@@ -19,6 +19,9 @@ Formato: `[x]` hecho · `[-]` no lo hago (con motivo) · `[ ]` pendiente · `OBS
 - [x] ESCALAR Fácil + cocina — HECHO — OBS: subí solo +15%, no +25%, por las dudas
 -->
 
+## 2026-07-12 — decisión de escalado
+- [ ] CREAR campaña COST CAP · Mini LED (ABO, límite de coste). 4 conjuntos escalonados $45k/$50k/$55k/$60k, mismos 4 ganadores por postID (video 4/5/3 Copia 2 + estatico cocina), link Mini LED. Decisión: arrancar con Cost Cap (tranqui, mete ventas a buen costo); si rinde 2-3 días → recién ahí Deep Pocket. Ver ESTRUCTURAS_ESCALADO.md.
+
 ## 2026-07-10 — bitácora Meta
 - [x] ESCALAR 'AD1' (ADSET1 / onlypocket) — HECHO
 - [x] ITERAR 'video 3' (Innovación + Cocina / CBO Mini huerta led) — HECHO (refresco del ganador de cocina)
