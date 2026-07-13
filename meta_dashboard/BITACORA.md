@@ -19,6 +19,20 @@ Formato: `[x]` hecho · `[-]` no lo hago (con motivo) · `[ ]` pendiente · `OBS
 - [x] ESCALAR Fácil + cocina — HECHO — OBS: subí solo +15%, no +25%, por las dudas
 -->
 
+## 2026-07-13 — bitácora Meta (lunes)
+- [x] APAGAR video 3 + carrusel 1 (Innovación+Cocina / CBO Mini huerta led) — HECHO (creativos muertos)
+- [x] APAGAR conjunto Test Huertas Semana 2 (TEST Ang ABO 2) — HECHO
+- [-] APAGAR estatico inovacion + ACRULE_ESC_H04_v3 — NO LO HAGO: la orden decía "varias/varias" y no los ubicó. UBICACIÓN CORRECTA: estatico inovacion → CBO Mini huerta led / Innovación+Cocina · ACRULE_ESC_H04_v3 → CBO Huerta 12 24 32 2 / ESCALACIÓN H-04. (Error mío: nunca poner "varias", siempre conjunto exacto.)
+- [x] ESCALAR CBO Huerta 12 24 32 2 (estanque) — HECHO
+- [x] ESCALAR AD1 (onlypocket) — HECHO
+- [x] SUBIR Test Semana 4 (P13-P17) — HECHO
+- [x] AMPLIAR CBO Curso + Ebook (5 estáticos) — HECHO
+- [ ] CREAR Cost Cap Mini LED — pendiente (Mariano pidió estructura exacta)
+- [ ] Gems de espacio → conjunto frío por postID — pendiente (pidió cómo)
+- [ ] RES-02 → conjunto frío — pendiente (pidió variaciones/engagers/postID)
+- [ ] H-01 ganador → CBO por postID — pendiente (pidió cómo)
+- [ ] H-19/H-11 reemplazo cocina — lo hace mañana
+
 ## 2026-07-12 — decisión de escalado
 - [ ] CREAR campaña COST CAP · Mini LED (ABO, límite de coste). 4 conjuntos escalonados $45k/$50k/$55k/$60k, mismos 4 ganadores por postID (video 4/5/3 Copia 2 + estatico cocina), link Mini LED. Decisión: arrancar con Cost Cap (tranqui, mete ventas a buen costo); si rinde 2-3 días → recién ahí Deep Pocket. Ver ESTRUCTURAS_ESCALADO.md.
 
