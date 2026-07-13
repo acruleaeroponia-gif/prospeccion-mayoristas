@@ -52,4 +52,17 @@
 - Si la cuenta se enfría (ROAS ~2) → **Cost Cap** para sostener ventas a costo objetivo.
 - Siempre: mismos ganadores por postID, mismo link, matar conjuntos perdedores (día 3), escalar duplicando.
 
-*Fuente: transcripción de 4 videos de estructuras de escalado (Cost Cap, Blueprint, Deep Pocket, Bid Cap) + lógica de onlypocket. Cargado 10/07.*
+---
+
+## ✅ PROPUESTA ACTIVA — 12/07 (condiciones dadas: 5+ ganadores 7d con ROAS 6-8)
+Cluster ganador = **Mini Huerta LED** (mismo producto/link). CPA ref ≈ $47.000.
+Anuncios: video 4 Copia 2 (6,75) · video 5 Copia 2 (6,59) · video 3 Copia 2 (6,58) · estatico cocina (3,56).
+
+**DEEP POCKET Mini LED:** CBO Ventas · esos 3-4 anuncios por postID en CADA conjunto · Nº conjuntos = presupuesto ÷ $47k → arranque 5 conjuntos ≈ $235k/día (agresivo 7 ≈ $330k/día). No tocar presupuesto; día 3 matar conjuntos sin venta; escalar duplicando.
+
+**COST CAP Mini LED:** ABO · Límite de coste · mismos anuncios · 4 conjuntos con cost cap escalonado $45k / $50k / $55k / $60k (break-even CPA ~$64k). Mantener los que traen ventas a buen costo.
+
+> Nota: NO mezclar productos en una misma campaña de escalado (Mini LED / Mini sin LED / Huertas grandes van separados). Los ganadores de Huertas grandes (H-01 Copia 6,66; ACRULE_ESC_H04_v1 8,08) irían en su propia Deep Pocket cuando junten volumen.
+
+---
+*Fuente: transcripción de 4 videos de estructuras de escalado (Cost Cap, Blueprint, Deep Pocket, Bid Cap) + lógica de onlypocket. Cargado 10/07 · propuesta activa 12/07.*

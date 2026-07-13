@@ -7,6 +7,7 @@ sobre las reglas automáticas** del PLAYBOOK.
 - `meta_dashboard/contexto/CONTEXTO_OPERATIVO.md` — negocio, campañas, aprendizajes, financiero.
 - `creativos_sem22-28/DOCUMENTO_MAESTRO_ACRULE.md` — sistema creativo, conjuntos, naming.
 - `meta_dashboard/REGLAS_API_META.md` — reglas anti-bloqueo (obligatorias).
+- `meta_dashboard/ESTRUCTURAS_ESCALADO.md` — estructuras para escalar ganadores (onlypocket, Deep Pocket, Bid Cap, Cost Cap, Blueprint) con sus condiciones de disparo. El cerebro avisa cuándo se dan las condiciones.
 
 ---
 
