@@ -19,6 +19,14 @@ Formato: `[x]` hecho · `[-]` no lo hago (con motivo) · `[ ]` pendiente · `OBS
 - [x] ESCALAR Fácil + cocina — HECHO — OBS: subí solo +15%, no +25%, por las dudas
 -->
 
+## 2026-07-14 — bitácora Meta
+- [x] REACTIVAR / ajuste en CBO Mini huerta led (cuenta) — HECHO
+- [x] RES-02 → conjunto FRÍO nuevo — HECHO. El conjunto se llama **"Reseñas Iteracion + PostID"** (RES-02 agregado por postID). Referir a ese nombre.
+- [x] ESCALAR AD1 (onlypocket) — HECHO
+- [x] AMPLIAR CBO Curso + Ebook (5 estáticos) — HECHO
+- [x] 🚀 CREAR **Cost Cap · Mini LED** con los gems (video 4/5/3 Copia 2 por postID) — HECHO. + subió **H-01 ganador a CBO Huerta 12 24 32 2 por postID** — HECHO.
+- [ ] Pausas recomendadas (carrusel 2 · FAM_H04/H05 test · H-12 test) — pendientes (no marcadas).
+
 ## 2026-07-13 — bitácora Meta (lunes)
 - [x] APAGAR video 3 + carrusel 1 (Innovación+Cocina / CBO Mini huerta led) — HECHO (creativos muertos)
 - [x] APAGAR conjunto Test Huertas Semana 2 (TEST Ang ABO 2) — HECHO
