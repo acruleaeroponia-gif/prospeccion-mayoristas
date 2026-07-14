@@ -39,6 +39,8 @@ sobre las reglas automáticas** del PLAYBOOK.
 
 ### 🔁 ITERACIÓN (regla fija)
 La iteración se hace con los **ANUNCIOS GANADORES de la campaña TEST**: se iteran (variantes) y se suben a la **CBO Huerta 12 24 32 2**. El test descubre el ganador; la iteración + la CBO lo escalan.
+- **postID:** el ganador que YA existe se sube a la CBO por postID (conserva prueba social). Las ITERACIONES nuevas van como creativo nuevo (todavía no tienen post).
+- **Qué hacer con el conjunto de test tras extraer el ganador:** APAGARLO una vez que el ganador ya corre en la CBO (no seguir gastando test budget en algo decidido). Apagar el anuncio del test NO rompe el postID de la CBO (el post vive en la Página, no en el anuncio). El conjunto de test que todavía está en sus 7 días se deja prendido hasta cerrar el ciclo.
 
 ### 🛒 SEÑAL DE CARRITOS antes de apagar (regla fija)
 No apagar por "0 ventas" a secas. Si el gasto es bajo (< ~$30k) **y hay carritos (add-to-cart ≥ 2-3)**, hay señal de que puede cerrar con más presupuesto/tiempo → NO apagar, darle budget. Apagar solo cuando: 0 ventas **+** gasto suficiente **+** SIN carritos (o CTR muy bajo). Los carritos son el indicador temprano de que el ángulo/creativo engancha aunque todavía no cierre (ej: 'Iteración Cocina' 07/07 — $28k, 0 ventas pero 3 carritos → se mantiene).
