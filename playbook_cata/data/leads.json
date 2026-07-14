@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-13",
-  "next_batch_date": "2026-07-14",
-  "total": 53,
+  "updated_at": "2026-07-14",
+  "next_batch_date": "2026-07-15",
+  "total": 60,
   "leads": [
     {
       "id": 1,
@@ -1017,6 +1017,143 @@
       "fuentes_numero": [
         "https://www.paginasamarillas.com.ar/fichas/lova-restaurant_14382041",
         "https://www.guiaurbana.com.ar/empresas/lova-restaurant-rosario"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 54,
+      "tipo": "vivero",
+      "nombre": "Mosby Tabaquería (Growshop)",
+      "direccion": "Mendoza 1894, Rosario Centro",
+      "instagram": "mosbytabaqueria",
+      "whatsapp": "+5493417069987",
+      "calificacion": "Media",
+      "motivo": "Growshop/tabaquería con local céntrico y tienda online (mosbytabaqueria.com); maneja insumos de cultivo (sustratos, luces, carpas indoor, fertilizantes) — canal de reventa afín a huertas hidropónicas. Número en 1 fuente (web propia)",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-14",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Mosby Tabaquería (Growshop): vi que manejan insumos de cultivo y me pareció que la propuesta encaja perfecto — el público que cultiva se copa con una mini huerta hidropónica lista para usar.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Growshop. WhatsApp 341-706-9987 figura en su web — reconfirmar antes de escribir.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://mosbytabaqueria.com/contacto/"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 55,
+      "tipo": "vivero",
+      "nombre": "Vivero Flor de Loto",
+      "direccion": "Av. Illia 1550, Funes",
+      "instagram": "vivero.flor.de.loto",
+      "whatsapp": "",
+      "calificacion": "Alta",
+      "motivo": "Vivero en Funes (zona objetivo) con IG activo; plantas, insumos, semillas, sustratos, paisajismo y talleres + envíos a domicilio. Público jardinero ideal para mini huerta",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-14",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Flor de Loto: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "",
+      "numero_verificado": "no_number",
+      "fuentes_numero": [],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 56,
+      "tipo": "vivero",
+      "nombre": "Vivero Jardín de Funes",
+      "direccion": "Funes, Santa Fe",
+      "instagram": "jardinfunes",
+      "whatsapp": "",
+      "calificacion": "Media",
+      "motivo": "Vivero de Funes (zona objetivo) con IG activo; amplio surtido: plantas interior/exterior, árboles, nativas, huerta y florales, semillas hortícolas, sustratos y césped",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-14",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Jardín de Funes: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "",
+      "numero_verificado": "no_number",
+      "fuentes_numero": [],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 57,
+      "tipo": "vivero",
+      "nombre": "Florería Liberati",
+      "direccion": "Bv. Rondeau 2384, Barrio Alberdi, Rosario",
+      "instagram": "florerialiberati",
+      "whatsapp": "+543414551887",
+      "calificacion": "Media",
+      "motivo": "Florería con local en Alberdi (zona norte) que vende plantas naturales además de flores; punto de venta con clientela consumidora de plantas. Tel fijo verificado en 2 directorios",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-14",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Florería Liberati: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Tel fijo 0341 455-1887. Es florería — sondear interés en sumar mini huertas al mostrador.",
+      "numero_verificado": "verified",
+      "fuentes_numero": [
+        "https://www.argentino.com.ar/floreria-liberati-F160CC20E18D2",
+        "https://www.yelp.com.ar/biz/floreria-liberati-rosario"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 58,
+      "tipo": "restaurante",
+      "nombre": "Cuervo Blanco",
+      "direccion": "Av. Luis C. Carballo 158, Puerto Norte, Rosario",
+      "instagram": "cuervoblanco.puertonorte",
+      "whatsapp": "+5493413742910",
+      "calificacion": "Media",
+      "motivo": "Restaurante emblema de Puerto Norte con vista al río Paraná, estética cuidada y carta con impronta asiática; salón foto-friendly y ticket medio-alto",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-14",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Cuervo Blanco y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Tel/reservas 341-374-2910 (formato móvil a confirmar). Contactar primero por IG.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://carta.menu/restaurants/rosario/cuervo-blanco-puerto-norte",
+        "https://www.tripadvisor.com/Restaurant_Review-g312809-d15699553-Reviews-Cuervo_Blanco-Rosario_Province_of_Santa_Fe_Litoral.html"
+      ],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 59,
+      "tipo": "restaurante",
+      "nombre": "Chinchibira",
+      "direccion": "Santiago 101, Rosario Centro",
+      "instagram": "chinchibirabar",
+      "whatsapp": "",
+      "calificacion": "Alta",
+      "motivo": "Restobar de cocina de autor + coctelería premiada (top ranking Rosario); estética cuidada y propuesta innovadora — encaje ideal con una huerta de hierbas frescas en salón",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-14",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Chinchibira y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Cocina de autor. Teléfono publicado incompleto — contactar por IG.",
+      "numero_verificado": "no_number",
+      "fuentes_numero": [],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 60,
+      "tipo": "restaurante",
+      "nombre": "Davis (Complejo Davis)",
+      "direccion": "Silos del MACRO, Av. de la Costa Estanislao López, Puerto Norte, Rosario",
+      "instagram": "",
+      "whatsapp": "+543414357142",
+      "calificacion": "Media",
+      "motivo": "Restó-bar de cocina internacional cuidada sobre el río Paraná, en los silos del MACRO; ubicación premium y ambiente foto-friendly. Tel fijo verificado en directorios",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-14",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Davis (Complejo Davis) y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Tel fijo 0341 435-7142. Sin IG confirmado — contactar por teléfono/WhatsApp.",
+      "numero_verificado": "verified",
+      "fuentes_numero": [
+        "https://www.yelp.com.ar/biz/complejo-davis-rosario",
+        "https://carta.menu/restaurants/rosario/davis-5"
       ],
       "canal_preferido": "whatsapp"
     }
