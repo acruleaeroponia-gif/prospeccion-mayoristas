@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-14",
-  "next_batch_date": "2026-07-15",
-  "total": 60,
+  "updated_at": "2026-07-15",
+  "next_batch_date": "2026-07-16",
+  "total": 70,
   "leads": [
     {
       "id": 1,
@@ -1156,6 +1156,199 @@
         "https://carta.menu/restaurants/rosario/davis-5"
       ],
       "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 61,
+      "tipo": "vivero",
+      "nombre": "Vivero Green Garden",
+      "direccion": "Matheu 3756, Barrio San Martín, Rosario",
+      "instagram": "viverogreengarden_",
+      "whatsapp": "",
+      "calificacion": "Alta",
+      "motivo": "Vivero con IG activo y tienda online, local en Barrio San Martín (Rosario); venta de plantas interior/exterior. Público consumidor ideal para mini huerta.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-15",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Green Garden: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Contactar por IG — tiene tienda online propia.",
+      "numero_verificado": "no_number",
+      "fuentes_numero": [],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 62,
+      "tipo": "vivero",
+      "nombre": "Vivero Espacios Verdes",
+      "direccion": "Av. San Martín 535, Rosario",
+      "instagram": "",
+      "whatsapp": "+543413130342",
+      "calificacion": "Media",
+      "motivo": "Vivero con venta minorista de plantas/plantines y diseño de parques y jardines sobre Av. San Martín; tel fijo en directorio.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-15",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Espacios Verdes: vi tu local y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Tel fijo 0341 313-0342 (1 directorio) — quizá no reciba WhatsApp, probar llamado. Reconfirmar.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://rosario.licuo.com.ar/viveros-en_rosario.htm"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 63,
+      "tipo": "vivero",
+      "nombre": "Vivero La Cumbrecita",
+      "direccion": "Av. Presidente Perón 3765, Rosario",
+      "instagram": "",
+      "whatsapp": "+543414328804",
+      "calificacion": "Media",
+      "motivo": "Vivero de barrio sobre Av. Presidente Perón, venta de plantas para jardín y parque; tel fijo en directorio.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-15",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero La Cumbrecita: vi tu local y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Tel fijo 0341 432-8804 (1 directorio) — quizá no reciba WhatsApp, probar llamado. Reconfirmar.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://rosario.licuo.com.ar/viveros-en_rosario.htm"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 64,
+      "tipo": "vivero",
+      "nombre": "Vivero Las Camelias",
+      "direccion": "Paraguay 713, Rosario Centro",
+      "instagram": "",
+      "whatsapp": "+543414471532",
+      "calificacion": "Media",
+      "motivo": "Vivero céntrico (Paraguay 713), venta de plantas al público; tel fijo en directorio.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-15",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Las Camelias: vi tu local y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Tel fijo 0341 447-1532 (1 directorio) — quizá no reciba WhatsApp, probar llamado. Reconfirmar.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://rosario.licuo.com.ar/viveros-en_rosario.htm"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 65,
+      "tipo": "vivero",
+      "nombre": "Vivero Cactus",
+      "direccion": "España 1898, Rosario",
+      "instagram": "",
+      "whatsapp": "+543414819112",
+      "calificacion": "Media",
+      "motivo": "Vivero céntrico especializado en cactus y suculentas (España 1898); rubro afín al público que arma composiciones y se copa con una mini huerta. Tel fijo en directorio.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-15",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Cactus: vi tu local y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Tel fijo 0341 481-9112 (1 directorio) — quizá no reciba WhatsApp, probar llamado. Reconfirmar.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://rosario.licuo.com.ar/viveros-en_rosario.htm"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 66,
+      "tipo": "vivero",
+      "nombre": "Vivero Del Sol (Diseño del Paisaje)",
+      "direccion": "San Juan 2736, Rosario",
+      "instagram": "",
+      "whatsapp": "+543414255120",
+      "calificacion": "Media",
+      "motivo": "Vivero + diseño del paisaje en zona centro-oeste (San Juan 2736), venta minorista de plantas para jardines y parques; tel fijo en directorio.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-15",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Del Sol (Diseño del Paisaje): vi tu local y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Tel fijo 0341 425-5120 (1 directorio) — quizá no reciba WhatsApp, probar llamado. Reconfirmar.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://rosario.licuo.com.ar/viveros-en_rosario.htm"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 67,
+      "tipo": "vivero",
+      "nombre": "Vivero Santuario",
+      "direccion": "Rosario",
+      "instagram": "viverosantuario",
+      "whatsapp": "",
+      "calificacion": "Media",
+      "motivo": "Vivero con IG activo, venta de plantas y macetas con entregas a domicilio en Rosario; contacto por IG.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-15",
+      "mensaje": "Buenas, ¿cómo andan? Soy Cata, escribo de parte de Acrule Hidroponía. Fabricamos huertas hidropónicas para el hogar y estamos armando una red de puntos de venta en Rosario. Ya trabajamos con varios viveros (como Vivero Agustín y Aires de Cultivo Grow Shop) y ahora queremos sumar más.\n\nTe cuento por qué te escribo a Vivero Santuario: vi tu Instagram y me pareció que la propuesta encaja perfecto — el público que compra plantas y aromáticas se copa con una mini huerta.\n\n¿Te copa que te pase el catálogo y las condiciones mayoristas? Sin compromiso 🌱",
+      "notas": "Número publicado (5520344791) con formato dudoso — contactar por IG.",
+      "numero_verificado": "no_number",
+      "fuentes_numero": [],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 68,
+      "tipo": "restaurante",
+      "nombre": "Picaña",
+      "direccion": "Schweitzer (Juan Pablo II) 9065 bis, Fisherton, Rosario",
+      "instagram": "picaniarosario",
+      "whatsapp": "+5493415039986",
+      "calificacion": "Alta",
+      "motivo": "Parrilla premium de Fisherton del dueño de Chicharra; producto de calidad, maridajes, estética cuidada y salón foto-friendly, ticket alto. Reservas por WhatsApp/IG.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-15",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Picaña y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Reservas 341 503-9986 (móvil, 1 fuente) — reconfirmar antes de escribir.",
+      "numero_verificado": "unverified",
+      "fuentes_numero": [
+        "https://urbanococinaamericana.com.ar/restaurante/picana-parrilla-restaurante/",
+        "https://www.instagram.com/picaniarosario/"
+      ],
+      "canal_preferido": "whatsapp"
+    },
+    {
+      "id": 69,
+      "tipo": "restaurante",
+      "nombre": "Olivio Restaurante Grill",
+      "direccion": "Güemes 2323, Pichincha, Rosario",
+      "instagram": "oliviourbanresto",
+      "whatsapp": "",
+      "calificacion": "Alta",
+      "motivo": "Restó urban gourmet en Pichincha (zona premium) con estética cuidada y grill de producto; salón foto-friendly. Reservas por IG.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-15",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Olivio Restaurante Grill y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Contactar por IG — no se encontró teléfono confiable.",
+      "numero_verificado": "no_number",
+      "fuentes_numero": [],
+      "canal_preferido": "instagram"
+    },
+    {
+      "id": 70,
+      "tipo": "restaurante",
+      "nombre": "Barro Pichincha",
+      "direccion": "Alvear 41, Pichincha, Rosario",
+      "instagram": "barropichincha",
+      "whatsapp": "",
+      "calificacion": "Media",
+      "motivo": "Propuesta 'barliche' en Pichincha (26K IG): coctelería de autor + cocina refinada + estética cuidada, muy foto-friendly. Reservas por DM.",
+      "estado": "Sin contactar",
+      "fecha_contacto": null,
+      "fecha_agregado": "2026-07-15",
+      "mensaje": "Buenas, ¿cómo estás? Soy Cata de Acrule Hidroponía.\n\nTe escribo porque vi la propuesta de Barro Pichincha y me pareció que hay mucha sinergia con lo que hacemos. Fabricamos huertas hidropónicas con luces LED que se instalan directamente en la cocina o el salón — producen albahaca, rúcula, brotes, tomillo, todo el año, sin depender del proveedor.\n\nMuchos chefs las usan porque tienen los ingredientes 100% frescos a mano y arman un factor visual único que va con el lenguaje estético del local.\n\n¿Te copa que te mande un video corto y coordinemos una llamada rápida con el chef? Sin compromiso 🌿",
+      "notas": "Perfil bar/coctelería premium más que farm-to-table — sondear interés en huerta de hierbas en salón. Reservas por DM.",
+      "numero_verificado": "no_number",
+      "fuentes_numero": [],
+      "canal_preferido": "instagram"
     }
   ]
 }
