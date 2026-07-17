@@ -118,55 +118,49 @@
 ============================================================ -->
 <script id="data">
 const DASH = {
-  cuenta:"Acrule Publicidad", moneda:"ARS", actualizado:"2026-07-16",
-  ventana:"Últimos 30 días (16 jun – 15 jul 2026)", objetivo_roas:6,
+  cuenta:"Acrule Publicidad", moneda:"ARS", actualizado:"2026-07-17",
+  ventana:"Últimos 30 días (17 jun – 16 jul 2026)", objetivo_roas:6,
 
-  roas_30d:2.85, roas_7d:2.87, spend_30d:12623302, spend_7d:3809256,
-  ctr_30d:2.15, ctr_7d:2.06, cpc_30d:282.83, cpc_7d:308.49,
-  reach_30d:674389, freq_30d:3.09, opportunity_score:54, tendencia:"vigilancia — fuga en Cost Cap",
+  roas_30d:2.81, roas_7d:2.91, spend_30d:12907133, spend_7d:3852912,
+  ctr_30d:2.10, ctr_7d:1.97, cpc_30d:286.88, cpc_7d:302.69,
+  reach_30d:681826, freq_30d:3.15, opportunity_score:62, tendencia:"estable — el 7d rebotó a 2,91 tras la poda del Cost Cap",
 
   fin:{ margen_bruto:65, break_even_roas:3.4, resultado:"pérdida",
         ads_pct_fact:31, cac_ads:77058, aov:199004 },
 
-  msj:{ mensajes_30d:946, spend_30d:785088, costo_prom:830, target_costo:400,
-        mejor:"CBO Emprendedores Mensajes ($550/msg · pausada)", peor:"CBO Mensajes Huertas ($1.024/msg · pausada)" },
+  msj:{ mensajes_30d:928, spend_30d:752074, costo_prom:811, target_costo:400,
+        mejor:"CBO Emprendedores Mensajes ($550/msg · pausada)", peor:"CBO Mensajes Huertas ($997/msg · pausada)" },
 
-  // OBSERVACIONES DEL DÍA (pulso diario 16/07) — vigilancia + 1 fuga con nombre
+  // OBSERVACIONES DEL DÍA (pulso diario 17/07) — la poda funcionó + 1 ganador que se apagó solo
   observaciones:[
-    { ic:"🔴", txt:"<b>El 7d bajó a 2,87 (ayer 3,25) — y la fuga tiene nombre: el Cost Cap.</b> No es todo maduración. El <b>Cost Cap · Mini LED</b> (creado 14/07) está en <b>día 3</b> y 3 de sus 4 conjuntos gastaron <b>$245k con 0 ventas</b> (Adset 45k/50k/60k). Solo el de <b>55k rinde (4,22)</b>. Eso arrastra el 7d hacia abajo. La estructura pide <b>podar los perdedores al día 3</b> (ESTRUCTURAS_ESCALADO) → hoy es el día." },
-    { ic:"💎", txt:"<b>El ADN ganador sigue intacto y fuerte.</b> 'La mejor huerta cualquier espacio' (conj 6,04, freq 2,60): <b>video 3-Copia2 7,89</b>, video 4-Copia2 6,38, video 5-Copia2 6,28 ('cabe en MI espacio chico'); estanque <b>ESC_H04_v4 7,83</b> / v1 5,80 ('vivís en depto'); test dejó <b>H-01 'Verdura que se pudre' 9,35</b> (culpa/desperdicio). La compradora compra <b>permiso, prueba e identidad</b>, no 'la huerta del futuro'." },
-    { ic:"⚠️", txt:"<b>La prueba social ya pasó el techo de frecuencia.</b> El conjunto <b>reseñas Iteracion</b> (ABIERTO) rinde 4,23 pero está en <b>freq 3,92</b> — arriba del máximo 3,5 (RES-02 freq 3,32 / RES-03 2,44). No se apaga (vende), pero la saturación es real: la jugada es el <b>conjunto FRÍO</b> con RES-02/RES-03 por postID, pendiente del brief del lunes. Ampliar el mismo conjunto ya no trae gente nueva." },
-    { ic:"🟠", txt:"<b>El frío 'Gemela POST ID' nunca arrancó.</b> Gastó $241k con 0 ventas, pero subió solo <b>+$2,6k en el día</b> — está inerte porque su único creativo ('video 3-Copia 3') figura <b>PAUSED</b>. El conjunto frío de los gems nunca entregó de verdad. Decisión: <b>activar los gems por postID</b> ahí, o descartar el conjunto y volcar los gems al frío bien armado del lunes. No es un incendio (no gasta), es una palanca sin usar." },
-    { ic:"✅", txt:"<b>El resto es maduración — no tocar.</b> onlypocket madura hoy (~16/07) a <b>4,00</b> (freq 1,50): sostiene, pero el +20% lo decide el cerebro del lunes. 'Innovación+Cocina' quedó sana: solo estatico cocina activo a <b>3,49</b> (arriba del piso, aunque bajó de 3,81 — vigilar). Sin anomalías, OS 54. Subir domingo 19, análisis lunes 20." }
+    { ic:"✅", txt:"<b>La poda del Cost Cap funcionó: el 7d rebotó.</b> Ayer se cerraron los 3 conjuntos ciegos (Adsets 45k/50k/60k, HECHO). Hoy el <b>7d subió de 2,87 a 2,91</b> y el Opportunity Score saltó <b>54 → 62</b>. La sangría se frenó. Seguimos <b>bajo el break-even 3,4</b> (30d 2,81), pero la cuenta pierde en los restos, no en el motor: gana donde están los pools de 6x." },
+    { ic:"🔴", txt:"<b>onlypocket (ganador 3,72) aparece APAGADO — y no hay nota en la bitácora.</b> Toda la campaña figura <b>PAUSED</b> (AD1, freq 1,50, el escalado +354% que maduraba a 4,00 ayer). Si fue a propósito, perfecto; si fue sin querer, es <b>volumen y ventas que dejamos de captar</b> con un creativo validado. Verificar HOY: si no fue intencional, reactivar." },
+    { ic:"💎", txt:"<b>El ADN ganador está intacto y el test tiró DOS joyas nuevas.</b> Espacio: video 4-Copia2 <b>6,62</b>, 5-Copia2 5,95, 3-Copia2 5,70 ('cabe en MI espacio chico'); estanque <b>ESC_H04_v4 7,77</b> ('vivís en depto'); prueba social RES-03 5,08 / RES-02 4,95. Y del test salieron <b>H-01 'Verdura que se pudre' 9,35</b> (culpa/desperdicio) y <b>H-12 'Lo que cosechás te sigue dando' 7,71</b> (continuidad). La compradora compra <b>permiso, prueba e identidad</b>." },
+    { ic:"🍳", txt:"<b>El motor cocina se está reemplazando en vivo — momento delicado.</b> El viejo (<b>estatico cocina</b>) bajó a <b>3,32</b> (era 3,49, ya perforó el piso 3,4) mientras el conjunto nuevo <b>COCINA · Mini LED</b> ($100k, 0 ventas) arranca en aprendizaje. El viejo se apaga solo y el nuevo todavía no convierte. No tocar (learning), pero vigilar que el nuevo agarre antes de que el volumen de Mini LED se resienta." },
+    { ic:"⚠️", txt:"<b>Queda un fleco del Cost Cap y la prueba social ya tiene su frío.</b> El <b>Adset 3 (55k)</b> que Mariano no ubicaba SÍ existía: está vivo, rinde <b>2,88</b> (bajo el break-even, cayó de 4,22). Como el Cost Cap se decidió cerrar, cerrarlo completa la poda. Y el frío nuevo <b>Reseñas Iteracion + PostID</b> ya está cargado absorbiendo la fatiga (RES-02 freq 3,40) — la jugada anti-saturación ya está en marcha." }
   ],
 
   ordenes:[
-    { p:"p1", accion:"apagar", titulo:"Cost Cap Mini LED · PODA día 3 — apagar los 3 conjuntos a 0 ventas ($245k)",
-      ruta:{campana:"ABO COSTCAP mini huerta", conjunto:"Adset 1 (45k) + Adset 2 (50k) + Adset 4 (60k)", anuncio:"(los 3 conjuntos completos)"},
-      impacto:"Frenar la fuga que hunde el 7d",
-      why:"El Cost Cap (creado 14/07) está en <b>día 3</b>. Adset 45k <b>$73.881 · 0 ventas</b>, Adset 50k <b>$67.401 · 0 ventas</b>, Adset 60k <b>$103.941 · 0 ventas</b> = <b>$245k sin una sola venta</b>. La estructura Cost Cap pide <b>matar los conjuntos perdedores al día 3</b> (ESTRUCTURAS_ESCALADO.md). Es la fuga que arrastra el 7d a 2,87. <b>Dejar vivo SOLO el Adset 55k</b> (2 ventas, ROAS 4,22, el único que agarró costo objetivo)." },
-    { p:"p2", accion:"reactivar", titulo:"Gemela POST ID — activar los gems por postID o descartar el conjunto",
-      ruta:{campana:"CBO Mini huerta led", conjunto:"La mejor huerta cualquier espacio Gemela POST ID", anuncio:"video 3/4/5 - Copia 2 (postID)"},
-      impacto:"Recuperar una palanca de frío sin usar",
-      why:"$241k, 0 ventas, pero subió solo <b>+$2,6k en el día</b> → está <b>inerte</b>: su único ad ('video 3-Copia 3') figura PAUSED, el conjunto frío nunca entregó. No es fuga (no gasta). Decisión: en Ads Manager <b>activar los gems ganadores por postID</b> (video 3/4/5-Copia2, 6,3–7,9) en este conjunto frío, o descartarlo y volcar los gems al frío bien armado que arma el cerebro del lunes." },
-    { p:"p2", accion:"ampliar", titulo:"reseñas Iteracion pasó freq 3,92 → conjunto FRÍO (pendiente del lunes)",
-      ruta:{campana:"CBO - MINI HUERTA - ABIERTO", conjunto:"reseñas Iteracion → FRÍO nuevo", anuncio:"RES-02 (freq 3,32) + RES-03 Antes/Ahora"},
-      impacto:"Proteger el motor de prueba social antes de que sature",
-      why:"El conjunto rinde <b>4,23</b> ($1,34M, 23 ventas) pero freq <b>3,92</b> — ya pasó el techo 3,5. No apagar (vende). Ampliar el mismo conjunto NO trae gente nueva: hay que abrir un frío. Pendiente del brief del lunes.",
-      iteraciones:["En Ads Manager, dentro de CBO - MINI HUERTA - ABIERTO, duplicá 'reseñas Iteracion' a un conjunto nuevo.","Audiencia: Advantage+ Audience (o lookalike/broad nuevo), EXCLUIR compradores 180d + engagers 365d.","Subí RES-02 y RES-03 por postID (conservás prueba social/engagement).","Dejalo 7 días sin tocar."],
-      ejemplo:"Conjunto 'reseñas Iteracion · FRÍO' → Advantage+ · excluye compradores 180d+engagers · RES-02 + RES-03 por postID." },
-    { p:"p4", accion:"escalar", titulo:"onlypocket maduró hoy a 4,00 — sostener, el +20% lo decide el lunes",
+    { p:"p1", accion:"reactivar", titulo:"onlypocket aparece APAGADO — verificar y reactivar si fue sin querer",
       ruta:{campana:"onlypocket", conjunto:"ADSET1", anuncio:"AD1"},
-      impacto:"Escala limpia, no forzar",
-      why:"AD1 aguanta <b>4,00</b> (freq 1,50) tras escalar +354%. Cierra su ventana hoy (~16/07). El diario no escala por rutina: si sostiene 4x+ el finde, el cerebro del lunes 20 decide el +20% suave. Hoy no tocar." },
-    { p:"p4", accion:"apagar", titulo:"Vigilar estatico cocina — bajó 3,81→3,49 (aún sobre el piso)",
+      impacto:"No perder un ganador validado por un apagado accidental",
+      why:"La campaña <b>onlypocket completa figura PAUSED</b> (AD1 ROAS <b>3,72</b>, freq 1,50 — el escalado +354% que ayer maduraba a 4,00). <b>No hay ninguna orden ni nota en la bitácora</b> que explique el apagado. Si Mariano lo pausó a propósito (restructura), dejarlo; si fue accidental, <b>reactivarlo</b>: es ventas/volumen que estamos dejando de captar con un creativo probado. Confirmar hoy antes que nada." },
+    { p:"p1", accion:"apagar", titulo:"Cost Cap · cerrar el Adset 3 (55k) — completa el cierre de la estructura",
+      ruta:{campana:"ABO COSTCAP mini huerta", conjunto:"Adset 3 costo de 55k", anuncio:"video 3 - Copia 2"},
+      impacto:"Terminar de cerrar una estructura que ya se decidió muerta",
+      why:"El Adset 3 (55k) que en la bitácora del 16/07 quedó como '<b>confirmar si existía</b>' <b>sí existe y quedó vivo</b>: ACTIVE, <b>$151.918 · 2 ventas · ROAS 2,88</b> (cayó de 4,22, ahora bajo el break-even 3,4). El Cost Cap ya se decidió cerrar entero ('no rindió → se cierra'). Es el último conjunto vivo de esa campaña: apagarlo completa la poda y saca el lastre de 1,25 a nivel campaña." },
+    { p:"p4", accion:"apagar", titulo:"Vigilar estatico cocina — perforó el piso (3,49→3,32)",
       ruta:{campana:"CBO Mini huerta led", conjunto:"Innovación + Cocina", anuncio:"estatico cocina"},
-      impacto:"Detectar si el motor cocina se agota del todo",
-      why:"Es el único sobreviviente activo del conjunto (los muertos ya están PAUSED). Rinde <b>3,49</b> ($1,27M, freq 1,66) — arriba del break-even 3,4 pero cayó desde 3,81. No apagar (rinde). Vigilar: si perfora 3,4 sostenido, entra al reemplazo cocina (H-19/H-11) que arma el cerebro del lunes." },
-    { p:"p4", accion:"reactivar", titulo:"El resto: maduración — no tocar lo que está <7 días",
+      impacto:"Detectar si el motor cocina viejo se agota antes que arranque el nuevo",
+      why:"Es el último sobreviviente activo del conjunto (video 3 y carrusel 1 ya PAUSED). Rinde <b>3,32</b> ($1,30M, freq 1,68) — <b>por debajo del break-even 3,4</b>, cayó de 3,49. Todavía NO apagar: es el que sostiene volumen de Mini LED mientras el reemplazo (COCINA · Mini LED) madura. Vigilar: si sigue perforando y el nuevo no agarra, se apaga y queda el reemplazo. Decisión fina del lunes 20." },
+    { p:"p4", accion:"reactivar", titulo:"Reemplazo cocina + prueba social frío + emprendedores nuevo — en aprendizaje, no tocar",
+      ruta:{campana:"CBO Mini huerta led / CBO - MINI HUERTA - ABIERTO", conjunto:"COCINA · Mini LED + Reseñas Iteracion + PostID + CBO emprendedores", anuncio:"—"},
+      impacto:"Dar los 7 días de aprendizaje a las apuestas nuevas",
+      why:"Cargadas y en learning (<7 días, no tocar): <b>COCINA · Mini LED</b> ($100k, 0 ventas — el reemplazo del motor cocina), <b>Reseñas Iteracion + PostID</b> ($79k, 0 ventas — el frío anti-fatiga de prueba social), <b>CBO emprendedores</b> ($27k, 0 ventas pero <b>8 carritos y CTR 7,79%</b> — señal temprana fuerte) y el nuevo <b>TEST · Mini LED</b> ($16k). Ninguna se juzga hasta cumplir su ventana." },
+    { p:"p4", accion:"reactivar", titulo:"El resto: maduración — subir domingo 19, análisis lunes 20",
       ruta:{campana:"(cuenta entera)", conjunto:"—", anuncio:"—"},
       impacto:"No romper la escala en aprendizaje",
-      why:"ADN ganador intacto (espacio 6,3–7,9, estanque H-04 7,8, prueba social 4,8, H-01 9,35). Sin anomalías, OS 54. Fuera de la poda del Cost Cap, no hay más fuegos: subir domingo 19/07, análisis lunes 20/07 (evaluación Deep Pocket si los pools aguantan volumen)." }
+      why:"ADN ganador intacto (espacio 5,7–6,6, estanque H-04 7,77, prueba social 4,9–5,1, test H-01 9,35 / H-12 7,71). Sin anomalías, OS 62 (subiendo). Meta marca budget-limited en prueba social y estanque H-04 (los ganadores piden más presupuesto) — pero escalar lo decide el cerebro del lunes, no el diario. Subir domingo 19/07; lunes 20 evalúa Deep Pocket si los pools aguantan volumen." }
   ],
 
   // PLAN DE LA SEMANA (lo llena el agente de los lunes)
@@ -191,45 +185,46 @@ const DASH = {
   },
 
   ventas_campanas:[
-    { n:"CBO Mini huerta led", est:"ACTIVE", spend:5915560, roas:3.36, ventas:75 },
-    { n:"CBO - MINI HUERTA - ABIERTO", est:"ACTIVE", spend:2342611, roas:3.11, ventas:32 },
-    { n:"TEST Ang ABO Huerta 12 24 32 2", est:"ACTIVE", spend:878969, roas:2.93, ventas:11 },
-    { n:"onlypocket", est:"ACTIVE", spend:655021, roas:4.00, ventas:10 },
-    { n:"CBO Huerta 12 24 32 2 (estanque)", est:"ACTIVE", spend:324261, roas:3.71, ventas:3 },
-    { n:"ABO COSTCAP mini huerta (fuga · poda día 3)", est:"ACTIVE", spend:348901, roas:1.26, ventas:2 },
-    { n:"ABO MODULAR ABIERTO", est:"PAUSED", spend:644079, roas:1.65, ventas:6 },
-    { n:"CBO Huerta 12 24 32", est:"PAUSED", spend:241856, roas:0.87, ventas:2 },
-    { n:"CBO Ebook", est:"PAUSED", spend:120502, roas:0.81, ventas:4 },
-    { n:"CBO Curso + Ebook", est:"PAUSED", spend:44880, roas:0, ventas:0 }
+    { n:"CBO Mini huerta led", est:"ACTIVE", spend:6115871, roas:3.24, ventas:74 },
+    { n:"CBO - MINI HUERTA - ABIERTO", est:"ACTIVE", spend:2326577, roas:3.29, ventas:32 },
+    { n:"TEST Ang ABO Huerta 12 24 32 2", est:"ACTIVE", spend:908890, roas:2.84, ventas:11 },
+    { n:"onlypocket (⚠️ APAGADO — verificar/reactivar)", est:"PAUSED", spend:703681, roas:3.72, ventas:10 },
+    { n:"ABO MODULAR ABIERTO", est:"PAUSED", spend:574568, roas:1.44, ventas:5 },
+    { n:"ABO COSTCAP mini huerta (cerrando · queda Adset 55k)", est:"ACTIVE", spend:434623, roas:1.25, ventas:3 },
+    { n:"CBO Huerta 12 24 32 2 (estanque)", est:"ACTIVE", spend:353919, roas:3.40, ventas:3 },
+    { n:"CBO Huerta 12 24 32", est:"PAUSED", spend:241855, roas:0.87, ventas:2 },
+    { n:"CBO Ebook", est:"PAUSED", spend:109758, roas:0.89, ventas:4 },
+    { n:"CBO emprendedores (🆕 8 carritos · CTR 7,8%)", est:"ACTIVE", spend:27544, roas:0, ventas:0 },
+    { n:"TEST Ang ABO Mini LED (🆕 test propio Mini LED)", est:"ACTIVE", spend:16446, roas:0, ventas:0 }
   ],
   mensajes_campanas:[
-    { n:"CBO Mensajes Huertas", est:"PAUSED", spend:571597, mensajes:558, costo:1024 },
+    { n:"CBO Mensajes Huertas", est:"PAUSED", spend:538583, mensajes:540, costo:997 },
     { n:"CBO Emprendedores Mensajes", est:"PAUSED", spend:213491, mensajes:388, costo:550 }
   ],
   ganadores:[
     { anuncio:"H-01 · Verdura que se pudre - Copia (ganador del test → a la CBO por postID)", conjunto:"Test Huerta Semana 1", campana:"TEST Ang ABO 2", roas:9.35, spend:129521, est:"PAUSED" },
-    { anuncio:"video 3 - Copia 2", conjunto:"La mejor huerta cualquier espacio", campana:"Mini huerta led", roas:7.89, spend:258256, est:"ACTIVE" },
-    { anuncio:"ACRULE_ESC_H04_v4 · Vivís en depto", conjunto:"ESCALACIÓN H-04 (estanque)", campana:"CBO Huerta 12 24 32 2", roas:7.83, spend:58563, est:"ACTIVE" },
-    { anuncio:"video 4 - Copia 2", conjunto:"La mejor huerta cualquier espacio", campana:"Mini huerta led", roas:6.38, spend:381678, est:"ACTIVE" },
-    { anuncio:"video 5 - Copia 2", conjunto:"La mejor huerta cualquier espacio", campana:"Mini huerta led", roas:6.28, spend:312460, est:"ACTIVE" },
-    { anuncio:"ACRULE_ESC_H04_v1 · Vivís en depto", conjunto:"ESCALACIÓN H-04 (estanque)", campana:"CBO Huerta 12 24 32 2", roas:5.80, spend:128201, est:"ACTIVE" },
-    { anuncio:"RES-02 · Collage +3.000 familias (freq 3,32 ⚠️ · conj 3,92)", conjunto:"reseñas Iteracion", campana:"MINI HUERTA ABIERTO", roas:4.80, spend:630337, est:"ACTIVE" },
-    { anuncio:"RES-03 · Antes/Ahora", conjunto:"reseñas Iteracion", campana:"MINI HUERTA ABIERTO", roas:4.78, spend:522584, est:"ACTIVE" }
+    { anuncio:"ACRULE_ESC_H04_v4 · Vivís en depto", conjunto:"ESCALACIÓN H-04 (estanque)", campana:"CBO Huerta 12 24 32 2", roas:7.77, spend:59030, est:"ACTIVE" },
+    { anuncio:"H-12 · Lo que cosechás te sigue dando (🆕 ganador Test Semana 3)", conjunto:"Test Huertas Semana 3", campana:"TEST Ang ABO 2", roas:7.71, spend:54295, est:"ACTIVE" },
+    { anuncio:"video 4 - Copia 2", conjunto:"La mejor huerta cualquier espacio", campana:"Mini huerta led", roas:6.62, spend:397265, est:"ACTIVE" },
+    { anuncio:"video 5 - Copia 2", conjunto:"La mejor huerta cualquier espacio", campana:"Mini huerta led", roas:5.95, spend:330119, est:"ACTIVE" },
+    { anuncio:"ACRULE_ESC_H04_v1 · Vivís en depto", conjunto:"ESCALACIÓN H-04 (estanque)", campana:"CBO Huerta 12 24 32 2", roas:5.79, spend:128302, est:"PAUSED" },
+    { anuncio:"video 3 - Copia 2", conjunto:"La mejor huerta cualquier espacio", campana:"Mini huerta led", roas:5.70, spend:357057, est:"ACTIVE" },
+    { anuncio:"RES-03 · Antes/Ahora", conjunto:"reseñas Iteracion", campana:"MINI HUERTA ABIERTO", roas:5.08, spend:536587, est:"ACTIVE" },
+    { anuncio:"RES-02 · Collage +3.000 familias (freq 3,40 ⚠️)", conjunto:"reseñas Iteracion", campana:"MINI HUERTA ABIERTO", roas:4.95, spend:656804, est:"ACTIVE" }
   ],
   perdedores:[
-    { anuncio:"Cost Cap Adset 4 (60k) — $103.941 · 0 ventas · día 3 → PODAR", conjunto:"Adset 4 costo de 60k", campana:"ABO COSTCAP mini huerta", roas:0, spend:103941, est:"ACTIVE" },
-    { anuncio:"Cost Cap Adset 1 (45k) — $73.881 · 0 ventas · día 3 → PODAR", conjunto:"Adset 1 costo de 45k", campana:"ABO COSTCAP mini huerta", roas:0, spend:73881, est:"ACTIVE" },
-    { anuncio:"Cost Cap Adset 2 (50k) — $67.401 · 0 ventas · día 3 → PODAR", conjunto:"Adset 2 costo de 50k", campana:"ABO COSTCAP mini huerta", roas:0, spend:67401, est:"ACTIVE" },
-    { anuncio:"Gemela POST ID (frío inerte · $241k · 0 ventas · gem PAUSED · +$2,6k/día · activar postID o descartar)", conjunto:"La mejor huerta cualquier espacio Gemela POST ID", campana:"Mini huerta led", roas:0, spend:241233, est:"ACTIVE" },
-    { anuncio:"estatico cocina (3,49 · sobreviviente, bajó de 3,81 · vigilar)", conjunto:"Innovación + Cocina", campana:"Mini huerta led", roas:3.49, spend:1268845, est:"ACTIVE" }
+    { anuncio:"onlypocket / AD1 — GANADOR 3,72 APAGADO sin nota (verificar/reactivar)", conjunto:"ADSET1", campana:"onlypocket", roas:3.72, spend:703681, est:"PAUSED" },
+    { anuncio:"Cost Cap Adset 3 (55k) — $151.918 · 2 ventas · 2,88 (bajó de 4,22) → CERRAR", conjunto:"Adset 3 costo de 55k", campana:"ABO COSTCAP mini huerta", roas:2.88, spend:151918, est:"ACTIVE" },
+    { anuncio:"estatico cocina (3,32 · perforó el piso 3,4, bajó de 3,49 · vigilar)", conjunto:"Innovación + Cocina", campana:"Mini huerta led", roas:3.32, spend:1303264, est:"ACTIVE" },
+    { anuncio:"COCINA · Mini LED nuevo — $100k · 0 ventas (reemplazo cocina · learning · vigilar)", conjunto:"COCINA · Mini LED — 3 carruseles + 3 videos", campana:"Mini huerta led", roas:0, spend:100828, est:"ACTIVE" }
   ],
   angulos:[
-    { n:"💎 Espacio/depto (La mejor huerta)", roas:"6,3–7,9", estado:"ESCALAR", nivel:98 },
+    { n:"💎 Espacio/depto (La mejor huerta)", roas:"5,7–6,6", estado:"ESCALAR", nivel:96 },
     { n:"🏢 Vivís en depto (H-04 estanque)", roas:"5,8–7,8", estado:"ESCALAR", nivel:94 },
-    { n:"⭐ Prueba social RES-02/03 (freq 3,92 ⚠️)", roas:"4,8", estado:"ESCALAR", nivel:88 },
-    { n:"🆕 onlypocket", roas:"4,00", estado:"ESCALAR", nivel:86 },
-    { n:"🍳 Cocina (estatico cocina 3,49 · bajando)", roas:"3,5", estado:"MANTENER", nivel:70 },
-    { n:"🧊 Cost Cap Mini LED (solo Adset 55k rinde 4,22; resto 0)", roas:"1,3", estado:"PODAR", nivel:38 },
+    { n:"⭐ Prueba social RES-02/03 (freq 3,40 ⚠️ · frío cargado)", roas:"4,9–5,1", estado:"ESCALAR", nivel:88 },
+    { n:"🆕 onlypocket (APAGADO — verificar)", roas:"3,72", estado:"REACTIVAR", nivel:80 },
+    { n:"🍳 Cocina (estatico cocina 3,32 · bajo MEB · reemplazo en learning)", roas:"3,3", estado:"MANTENER", nivel:64 },
+    { n:"🧊 Cost Cap Mini LED (cerrando · Adset 55k 2,88)", roas:"1,3", estado:"CERRAR", nivel:34 },
     { n:"📚 Ebook / catálogo", roas:"0,8", estado:"PAUSAR", nivel:16 },
     { n:"💬 Mensajes (pausado 04/07)", roas:"n/a", estado:"PAUSAR", nivel:14 }
   ],
