@@ -118,12 +118,12 @@
 ============================================================ -->
 <script id="data">
 const DASH = {
-  cuenta:"Acrule Publicidad", moneda:"ARS", actualizado:"2026-07-23",
-  ventana:"30d de contexto · 7d de pulso · jueves de veredictos", objetivo_roas:6,
+  cuenta:"Acrule Publicidad", moneda:"ARS", actualizado:"2026-07-24",
+  ventana:"30d de contexto · 7d de pulso · viernes de ejecución", objetivo_roas:6,
 
-  roas_30d:2.95, roas_7d:2.70, spend_30d:13564478, spend_7d:3191800,
-  ctr_30d:2.09, ctr_7d:1.90, cpc_30d:295.70, cpc_7d:312.43,
-  reach_30d:645957, freq_30d:3.39, opportunity_score:52, tendencia:"🟢 El re-aprendizaje post-poda SIGUE recuperando sin tocar nada: el 7d rebotó 2,50→2,70 y el 30d 2,89→2,95 (opp score 50→52). ABIERTO cruzó su break-even (3,44→3,50) y Mini LED sube (3,28→3,36). Hoy es jueves = día de VEREDICTOS: cocina quedó muerta y ya 100% apagada; el postID de H-01 llegó a $86,6k/0 ventas con CTR sano → cruzar Shopify y parkear si es 0 real. Sin anomalías. Semana que cierra con más cortes que escalados = doctrina cumplida.",
+  roas_30d:2.96, roas_7d:2.71, spend_30d:13631535, spend_7d:2984089,
+  ctr_30d:2.09, ctr_7d:1.95, cpc_30d:298.20, cpc_7d:334.13,
+  reach_30d:641057, freq_30d:3.41, opportunity_score:53, tendencia:"🟢 5º día seguido de recuperación sin tocar nada: 30d 2,95→2,96, 7d 2,70→2,71, opp 52→53. <b>ABIERTO saltó 3,50→3,80</b> (cruzó su BE 3,22 con holgura). Mini LED cedió apenas 3,36→3,28 (la cocina lo arrastra mientras el conjunto siga prendido). <b>Los dos veredictos de ayer siguen SIN ejecutar</b>: el conjunto COCINA sigue ACTIVE (quedó CARR_v1 prendido) y el postID de H-01 gastó hasta $101,6k con 0 ventas. Hoy (viernes) = ejecutar esos dos cortes y no tocar el resto. Sin anomalías.",
 
   fin:{ margen_bruto:65, break_even_roas:3.4, resultado:"pérdida",
         ads_pct_fact:33, pauta_objetivo:18, cac_ads:77058, aov:199004,
@@ -133,37 +133,37 @@ const DASH = {
   msj:{ mensajes_30d:751, spend_30d:578336, costo_prom:770, target_costo:400,
         mejor:"CBO Emprendedores Mensajes ($594/msg · pausada)", peor:"CBO Mensajes Huertas ($982/msg · pausada)" },
 
-  // OBSERVACIONES DEL DÍA (pulso diario 23/07 · jueves) — día de veredictos: cocina muerta+apagada, H-01 postID a juicio
+  // OBSERVACIONES DEL DÍA (pulso diario 24/07 · viernes) — ejecutar los dos cortes pendientes; recuperación sigue
   observaciones:[
-    { ic:"🟢", txt:"<b>Cuarto día de recuperación seguido — y sin tocar un solo botón.</b> El <b>7d subió 2,50→2,70</b> y el 30d 2,89→2,95; el opp score 50→<b>52</b>. <b>ABIERTO cruzó su break-even</b> (3,44→3,50, sobre 3,22) y <b>Mini LED sube</b> (3,28→3,36, todavía bajo su BE 3,5). Es la prueba viva de la doctrina: apagar lo que rinde bajo el break-even sube el ROAS de toda la cuenta por concentración, sin gastar un peso más. El 7d se re-arma solo mientras no lo toquemos." },
-    { ic:"🍳", txt:"<b>Veredicto cocina: muerto y ya 100% apagado.</b> El conjunto <b>COCINA · Mini LED rinde 1,21</b> ($704k 30d) — muy por debajo de su BE 3,5. La orden de ayer (apagar ACRULE_ML_CARR_v3) está HECHA: <b>todas sus piezas quedaron PAUSED</b> (ML_VID_v2, CARR_v3, CARR_v2, VID_v3). El conjunto ya no gasta. Solo queda apagar el conjunto para dejar la CBO limpia, apoyada en el ganador espacio (video 4 = 6,04). El motor cocina en frío no cerró — el aprendizaje es claro: la compradora de Mini LED compra por ESPACIO/permiso, no por 'la huerta del futuro'." },
-    { ic:"⏳", txt:"<b>Veredicto H-01 postID: ya cruzó el umbral, hora de decidir con Shopify.</b> <b>ACRULE_HG_H01 va $86,6k / 0 ventas</b> — pasó de sobra los 2-3× CPA ($60-80k). El <b>CTR 1,57% = idéntico al original</b>: el post viaja bien, NO es el creativo — es que en la CBO no consigue entrega limpia (Meta la marca <i>budget_limited</i> + <i>fragmentation</i>: los 3 conjuntos de H-01/H-04 compiten por la misma audiencia). A $86,6k el 0 ya no es ruido. Como es una <b>huerta grande</b> (Meta subcuenta ~50%, cierra por WhatsApp), el paso correcto es <b>cruzar Shopify</b>: si hay 0 venta real → parkear. El ángulo desperdicio no muere (vive en el ad de test 9,35 y se re-itera)." },
-    { ic:"💎", txt:"<b>Los ganadores siguen sanos y subiendo.</b> Le hablan a la compradora (permiso + prueba + mi propia comida): <b>video 4 espacio 6,04</b> (subió desde 5,59), <b>video 5 espacio 10,49</b>, <b>H-12 continuidad 5,53</b>, <b>H-04 depto v4 6,28 / v1 5,09</b>, <b>RES-03 4,28</b>, <b>MS postID 3,06</b>. Ojo con <b>H-12: freq 2,85 subiendo</b> hacia 3 — es el próximo movimiento del plan (subir a la CBO por postID) pero NO adelantar a mitad de semana. El <b>OnlyPocket del video 4 quedó PAUSED</b> ($62,9k, 0 ventas): parkeado — el video 4 sigue ganando dentro de la CBO, el aislado no cerró." },
+    { ic:"🟢", txt:"<b>Quinto día de recuperación seguido — sin tocar un solo botón.</b> El <b>30d 2,95→2,96</b>, el 7d 2,70→<b>2,71</b> y el opp score 52→<b>53</b>. El salto del día es <b>ABIERTO: 3,50→3,80</b> — cruzó su break-even (3,22) con holgura clara. Es la prueba viva de la doctrina: apagar lo que rinde bajo el break-even sube el ROAS de toda la cuenta por concentración, sin gastar un peso más. El 7d se re-arma solo mientras no lo toquemos." },
+    { ic:"🍳", txt:"<b>Veredicto cocina: quedó a medias — hay que terminar el corte.</b> El conjunto <b>COCINA · Mini LED rinde 1,16</b> ($735k 30d), muy por debajo de su BE 3,5. Ayer se apagaron sus videos/carruseles, pero <b>quedó ACRULE_ML_CARR_v1 ACTIVE</b> (CTR 0,82% — el peor de todos; su 3,43 es residual de días viejos, no una señal). Apagar el <b>conjunto entero</b> lo incluye y deja la CBO Mini LED apoyada en el ganador espacio (video 4 5,39 · video 5 8,85). Aprendizaje confirmado: la compradora de Mini LED compra por ESPACIO/permiso, no por 'la huerta del futuro'." },
+    { ic:"⏳", txt:"<b>Veredicto H-01 postID: siguió gastando y sigue en 0 — parkealo ya.</b> Pasó de $86,6k a <b>$101,6k / 0 ventas</b>: el 0 a este gasto es veredicto, no ruido (2-3× CPA = $60-80k, ya lo dobló). El <b>CTR 1,55% ≈ original 1,57%</b>: el post viaja bien, NO es el creativo — es entrega (Meta marca el conjunto <i>budget_limited</i> + <i>fragmentation</i>: los 3 conjuntos H-01/H-04 compiten por la misma audiencia). Como es <b>huerta grande</b> (Meta subcuenta ~50%, cierra por WhatsApp): cruzá Shopify y, si es 0 venta real → parkear. El ángulo desperdicio no muere (vive en el ad de test 9,35 y se re-itera)." },
+    { ic:"💎", txt:"<b>Los ganadores siguen sanos.</b> Le hablan a la compradora (permiso + prueba + mi propia comida): <b>video 5 espacio 8,85</b>, <b>H-04 depto v4 6,00</b>, <b>video 4 espacio 5,39</b>, <b>H-12 continuidad 5,00</b>, <b>RES-03 4,93</b> (subió). Dos ojos: <b>H-12 freq 2,85→2,92 subiendo</b> hacia 3 — es el movimiento que el plan del lunes manda subir a la CBO por postID, pero NO adelantar a mitad de semana; y <b>Acrule_MS_RES postID cayó 3,06→2,61</b> (bajo su BE 3,22) — vigilar, candidato a corte la semana que viene si sigue bajando." },
     { ic:"🎫", txt:"<b>AOV sigue sin comunicarse — la palanca hacia ROAS 6 que NO depende de Meta.</b> Con el mismo CPA, más ticket por orden = más ROAS sin cortar alcance. El material YA existe: <b>bundle Mini LED + nutrientes + consumibles</b>, <b>order bump</b> (kit germinador, corrector PH) y <b>cuotas</b> para el ticket alto de las grandes. Falta COMUNICARLO en creativos y landing (sello '6 cuotas sin interés' + 'kit completo'). Es la vía a 6 mientras el gasto (pauta ~33% vs techo 18%) sigue siendo lo que hay que bajar. Orden recurrente." }
   ],
 
   ordenes:[
-    { p:"p1", accion:"apagar", titulo:"VEREDICTO H-01 postID: cruzá Shopify y, si es 0 real, PARKEALO",
+    { p:"p1", accion:"apagar", titulo:"H-01 postID: siguió en 0 hasta $101,6k — cruzá Shopify y PARKEALO",
       ruta:{campana:"CBO Huerta 12 24 32 2", conjunto:"H-01 \"Verdura que se pudre\" - ganador test sem 1", anuncio:"ACRULE_HG_H01 Post Id"},
       impacto:"Cortar el drenaje limpio bajo break-even sin matar el ángulo (que ya vive en el test)",
-      why:"El postID va <b>$86,6k / 0 ventas</b> — cruzó de sobra el umbral de juicio (2-3× CPA = $60-80k), el 0 ya NO es ruido. El <b>CTR 1,57% = idéntico al original</b>: el post viaja bien, no es el creativo — Meta marca el conjunto <b>budget_limited + fragmentation</b> (los 3 conjuntos H-01/H-04 compiten por la misma audiencia y le comen la entrega). Como es una <b>huerta grande</b> (Meta subcuenta ~50%, cierra por WhatsApp), <b>mirá Shopify primero</b>: si hay 0 venta real en la ventana → parkear el ad. El ángulo desperdicio/culpa NO se pierde: sigue vivo en el ad de test (9,35) y se re-itera como creativo nuevo (plan del lunes)." },
-    { p:"p1", accion:"apagar", titulo:"VEREDICTO cocina: apagar el conjunto COCINA · Mini LED (muerto y ya sin piezas vivas)",
-      ruta:{campana:"CBO Mini huerta led", conjunto:"COCINA · Mini LED — 3 carruseles + 3 videos", anuncio:"(conjunto entero — todas las piezas ya PAUSED)"},
-      impacto:"Deja la CBO Mini LED limpia, apoyada en el ganador espacio (video 4 = 6,04)",
-      why:"El conjunto rinde <b>1,21</b> ($704k 30d), muy bajo su BE 3,5. El P1 de ayer (apagar ACRULE_ML_CARR_v3) está HECHO → <b>todas las piezas quedaron PAUSED</b> y el conjunto ya no gasta. Apagar el conjunto es formalizar el cierre. En CBO no baja el gasto (lo reparte), pero deja el motor cocina cerrado: el aprendizaje confirmado es que la compradora de Mini LED compra por ESPACIO/permiso, no por 'la huerta del futuro/innovación'." },
+      why:"El postID pasó de $86,6k a <b>$101,6k / 0 ventas</b> — dobló el umbral de juicio (2-3× CPA = $60-80k), el 0 ya es veredicto, no ruido. El <b>CTR 1,55% ≈ original 1,57%</b>: el post viaja bien, no es el creativo — Meta marca el conjunto <b>budget_limited + fragmentation</b> (los 3 conjuntos H-01/H-04 compiten por la misma audiencia y le comen la entrega). Como es una <b>huerta grande</b> (Meta subcuenta ~50%, cierra por WhatsApp), <b>mirá Shopify primero</b>: si hay 0 venta real en la ventana → parkear el ad. El ángulo desperdicio/culpa NO se pierde: sigue vivo en el ad de test (9,35) y se re-itera como creativo nuevo (plan del lunes)." },
+    { p:"p1", accion:"apagar", titulo:"Terminar el corte de cocina: apagar el conjunto entero COCINA · Mini LED",
+      ruta:{campana:"CBO Mini huerta led", conjunto:"COCINA · Mini LED — 3 carruseles + 3 videos", anuncio:"(conjunto entero — queda ACRULE_ML_CARR_v1 aún ACTIVE)"},
+      impacto:"Deja la CBO Mini LED limpia, apoyada en el ganador espacio (video 4 5,39 · video 5 8,85)",
+      why:"El conjunto rinde <b>1,16</b> ($735k 30d), muy bajo su BE 3,5. Ayer se apagaron sus videos/carruseles, pero <b>quedó ACRULE_ML_CARR_v1 ACTIVE</b> (CTR 0,82% — el peor; su 3,43 es residual de días viejos, no una señal viva). Apagar el conjunto entero lo incluye y formaliza el cierre. En CBO no baja el gasto (lo reparte) pero deja el motor cocina cerrado: el aprendizaje confirmado es que la compradora de Mini LED compra por ESPACIO/permiso, no por 'la huerta del futuro/innovación'." },
     { p:"p3", accion:"iterar", titulo:"AOV — comunicar el bundle Mini LED + cuotas (la palanca hacia ROAS 6)",
       ruta:{campana:"Shopify (tienda) + creativos", conjunto:"bundle / order bump / cuotas", anuncio:"—"},
       impacto:"Sube el ROAS sin cortar alcance: más facturación por el mismo CPA",
       why:"El bundle (Mini LED + nutrientes + consumibles) y las 6 cuotas sin interés YA existen en la web — falta <b>hacerlos visibles</b>. Con el mismo CPA, más ticket = más ROAS. Es la vía a 6 que no depende de Meta, justo cuando el norte es bajar el gasto (pauta ~33% vs techo 18%). Orden recurrente.",
       iteraciones:["Sello '6 cuotas sin interés' + 'kit completo: huerta + nutrientes + consumibles' en creativos y landing","Order bump en checkout: kit germinador / corrector PH","Empujar cuotas en las Huertas grandes (ticket $397k)"] },
-    { p:"p4", accion:"reactivar", titulo:"Mantenimiento: vigilar (learning, NO tocar) H-12, RES-03 y CBO emprendedores",
-      ruta:{campana:"TEST Huertas Sem 3 / CBO ABIERTO / CBO emprendedores", conjunto:"Test Huertas Semana 3 · reseñas Iteracion · Videos Insta", anuncio:"Pieza 9 H-12 · RES-03 · video4"},
-      impacto:"Detectar fatiga/oportunidad sin romper el re-aprendizaje",
-      why:"<b>H-12 continuidad</b> (5,53, <b>freq 2,85 subiendo</b> hacia 3): es el ganador que el plan del lunes manda subir a la CBO por postID — NO adelantar a mitad de semana, vigilar su fatiga. <b>RES-03</b> (4,28, freq 2,62) — sano, vigilar que no pase de 3. <b>CBO emprendedores</b> (video4 CTR 14,87%, carritos sin venta): en aprendizaje, no tocar." },
-    { p:"p4", accion:"reactivar", titulo:"Cerrar el día: 4º día de recuperación — la semana cierra con más cortes que escalados",
+    { p:"p4", accion:"reactivar", titulo:"Mantenimiento: vigilar (learning, NO tocar) H-12, RES-03, MS postID y CBO emprendedores",
+      ruta:{campana:"TEST Huertas Sem 3 / CBO ABIERTO / CBO emprendedores", conjunto:"Test Huertas Semana 3 · reseñas Iteracion · Videos Insta", anuncio:"Pieza 9 H-12 · RES-03 · Acrule_MS_RES · video4"},
+      impacto:"Detectar fatiga/oportunidad sin romper el re-aprendizaje de mitad de semana",
+      why:"<b>H-12 continuidad</b> (5,00, <b>freq 2,92 subiendo</b> hacia 3): es el ganador que el plan del lunes manda subir a la CBO por postID — NO adelantar a mitad de semana, vigilar su fatiga. <b>RES-03</b> (4,93, freq 2,65) — sano, subió, vigilar que no pase de 3. <b>Acrule_MS_RES postID</b> (2,61, cayó de 3,06 · bajo su BE 3,22): vigilar — candidato a corte la semana que viene si sigue bajando. <b>CBO emprendedores</b> (video4 CTR 14,30%, carritos sin venta): en aprendizaje, no tocar." },
+    { p:"p4", accion:"reactivar", titulo:"Cerrar el día: 5º día de recuperación — la semana cierra con más cortes que escalados",
       ruta:{campana:"(cuenta entera)", conjunto:"—", anuncio:"—"},
       impacto:"El número que decide si dejás de perder plata",
-      why:"El 7d subió 2,50→2,70 y el 30d a 2,95 sin tocar nada — la poda mejora el ROAS por concentración. Lo que falta para dejar de perder es <b>bajar el gasto</b>: la pauta sigue ~33% vs techo 18%. Hoy (jueves) se cerraron los dos veredictos con cortes (cocina + H-01 postID) → la semana termina bajando gasto, que es exactamente la doctrina. El 7d se re-arma solo si no lo tocamos." }
+      why:"El 7d subió a 2,71 y el 30d a 2,96 sin tocar nada — la poda mejora el ROAS por concentración (ABIERTO ya en 3,80). Lo que falta para dejar de perder es <b>bajar el gasto</b>: la pauta sigue ~33% vs techo 18%. Los dos cortes de hoy (cocina + H-01 postID) son ambos reducciones/limpiezas → la semana termina bajando gasto, que es exactamente la doctrina. El 7d se re-arma solo si no lo tocamos." }
   ],
 
   // PLAN DE LA SEMANA (lo llena el agente de los lunes)
@@ -188,14 +188,14 @@ const DASH = {
   },
 
   ventas_campanas:[
-    { n:"CBO Mini huerta led (recupera 3,28→3,36 · cocina ya apagada, la lleva espacio 6,04)", est:"ACTIVE", spend:6988229, roas:3.36, ventas:79 },
-    { n:"CBO - MINI HUERTA - ABIERTO (✅ cruzó break-even: 3,44→3,50 · sobre 3,22)", est:"ACTIVE", spend:2205434, roas:3.50, ventas:32 },
-    { n:"TEST Ang ABO Huerta 12 24 32 2 (2,74 · H-12 5,53 y H-01 9,35 ganadores del test)", est:"ACTIVE", spend:1094914, roas:2.74, ventas:13 },
+    { n:"CBO Mini huerta led (cede 3,36→3,28 · cocina aún la arrastra, la lleva espacio 5,39/8,85)", est:"ACTIVE", spend:7095205, roas:3.28, ventas:78 },
+    { n:"CBO - MINI HUERTA - ABIERTO (✅ saltó 3,50→3,80 · cruzó su BE 3,22 con holgura)", est:"ACTIVE", spend:2182550, roas:3.80, ventas:33 },
+    { n:"TEST Ang ABO Huerta 12 24 32 2 (2,63 · H-12 5,00 y H-01 9,35 ganadores del test)", est:"ACTIVE", spend:1141525, roas:2.63, ventas:13 },
     { n:"onlypocket viejo (PAUSED · 3,72)", est:"PAUSED", spend:703686, roas:3.72, ventas:10 },
-    { n:"CBO Huerta 12 24 32 2 (⚠️ postID H-01 $86,6k/0 v · VEREDICTO hoy: cruzar Shopify → parkear)", est:"ACTIVE", spend:572920, roas:2.10, ventas:3 },
+    { n:"CBO Huerta 12 24 32 2 (⚠️ postID H-01 $101,6k/0 v · VEREDICTO: cruzar Shopify → parkear)", est:"ACTIVE", spend:607769, roas:1.98, ventas:3 },
     { n:"ABO COSTCAP mini huerta (✅ CERRADA)", est:"PAUSED", spend:449475, roas:1.21, ventas:3 },
-    { n:"TEST Ang ABO Mini huerta led (test propio · 2,88)", est:"ACTIVE", spend:116147, roas:2.88, ventas:2 },
-    { n:"CBO emprendedores (video4 CTR 14,87% · carritos sin venta · learning)", est:"ACTIVE", spend:125389, roas:0, ventas:0 },
+    { n:"TEST Ang ABO Mini huerta led (test propio · 2,52)", est:"ACTIVE", spend:132811, roas:2.52, ventas:2 },
+    { n:"CBO emprendedores (video4 CTR 14,30% · carritos sin venta · learning)", est:"ACTIVE", spend:138637, roas:0, ventas:0 },
     { n:"OnlyPocket Mini huerta Video 4 copia 2 (🔻 PAUSED · $62,9k/0 v · parkeado, no cerró aislado)", est:"PAUSED", spend:62894, roas:0, ventas:0 }
   ],
   mensajes_campanas:[
@@ -203,29 +203,29 @@ const DASH = {
     { n:"CBO Emprendedores Mensajes (pausada)", est:"PAUSED", spend:213491, mensajes:388, costo:550 }
   ],
   ganadores:[
-    { anuncio:"video 5 - Copia 2 (espacio · el mejor activo · freq 2,18)", conjunto:"La mejor huerta cualquier espacio", campana:"CBO Mini huerta led", roas:10.49, spend:412337, est:"ACTIVE" },
-    { anuncio:"ACRULE_ESC_H04_v4 (depto · freq 1,32)", conjunto:"ESCALACIÓN H-04 'VIVÍS EN DEPTO'", campana:"CBO Huerta 12 24 32 2", roas:6.28, spend:73020, est:"ACTIVE" },
-    { anuncio:"video 4 - Copia 2 (espacio · workhorse · subió 5,59→6,04 · freq 1,70)", conjunto:"La mejor huerta cualquier espacio", campana:"CBO Mini huerta led", roas:6.04, spend:834911, est:"ACTIVE" },
-    { anuncio:"Pieza 9 · H-12 continuidad (⚠️ freq 2,85 subiendo → montar en CBO por postID, sin adelantar)", conjunto:"Test Huertas Semana 3", campana:"TEST Ang ABO Huerta 12 24 32 2", roas:5.53, spend:117225, est:"ACTIVE" },
-    { anuncio:"ACRULE_ESC_H04_v1 (depto · freq 1,97)", conjunto:"ESCALACIÓN H-04 'VIVÍS EN DEPTO'", campana:"CBO Huerta 12 24 32 2", roas:5.09, spend:145942, est:"ACTIVE" },
-    { anuncio:"RES-03 · Antes/Ahora (prueba social viva · freq 2,62)", conjunto:"reseñas Iteracion", campana:"CBO - MINI HUERTA - ABIERTO", roas:4.28, spend:700188, est:"ACTIVE" },
-    { anuncio:"Acrule_MS_RES postID (reseñas Mini sin LED)", conjunto:"Reseñas Iteracion + PostID", campana:"CBO - MINI HUERTA - ABIERTO", roas:3.06, spend:110777, est:"ACTIVE" },
-    { anuncio:"H-01 · Verdura que se pudre - Copia (test · el mejor ángulo · su postID en VEREDICTO hoy)", conjunto:"Test Huerta Semana 1", campana:"TEST Ang ABO Huerta 12 24 32 2", roas:9.35, spend:129521, est:"PAUSED" }
+    { anuncio:"video 5 - Copia 2 (espacio · el mejor activo · freq 2,22)", conjunto:"La mejor huerta cualquier espacio", campana:"CBO Mini huerta led", roas:8.85, spend:488672, est:"ACTIVE" },
+    { anuncio:"ACRULE_ESC_H04_v4 (depto · freq 1,34)", conjunto:"ESCALACIÓN H-04 'VIVÍS EN DEPTO'", campana:"CBO Huerta 12 24 32 2", roas:6.00, spend:76407, est:"ACTIVE" },
+    { anuncio:"video 4 - Copia 2 (espacio · workhorse · freq 1,73)", conjunto:"La mejor huerta cualquier espacio", campana:"CBO Mini huerta led", roas:5.39, spend:935921, est:"ACTIVE" },
+    { anuncio:"Pieza 9 · H-12 continuidad (⚠️ freq 2,92 subiendo → montar en CBO por postID, sin adelantar)", conjunto:"Test Huertas Semana 3", campana:"TEST Ang ABO Huerta 12 24 32 2", roas:5.00, spend:129759, est:"ACTIVE" },
+    { anuncio:"RES-03 · Antes/Ahora (prueba social viva · subió · freq 2,65)", conjunto:"reseñas Iteracion", campana:"CBO - MINI HUERTA - ABIERTO", roas:4.93, spend:724489, est:"ACTIVE" },
+    { anuncio:"ACRULE_ESC_H04_v1 (depto · freq 1,97)", conjunto:"ESCALACIÓN H-04 'VIVÍS EN DEPTO'", campana:"CBO Huerta 12 24 32 2", roas:4.84, spend:153423, est:"ACTIVE" },
+    { anuncio:"Acrule_MS_RES postID (reseñas Mini sin LED · 🔻cayó 3,06→2,61 · bajo su BE 3,22 · vigilar)", conjunto:"Reseñas Iteracion + PostID", campana:"CBO - MINI HUERTA - ABIERTO", roas:2.61, spend:129669, est:"ACTIVE" },
+    { anuncio:"H-01 · Verdura que se pudre - Copia (test · el mejor ángulo · su postID en VEREDICTO)", conjunto:"Test Huerta Semana 1", campana:"TEST Ang ABO Huerta 12 24 32 2", roas:9.35, spend:129521, est:"PAUSED" }
   ],
   perdedores:[
-    { anuncio:"⏳ ACRULE_HG_H01 Post Id (0 ventas · $86,6k · CTR 1,57% sano) → VEREDICTO hoy: cruzar Shopify → parkear", conjunto:"H-01 ganador test sem 1", campana:"CBO Huerta 12 24 32 2", roas:0, spend:86606, est:"ACTIVE" },
-    { anuncio:"🍳 COCINA · Mini LED (motor cocina muerto · 1,21 · todas las piezas ya PAUSED) → APAGAR el conjunto", conjunto:"COCINA · Mini LED — 3 carruseles + 3 videos", campana:"CBO Mini huerta led", roas:1.21, spend:704204, est:"ACTIVE" },
+    { anuncio:"⏳ ACRULE_HG_H01 Post Id (0 ventas · $101,6k · CTR 1,55% sano) → VEREDICTO: cruzar Shopify → parkear", conjunto:"H-01 ganador test sem 1", campana:"CBO Huerta 12 24 32 2", roas:0, spend:101650, est:"ACTIVE" },
+    { anuncio:"🍳 COCINA · Mini LED (motor cocina muerto · 1,16 · queda CARR_v1 ACTIVE) → APAGAR el conjunto entero", conjunto:"COCINA · Mini LED — 3 carruseles + 3 videos", campana:"CBO Mini huerta led", roas:1.16, spend:735245, est:"ACTIVE" },
+    { anuncio:"ACRULE_ML_CARR_v1 (última pieza cocina viva · CTR 0,82% el peor · 3,43 residual) → cae con el conjunto", conjunto:"COCINA · Mini LED", campana:"CBO Mini huerta led", roas:3.43, spend:68991, est:"ACTIVE" },
     { anuncio:"🔻 OnlyPocket video 4 (aislado · $62,9k/0 v) — PAUSED (no cerró; el video 4 sigue ganando en la CBO)", conjunto:"Adset 1", campana:"OnlyPocket Mini huerta Video 4 copia 2", roas:0, spend:62894, est:"PAUSED" },
-    { anuncio:"✅ ACRULE_ML_CARR_v3 'Paso a paso' — APAGADO (P1 de ayer · 0 v · CTR 1,09%)", conjunto:"COCINA · Mini LED", campana:"CBO Mini huerta led", roas:0, spend:75452, est:"PAUSED" },
     { anuncio:"✅ ACRULE_ML_VID_v2 'futuro/innovación' — APAGADO (era el mayor drenaje)", conjunto:"COCINA · Mini LED", campana:"CBO Mini huerta led", roas:1.48, spend:384979, est:"PAUSED" }
   ],
   angulos:[
-    { n:"💎 Espacio (video 4 6,04 subiendo · video 5 10,49)", roas:"6,0–10,5", estado:"ESCALAR", nivel:94 },
-    { n:"🗑️ Desperdicio/culpa (H-01 · test 9,35 · postID en VEREDICTO hoy en la CBO)", roas:"9,4", estado:"VEREDICTO", nivel:90 },
-    { n:"🏢 Vivís en depto (H-04 v4 6,28 / v1 5,09)", roas:"5,1–6,3", estado:"ESCALAR", nivel:87 },
-    { n:"🔁 Continuidad (H-12 'te sigue dando' · freq 2,85 subiendo)", roas:"5,5", estado:"VIGILAR", nivel:84 },
-    { n:"⭐ Reseñas Antes/Ahora + MS postID", roas:"3,1–4,3", estado:"MANTENER", nivel:70 },
-    { n:"🍳 Cocina/indoor en frío (reemplazo · no cerró · apagado)", roas:"1,2", estado:"MUERTO", nivel:16 },
+    { n:"💎 Espacio (video 4 5,39 · video 5 8,85)", roas:"5,4–8,9", estado:"ESCALAR", nivel:94 },
+    { n:"🗑️ Desperdicio/culpa (H-01 · test 9,35 · postID en VEREDICTO en la CBO)", roas:"9,4", estado:"VEREDICTO", nivel:90 },
+    { n:"🏢 Vivís en depto (H-04 v4 6,00 / v1 4,84)", roas:"4,8–6,0", estado:"ESCALAR", nivel:87 },
+    { n:"🔁 Continuidad (H-12 'te sigue dando' · freq 2,92 subiendo)", roas:"5,0", estado:"VIGILAR", nivel:84 },
+    { n:"⭐ Reseñas Antes/Ahora (RES-03 4,93 sano · MS postID 2,61 cae)", roas:"2,6–4,9", estado:"MANTENER", nivel:68 },
+    { n:"🍳 Cocina/indoor en frío (reemplazo · no cerró · apagando)", roas:"1,2", estado:"MUERTO", nivel:16 },
     { n:"🚀 Futuro/innovación (ML_VID_v2 · apagado)", roas:"1,5", estado:"MUERTO", nivel:12 },
     { n:"💬 Mensajes / 📚 Ebook (pausados)", roas:"n/a", estado:"PAUSAR", nivel:10 }
   ],
